@@ -1,0 +1,51 @@
+model,brand,body_type,fuel_type,price_range,luxury,engine_cc
+Swift,Maruti Suzuki,Hatchback,Petrol,under_10L,No,1197
+Baleno,Maruti Suzuki,Hatchback,Petrol,under_10L,No,1197
+WagonR,Maruti Suzuki,Hatchback,Petrol,under_10L,No,998
+Alto 800,Maruti Suzuki,Hatchback,Petrol,under_10L,No,796
+Celerio,Maruti Suzuki,Hatchback,Petrol,under_10L,No,998
+Grand i10 Nios,Hyundai,Hatchback,Petrol,under_10L,No,1197
+i20,Hyundai,Hatchback,Petrol,under_10L,No,1197
+Santro,Hyundai,Hatchback,Petrol,under_10L,No,1086
+Tiago,Tata,Hatchback,Petrol,under_10L,No,1199
+Altroz,Tata,Hatchback,Petrol,under_10L,No,1199
+Polo,Volkswagen,Hatchback,Petrol,under_10L,No,999
+Punch,Tata,SUV,Petrol,under_10L,No,1199
+Kwid,Renault,Hatchback,Petrol,under_10L,No,999
+Dzire,Maruti Suzuki,Sedan,Petrol,under_10L,No,1197
+Amaze,Honda,Sedan,Petrol,under_10L,No,1199
+Aura,Hyundai,Sedan,Petrol,under_10L,No,1197
+Tigor,Tata,Sedan,Petrol,under_10L,No,1199
+Aspire,Ford,Sedan,Petrol,under_10L,No,1196
+Ciaz,Maruti Suzuki,Sedan,Petrol,10-20L,No,1462
+Verna,Hyundai,Sedan,Petrol,10-20L,No,1497
+City,Honda,Sedan,Petrol,10-20L,No,1498
+Rapid,Skoda,Sedan,Petrol,10-20L,No,999
+Virtus,Volkswagen,Sedan,Petrol,10-20L,No,999
+Slavia,Skoda,Sedan,Petrol,10-20L,No,999
+Vitara Brezza,Maruti Suzuki,SUV,Petrol,under_10L,No,1462
+Venue,Hyundai,SUV,Petrol,under_10L,No,998
+Nexon,Tata,SUV,Petrol,under_10L,No,1199
+Ecosport,Ford,SUV,Petrol,under_10L,No,999
+XUV300,Mahindra,SUV,Diesel,under_10L,No,1497
+Sonet,Kia,SUV,Petrol,under_10L,No,998
+Brezza,Maruti Suzuki,SUV,Petrol,under_10L,No,1462
+Creta,Hyundai,SUV,Petrol,10-20L,No,1497
+Seltos,Kia,SUV,Petrol,10-20L,No,1497
+Harrier,Tata,SUV,Diesel,10-20L,No,1956
+Safari,Tata,SUV,Diesel,10-20L,No,1956
+XUV700,Mahindra,SUV,Petrol,10-20L,No,1997
+Kushaq,Skoda,SUV,Petrol,10-20L,No,999
+Taigun,Volkswagen,SUV,Petrol,10-20L,No,999
+Astor,MG,SUV,Petrol,10-20L,No,1349
+Hector,MG,SUV,Petrol,10-20L,No,1451
+Innova Crysta,Toyota,SUV,Diesel,10-20L,No,2393
+Fortuner,Toyota,SUV,Diesel,20-30L,Yes,2755
+Endeavour,Ford,SUV,Diesel,20-30L,Yes,1996
+Compass,Jeep,SUV,Petrol,10-20L,Yes,1368
+Alcazar,Hyundai,SUV,Petrol,10-20L,No,1497
+Nexon EV,Tata,SUV,Electric,10-20L,No,0
+ZS EV,MG,SUV,Electric,10-20L,No,0
+Tigor EV,Tata,Sedan,Electric,under_10L,No,0
+e-Verito,Mahindra,Sedan,Electric,under_10L,No,0
+Glanza,Toyota,Hatchback,Petrol,under_10L,No,1197
