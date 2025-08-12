@@ -1,0 +1,51 @@
+model,keywords,brand,body_type,fuel_type,price_range,luxury,engine_cc
+Swift,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,1197
+Baleno,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,1197
+WagonR,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,998
+Alto 800,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,796
+Celerio,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,998
+Grand i10 Nios,"feature-rich,compact,city-friendly,smooth,affordable",Hyundai,Hatchback,Petrol,under_10L,False,1197
+i20,"feature-rich,compact,city-friendly,smooth,affordable",Hyundai,Hatchback,Petrol,under_10L,False,1197
+Santro,"feature-rich,compact,city-friendly,smooth,affordable",Hyundai,Hatchback,Petrol,under_10L,False,1086
+Tiago,"safety,compact,city-friendly,smooth,affordable",Tata,Hatchback,Petrol,under_10L,False,1199
+Altroz,"safety,compact,city-friendly,smooth,affordable",Tata,Hatchback,Petrol,under_10L,False,1199
+Polo,"german-engineering,compact,city-friendly,smooth,affordable",Volkswagen,Hatchback,Petrol,under_10L,False,999
+Punch,"safety,versatile,commanding,smooth,affordable",Tata,SUV,Petrol,under_10L,False,1199
+Kwid,"french-design,compact,city-friendly,smooth,affordable",Renault,Hatchback,Petrol,under_10L,False,999
+Dzire,"reliable,spacious,comfortable,smooth,affordable",Maruti Suzuki,Sedan,Petrol,under_10L,False,1197
+Amaze,"refined,spacious,comfortable,smooth,affordable",Honda,Sedan,Petrol,under_10L,False,1199
+Aura,"feature-rich,spacious,comfortable,smooth,affordable",Hyundai,Sedan,Petrol,under_10L,False,1197
+Tigor,"safety,spacious,comfortable,smooth,affordable",Tata,Sedan,Petrol,under_10L,False,1199
+Aspire,"performance,spacious,comfortable,smooth,affordable",Ford,Sedan,Petrol,under_10L,False,1196
+Ciaz,"reliable,spacious,comfortable,smooth,premium",Maruti Suzuki,Sedan,Petrol,10-20L,False,1462
+Verna,"feature-rich,spacious,comfortable,smooth,premium",Hyundai,Sedan,Petrol,10-20L,False,1497
+City,"refined,spacious,comfortable,smooth,premium",Honda,Sedan,Petrol,10-20L,False,1498
+Rapid,"german-engineering,spacious,comfortable,smooth,premium",Skoda,Sedan,Petrol,10-20L,False,999
+Virtus,"german-engineering,spacious,comfortable,smooth,premium",Volkswagen,Sedan,Petrol,10-20L,False,999
+Slavia,"german-engineering,spacious,comfortable,smooth,premium",Skoda,Sedan,Petrol,10-20L,False,999
+Vitara Brezza,"reliable,versatile,commanding,smooth,affordable",Maruti Suzuki,SUV,Petrol,under_10L,False,1462
+Venue,"feature-rich,versatile,commanding,smooth,affordable",Hyundai,SUV,Petrol,under_10L,False,998
+Nexon,"safety,versatile,commanding,smooth,affordable",Tata,SUV,Petrol,under_10L,False,1199
+Ecosport,"performance,versatile,commanding,smooth,affordable",Ford,SUV,Petrol,under_10L,False,999
+XUV300,"rugged,versatile,commanding,torquey,affordable",Mahindra,SUV,Diesel,under_10L,False,1497
+Sonet,"stylish,versatile,commanding,smooth,affordable",Kia,SUV,Petrol,under_10L,False,998
+Brezza,"reliable,versatile,commanding,smooth,affordable",Maruti Suzuki,SUV,Petrol,under_10L,False,1462
+Creta,"feature-rich,versatile,commanding,smooth,premium",Hyundai,SUV,Petrol,10-20L,False,1497
+Seltos,"stylish,versatile,commanding,smooth,premium",Kia,SUV,Petrol,10-20L,False,1497
+Harrier,"safety,versatile,commanding,torquey,premium",Tata,SUV,Diesel,10-20L,False,1956
+Safari,"safety,versatile,commanding,torquey,premium",Tata,SUV,Diesel,10-20L,False,1956
+XUV700,"rugged,versatile,commanding,smooth,premium",Mahindra,SUV,Petrol,10-20L,False,1997
+Kushaq,"german-engineering,versatile,commanding,smooth,premium",Skoda,SUV,Petrol,10-20L,False,999
+Taigun,"german-engineering,versatile,commanding,smooth,premium",Volkswagen,SUV,Petrol,10-20L,False,999
+Astor,"tech-savvy,versatile,commanding,smooth,premium",MG,SUV,Petrol,10-20L,False,1349
+Hector,"tech-savvy,versatile,commanding,smooth,premium",MG,SUV,Petrol,10-20L,False,1451
+Innova Crysta,"durable,versatile,commanding,torquey,premium",Toyota,SUV,Diesel,10-20L,False,2393
+Fortuner,"durable,versatile,commanding,torquey,luxury",Toyota,SUV,Diesel,20-30L,True,2755
+Endeavour,"performance,versatile,commanding,torquey,luxury",Ford,SUV,Diesel,20-30L,True,1996
+Compass,"off-road,versatile,commanding,smooth,premium",Jeep,SUV,Petrol,10-20L,True,1368
+Alcazar,"feature-rich,versatile,commanding,smooth,premium",Hyundai,SUV,Petrol,10-20L,False,1497
+Nexon EV,"safety,versatile,commanding,eco-friendly,silent",Tata,SUV,Electric,10-20L,False,0
+ZS EV,"tech-savvy,versatile,commanding,eco-friendly,silent",MG,SUV,Electric,10-20L,False,0
+Tigor EV,"safety,spacious,comfortable,eco-friendly,silent",Tata,Sedan,Electric,under_10L,False,0
+e-Verito,"rugged,spacious,comfortable,eco-friendly,silent",Mahindra,Sedan,Electric,under_10L,False,0
+
