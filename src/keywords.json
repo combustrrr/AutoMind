@@ -1,0 +1,33 @@
+{
+  "brands": [
+    "maruti suzuki",
+    "tata",
+    "ford",
+    "kia",
+    "mg",
+    "mahindra",
+    "toyota",
+    "volkswagen",
+    "renault",
+    "jeep",
+    "honda",
+    "hyundai",
+    "skoda"
+  ],
+  "body_types": [
+    "hatchback",
+    "suv",
+    "sedan"
+  ],
+  "fuel_types": [
+    "electric",
+    "diesel",
+    "petrol"
+  ],
+  "price_bins": [
+    "under_10l",
+    "10-20l",
+    "20-30l",
+    "above_30l"
+  ]
+}
