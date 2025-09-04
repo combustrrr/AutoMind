@@ -1,28 +1,28 @@
 {
   "brands": [
-    "volkswagen",
-    "ford",
-    "mahindra",
-    "skoda",
+    "renault",
     "kia",
-    "honda",
-    "toyota",
-    "mg",
     "hyundai",
+    "ford",
     "jeep",
+    "honda",
+    "volkswagen",
     "tata",
-    "maruti suzuki",
-    "renault"
+    "skoda",
+    "mg",
+    "toyota",
+    "mahindra",
+    "maruti suzuki"
   ],
   "body_types": [
+    "hatchback",
     "sedan",
-    "suv",
-    "hatchback"
+    "suv"
   ],
   "fuel_types": [
-    "petrol",
     "electric",
-    "diesel"
+    "diesel",
+    "petrol"
   ],
   "price_bins": [
     "under_10l",
