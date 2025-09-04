@@ -1,27 +1,27 @@
 {
   "brands": [
-    "maruti suzuki",
-    "tata",
+    "volkswagen",
     "ford",
     "kia",
-    "mg",
-    "mahindra",
     "toyota",
-    "volkswagen",
-    "renault",
+    "maruti suzuki",
+    "mg",
     "jeep",
+    "renault",
+    "tata",
+    "skoda",
     "honda",
     "hyundai",
-    "skoda"
+    "mahindra"
   ],
   "body_types": [
     "hatchback",
-    "suv",
-    "sedan"
+    "sedan",
+    "suv"
   ],
   "fuel_types": [
-    "electric",
     "diesel",
+    "electric",
     "petrol"
   ],
   "price_bins": [
