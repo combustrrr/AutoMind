@@ -1,0 +1,5 @@
+# AutoMind - Guess the Car Game Requirements
+# This game uses only Python standard library modules
+# No external dependencies required
+
+# Python >= 3.6 is recommended for f-string support and type hints
