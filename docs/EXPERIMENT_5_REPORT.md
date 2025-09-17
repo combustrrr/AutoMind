@@ -1,8 +1,8 @@
 # EXPERIMENT 5 REPORT
 
 **Experiment Title:** Rule-Based Pattern Matching for Automotive Queries  
-**Name:** Sarthak Kulkarni, Parth Mokashi  
-**Roll No:** 23101B0019, 23101B0062  
+**Name:** Sarthak Kulkarni
+**Roll No:** 23101B0019 
 **Experiment No:** 5  
 **Subject:** Artificial Intelligence  
 **Date:** September 2025  
