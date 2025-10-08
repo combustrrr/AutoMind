@@ -10,6 +10,54 @@ A fun and interactive car guessing game featuring 50 popular Indian market cars.
 - 🎮 **Multiple Rounds**: Play as many rounds as you want
 - 💡 **Smart Matching**: Flexible guess matching for model names
 - 🤖 **NLP Chatbot**: Natural language understanding for car queries (Experiment 5)
+- 🚗 **Car Recommender**: Intelligent car recommendation system with Web & CLI interfaces
+
+## AutoMind Car Recommender (NEW!)
+
+### 🌟 Natural Language Car Search
+
+AutoMind now includes an intelligent car recommendation system that understands natural language queries!
+
+**Quick Start:**
+
+```bash
+# Option 1: Web UI (Streamlit - Recommended for demo)
+pip install streamlit
+streamlit run automind_ui.py
+
+# Option 2: Command Line Interface (No installation needed)
+python automind_cli.py
+```
+
+### 📋 Example Queries
+
+Try these natural language queries:
+- "A Toyota SUV under 20 lakhs"
+- "Luxury electric sedan above 50L"
+- "Cheap Maruti hatchback under 10L"
+- "Premium BMW sedan"
+- "Budget friendly diesel car from Hyundai"
+
+### 🎯 How It Works
+
+1. **Type your query** in natural language
+2. **NLP Engine** extracts features (brand, type, fuel, price, luxury)
+3. **Guessing Engine** scores cars from database
+4. **Get recommendations** ranked by match score
+
+### ✨ Advanced Features
+
+- **Fuzzy Matching**: Handles typos (e.g., "Tayota" → "Toyota")
+- **Synonym Support**: "EV" → "electric", "crossover" → "SUV"
+- **Compound Queries**: Multiple features in one sentence
+- **Negation Handling**: "not diesel" excludes diesel cars
+- **Smart Inference**: Infers luxury from brand/price
+
+### 📚 Documentation
+
+- **Full NLP Docs**: [NLP Module Documentation](docs/NLP_MODULE_DOCUMENTATION.md)
+- **API Reference**: [NLP Deliverables](docs/NLP_DELIVERABLES_SUMMARY.md)
+- **Quick Reference**: [NLP Quick Reference](docs/NLP_QUICK_REFERENCE.md)
 
 ## NLP Query System (Experiment 5)
 
