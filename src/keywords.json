@@ -1,0 +1,95 @@
+{
+  "brands": [
+    "ford",
+    "honda",
+    "hyundai",
+    "jeep",
+    "kia",
+    "mahindra",
+    "maruti suzuki",
+    "mg",
+    "renault",
+    "skoda",
+    "tata",
+    "toyota",
+    "volkswagen"
+  ],
+  "body_types": [
+    "hatchback",
+    "sedan",
+    "suv"
+  ],
+  "fuel_types": [
+    "diesel",
+    "electric",
+    "petrol"
+  ],
+  "price_bins": [
+    "under_10l",
+    "10-20l",
+    "20-30l",
+    "above_30l"
+  ],
+  "synonyms": {
+    "body_types": {
+      "suv": [
+        "suv",
+        "suvs",
+        "crossover",
+        "crossovers",
+        "4x4",
+        "off-road",
+        "sport utility"
+      ],
+      "sedan": [
+        "sedan",
+        "sedans",
+        "saloon",
+        "saloons"
+      ],
+      "hatchback": [
+        "hatchback",
+        "hatchbacks",
+        "hatch"
+      ]
+    },
+    "fuel_types": {
+      "electric": [
+        "electric",
+        "ev",
+        "battery",
+        "e-car",
+        "zero-emission"
+      ],
+      "diesel": [
+        "diesel"
+      ],
+      "petrol": [
+        "petrol",
+        "gasoline",
+        "gas"
+      ]
+    },
+    "luxury": {
+      "yes": [
+        "luxury",
+        "premium",
+        "high-end",
+        "expensive",
+        "flagship",
+        "elite",
+        "prestige"
+      ],
+      "no": [
+        "cheap",
+        "affordable",
+        "budget",
+        "economical",
+        "value",
+        "entry-level",
+        "basic",
+        "low-cost"
+      ]
+    }
+  }
+}
