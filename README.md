@@ -9,6 +9,35 @@ A fun and interactive car guessing game featuring 50 popular Indian market cars.
 - 📊 **Comprehensive Data**: 50 real Indian market cars with detailed specifications
 - 🎮 **Multiple Rounds**: Play as many rounds as you want
 - 💡 **Smart Matching**: Flexible guess matching for model names
+- 🤖 **NLP Chatbot**: Natural language understanding for car queries (Experiment 5)
+
+## NLP Query System (Experiment 5)
+
+AutoMind includes an advanced NLP-based chatbot that understands natural language car queries:
+
+### Supported Query Types
+- **Brand + Type**: "Show me Maruti hatchbacks"
+- **Fuel + Budget**: "Affordable electric cars under 20 lakhs"
+- **Luxury + Price**: "Premium sedans above 30 lakhs"
+- **Complex Queries**: "Cheap diesel SUV from Tata under 15L"
+
+### Extractable Attributes
+- **brand**: Toyota, Hyundai, Maruti Suzuki, BMW, etc.
+- **type**: SUV, sedan, hatchback
+- **fuel**: petrol, diesel, electric (supports synonyms like "EV", "gasoline")
+- **price_range**: under_10l, 10-20l, 20-30l, above_30l
+- **luxury**: Inferred from keywords (luxury/budget) or price range
+
+### Try the NLP Chatbot
+```bash
+# Run the interactive NLP demo
+python3 demo_enhanced_nlp.py
+
+# Verify all NLP deliverables
+python3 verify_nlp_deliverables.py
+```
+
+📄 **Full Documentation**: See [NLP Deliverables Summary](docs/NLP_DELIVERABLES_SUMMARY.md)
 
 ## How to Play
 
@@ -69,12 +98,21 @@ AutoMind/
 ├── test_automind.py         # Test suite
 ├── requirements.txt         # Dependencies (Python standard library only)
 ├── README.md               # This file
+├── generate_keywords.py    # NLP pattern extraction script
+├── demo_enhanced_nlp.py    # NLP chatbot demo
+├── verify_nlp_deliverables.py # Deliverables verification
 ├── data/
 │   ├── car_data.csv        # Original car dataset
 │   ├── car_data_enriched.csv # Enhanced dataset with keywords
 │   └── data_validation_log.txt # Data processing log
+├── src/
+│   ├── chatbot.py          # NLP engine implementation
+│   └── keywords.json       # Pattern database with synonyms
 └── docs/
-    └── DATA_DICTIONARY.md  # Comprehensive data documentation
+    ├── DATA_DICTIONARY.md  # Comprehensive data documentation
+    ├── NLP_DESIGN_PLAN.md  # Complete NLP design documentation
+    ├── NLP_DELIVERABLES_SUMMARY.md # NLP deliverables summary
+    └── EXPERIMENT_5_REPORT.md # Experiment report
 ```
 
 ## Example Gameplay
