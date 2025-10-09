@@ -49,6 +49,19 @@ MODEL_VARIATIONS = {
 CONTEXT_STACK = []
 MAX_CONTEXT_TURNS = 3
 
+# RISC AI Enhancement 4: SMART CLARIFICATION
+# Low confidence threshold for asking clarifying questions
+CLARIFY_WHEN_CONFIDENT = 0.3  # Ask for clarification when confidence < 30%
+
+# RISC AI Enhancement 5: PREFERENCE LEARNING
+# Simple user preference tracking
+USER_PREFERENCES = {
+    'prefers_electric': None,
+    'prefers_suv': None,
+    'preferred_brands': [],
+    'price_sensitivity': None  # 'budget', 'luxury', or None
+}
+
 
 def levenshtein_distance(s1: str, s2: str) -> int:
     """
@@ -243,9 +256,21 @@ def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[
     if use_context:
         update_context(original_text, features)
     
+    # RISC AI Enhancement 5: Update preferences
+    update_preferences(features)
+    
+    # Calculate confidence score
+    confidence = calculate_confidence(features)
+    
     # Log what was detected (for debugging)
     print(f"[NLP Engine] Input: '{original_text}'")
     print(f"[NLP Engine] Detected: {features}")
+    print(f"[NLP Engine] Confidence: {confidence:.1%}")
+    
+    # RISC AI Enhancement 4: Suggest clarification if needed
+    clarification = suggest_clarification(features, confidence)
+    if clarification:
+        print(f"[NLP Engine] Suggestion: {clarification}")
     
     return features
 
@@ -472,6 +497,151 @@ def clear_context() -> None:
     """Clear conversation context (start fresh conversation)."""
     global CONTEXT_STACK
     CONTEXT_STACK = []
+
+
+def calculate_confidence(features: Dict[str, Optional[str]]) -> float:
+    """
+    RISC AI Enhancement 4: SMART CLARIFICATION
+    Calculate confidence score based on number and quality of extracted features.
+    
+    Args:
+        features: Extracted features dictionary
+        
+    Returns:
+        Confidence score between 0.0 and 1.0
+    """
+    score = 0.0
+    max_score = 100.0
+    
+    # Brand detection: 30 points
+    if features.get('brand'):
+        score += 30
+    
+    # Body type detection: 20 points
+    if features.get('type'):
+        score += 20
+    
+    # Fuel type detection: 20 points
+    if features.get('fuel'):
+        score += 20
+    
+    # Price range detection: 20 points
+    if features.get('price_range'):
+        score += 20
+    
+    # Luxury status detection: 10 points
+    if features.get('luxury') is not None:
+        score += 10
+    
+    return score / max_score
+
+
+def handle_confusion() -> str:
+    """
+    RISC AI Enhancement 6: CONVERSATION REPAIR
+    Provide helpful message when query is unclear or confusing.
+    
+    Returns:
+        Helpful guidance message
+    """
+    return "I'm not sure I understand. Could you mention the brand name or car type? For example: 'Toyota SUV' or 'luxury sedan'"
+
+
+def suggest_clarification(features: Dict[str, Optional[str]], confidence: float) -> Optional[str]:
+    """
+    RISC AI Enhancement 4: SMART CLARIFICATION
+    Suggest clarification questions when confidence is low.
+    
+    Args:
+        features: Extracted features
+        confidence: Confidence score (0-1)
+        
+    Returns:
+        Clarification question or None if confidence is sufficient
+    """
+    if confidence >= CLARIFY_WHEN_CONFIDENT:
+        return None
+    
+    # Build clarification based on what's missing
+    missing = []
+    if not features.get('brand'):
+        missing.append("brand (e.g., Toyota, Hyundai, Maruti)")
+    if not features.get('type'):
+        missing.append("type (SUV, sedan, or hatchback)")
+    if not features.get('fuel'):
+        missing.append("fuel type (petrol, diesel, electric)")
+    if not features.get('price_range'):
+        missing.append("budget (e.g., under 20 lakhs)")
+    
+    if missing:
+        return f"I could use more details. Consider specifying: {', '.join(missing[:2])}"
+    
+    return None
+
+
+def update_preferences(features: Dict[str, Optional[str]]) -> None:
+    """
+    RISC AI Enhancement 5: PREFERENCE LEARNING
+    Update user preferences based on their queries.
+    
+    Args:
+        features: Extracted features from query
+    """
+    global USER_PREFERENCES
+    
+    # Track electric preference
+    if features.get('fuel') == 'electric':
+        USER_PREFERENCES['prefers_electric'] = True
+    elif features.get('fuel') in ['petrol', 'diesel']:
+        if USER_PREFERENCES['prefers_electric'] is None:
+            USER_PREFERENCES['prefers_electric'] = False
+    
+    # Track SUV preference
+    if features.get('type') == 'suv':
+        USER_PREFERENCES['prefers_suv'] = True
+    elif features.get('type') in ['sedan', 'hatchback']:
+        if USER_PREFERENCES['prefers_suv'] is None:
+            USER_PREFERENCES['prefers_suv'] = False
+    
+    # Track brand preferences
+    if features.get('brand'):
+        brand = features['brand']
+        if brand not in USER_PREFERENCES['preferred_brands']:
+            USER_PREFERENCES['preferred_brands'].append(brand)
+            # Keep only last 3 brands
+            if len(USER_PREFERENCES['preferred_brands']) > 3:
+                USER_PREFERENCES['preferred_brands'].pop(0)
+    
+    # Track price sensitivity
+    if features.get('luxury') is True:
+        USER_PREFERENCES['price_sensitivity'] = 'luxury'
+    elif features.get('luxury') is False:
+        USER_PREFERENCES['price_sensitivity'] = 'budget'
+
+
+def get_preferences() -> Dict:
+    """
+    RISC AI Enhancement 5: PREFERENCE LEARNING
+    Get current user preferences.
+    
+    Returns:
+        User preferences dictionary
+    """
+    return USER_PREFERENCES.copy()
+
+
+def reset_preferences() -> None:
+    """
+    RISC AI Enhancement 5: PREFERENCE LEARNING
+    Reset user preferences to defaults.
+    """
+    global USER_PREFERENCES
+    USER_PREFERENCES = {
+        'prefers_electric': None,
+        'prefers_suv': None,
+        'preferred_brands': [],
+        'price_sensitivity': None
+    }
 
 
 def suggest_similar_queries(text: str) -> List[str]:

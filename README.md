@@ -52,12 +52,16 @@ Try these natural language queries:
 - **Compound Queries**: Multiple features in one sentence
 - **Negation Handling**: "not diesel" excludes diesel cars
 - **Smart Inference**: Infers luxury from brand/price
+- **🆕 Smart Clarification**: Asks for details when confidence is low (< 30%)
+- **🆕 Preference Learning**: Remembers what you like across conversation
+- **🆕 Conversation Repair**: Helpful guidance when queries are unclear
 
 ### 📚 Documentation
 
 - **Full NLP Docs**: [NLP Module Documentation](docs/NLP_MODULE_DOCUMENTATION.md)
 - **API Reference**: [NLP Deliverables](docs/NLP_DELIVERABLES_SUMMARY.md)
 - **Quick Reference**: [NLP Quick Reference](docs/NLP_QUICK_REFERENCE.md)
+- **🆕 RISC AI Enhancements**: [RISC AI Enhancements](docs/RISC_AI_ENHANCEMENTS.md)
 
 ## NLP Query System (Experiment 5)
 

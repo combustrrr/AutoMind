@@ -4,7 +4,7 @@ AutoMind CLI - Simple command-line interface
 For when Streamlit is not available
 """
 
-from nlp_engine import extract_features, suggest_similar_queries, clear_context, get_context_stack
+from nlp_engine import extract_features, suggest_similar_queries, clear_context, get_context_stack, get_preferences, reset_preferences, calculate_confidence
 from guessing_engine import GuessingEngine
 
 
@@ -39,7 +39,10 @@ def print_help():
     print("  • Nickname recognition: 'beemer' → BMW, 'merc' → Mercedes")
     print("  • Typo correction: 'Tayota' → Toyota, 'Hundai' → Hyundai")
     print("  • Context memory: Say 'the sedan one' after mentioning a brand")
+    print("  • Smart clarification: Asks for more details when unsure")
+    print("  • Preference learning: Remembers what you like across conversation")
     print("  • Type 'clear' to reset conversation context")
+    print("  • Type 'prefs' to see your learned preferences")
     print()
 
 
@@ -143,8 +146,36 @@ def main():
             
             if user_input.lower() == 'clear':
                 clear_context()
+                reset_preferences()
                 query_count = 0
-                print("✨ Context cleared! Starting fresh conversation.\n")
+                print("✨ Context and preferences cleared! Starting fresh conversation.\n")
+                continue
+            
+            if user_input.lower() in ['prefs', 'preferences']:
+                prefs = get_preferences()
+                print("\n🧠 YOUR LEARNED PREFERENCES:")
+                print("-" * 70)
+                if prefs['prefers_electric'] is True:
+                    print("  • Prefers: Electric vehicles")
+                elif prefs['prefers_electric'] is False:
+                    print("  • Prefers: Non-electric vehicles")
+                
+                if prefs['prefers_suv'] is True:
+                    print("  • Prefers: SUVs")
+                elif prefs['prefers_suv'] is False:
+                    print("  • Prefers: Non-SUV body types")
+                
+                if prefs['preferred_brands']:
+                    print(f"  • Brands you've searched: {', '.join(prefs['preferred_brands'])}")
+                
+                if prefs['price_sensitivity']:
+                    print(f"  • Price sensitivity: {prefs['price_sensitivity']}")
+                
+                if not any([prefs['prefers_electric'], prefs['prefers_suv'], 
+                           prefs['preferred_brands'], prefs['price_sensitivity']]):
+                    print("  • No preferences learned yet. Keep searching!")
+                print("-" * 70)
+                print()
                 continue
             
             query_count += 1
