@@ -129,6 +129,37 @@ def demo_conversation_repair():
     print("\n\n🎉 Summary: System provides helpful guidance instead of errors!")
 
 
+def _extract_turn_features(query: str, turn_num: int):
+    """Extract and display features for a conversation turn."""
+    print(f"Turn {turn_num}: '{query}'")
+    print("-" * 70)
+    
+    features = extract_features(query)
+    confidence = calculate_confidence(features)
+    
+    print(f"  Extracted: brand={features['brand']}, "
+          f"type={features['type']}, "
+          f"fuel={features['fuel']}, "
+          f"price={features['price_range']}")
+    print(f"  Confidence: {confidence:.1%}")
+    
+    return features
+
+
+def _display_learned_preferences(prefs):
+    """Display learned preferences from a conversation turn."""
+    learned = []
+    if prefs['prefers_electric']:
+        learned.append("electric")
+    if prefs['prefers_suv'] is not None:
+        learned.append("SUV" if prefs['prefers_suv'] else "non-SUV")
+    if prefs['preferred_brands']:
+        learned.append(f"brands: {', '.join(prefs['preferred_brands'])}")
+    
+    if learned:
+        print(f"  Preferences: {'; '.join(learned)}")
+
+
 def demo_full_conversation():
     """Demo full conversation with all features."""
     print_section("DEMO 4: COMPLETE CONVERSATION")
@@ -147,29 +178,10 @@ def demo_full_conversation():
     ]
     
     for i, query in enumerate(conversation, 1):
-        print(f"Turn {i}: '{query}'")
-        print("-" * 70)
-        
-        features = extract_features(query)
-        confidence = calculate_confidence(features)
-        
-        print(f"  Extracted: brand={features['brand']}, "
-              f"type={features['type']}, "
-              f"fuel={features['fuel']}, "
-              f"price={features['price_range']}")
-        print(f"  Confidence: {confidence:.1%}")
+        _extract_turn_features(query, i)
         
         prefs = get_preferences()
-        learned = []
-        if prefs['prefers_electric']:
-            learned.append("electric")
-        if prefs['prefers_suv'] is not None:
-            learned.append("SUV" if prefs['prefers_suv'] else "non-SUV")
-        if prefs['preferred_brands']:
-            learned.append(f"brands: {', '.join(prefs['preferred_brands'])}")
-        
-        if learned:
-            print(f"  Preferences: {'; '.join(learned)}")
+        _display_learned_preferences(prefs)
         
         print()
     

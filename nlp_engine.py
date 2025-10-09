@@ -162,6 +162,42 @@ def get_context_feature(feature_name: str) -> Optional[str]:
     return None
 
 
+def _is_vague_query(text: str) -> bool:
+    """Check if query is too vague to process."""
+    vague_queries = ['car', 'vehicle', 'automobile', 'something', 'anything', 'good', 'nice', 'best']
+    words = text.split()
+    return len(words) <= 2 and any(vague in text for vague in vague_queries)
+
+
+def _detect_negations(text: str) -> Dict[str, Optional[str]]:
+    """Detect negated terms in query."""
+    negations = {
+        "brand": None,
+        "type": None,
+        "fuel": None
+    }
+    
+    negation_patterns = [
+        (r'not\s+(\w+)', 'not'),
+        (r'no\s+(\w+)', 'no'),
+        (r'without\s+(\w+)', 'without')
+    ]
+    
+    for pattern, neg_type in negation_patterns:
+        matches = re.finditer(pattern, text)
+        for match in matches:
+            negated_word = match.group(1)
+            # Check what's being negated
+            for fuel_type in ['electric', 'diesel', 'petrol', 'ev', 'gasoline']:
+                if fuel_type in negated_word:
+                    negations['fuel'] = negated_word
+            for body_type in ['suv', 'sedan', 'hatchback']:
+                if body_type in negated_word:
+                    negations['type'] = negated_word
+    
+    return negations
+
+
 def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[str]]:
     """
     Extract car features from user input text.
@@ -193,9 +229,7 @@ def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[
         return _empty_features(original_text)
     
     # Check if query is too vague
-    vague_queries = ['car', 'vehicle', 'automobile', 'something', 'anything', 'good', 'nice', 'best']
-    words = text.split()
-    if len(words) <= 2 and any(vague in text for vague in vague_queries):
+    if _is_vague_query(text):
         print(f"[NLP Engine] Vague input: '{original_text}'")
         print(f"[NLP Engine] Please be more specific (e.g., 'Toyota SUV', 'cheap hatchback')")
     
@@ -211,31 +245,8 @@ def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[
         "luxury": None
     }
     
-    # Check for negations
-    negations = {
-        "brand": None,
-        "type": None,
-        "fuel": None
-    }
-    
     # Detect negations
-    negation_patterns = [
-        (r'not\s+(\w+)', 'not'),
-        (r'no\s+(\w+)', 'no'),
-        (r'without\s+(\w+)', 'without')
-    ]
-    
-    for pattern, neg_type in negation_patterns:
-        matches = re.finditer(pattern, text)
-        for match in matches:
-            negated_word = match.group(1)
-            # Check what's being negated
-            for fuel_type in ['electric', 'diesel', 'petrol', 'ev', 'gasoline']:
-                if fuel_type in negated_word:
-                    negations['fuel'] = negated_word
-            for body_type in ['suv', 'sedan', 'hatchback']:
-                if body_type in negated_word:
-                    negations['type'] = negated_word
+    negations = _detect_negations(text)
     
     # 1. BRAND DETECTION with fuzzy matching
     features['brand'] = _extract_brand(text, original_text, use_context)
@@ -288,6 +299,37 @@ def _empty_features(original_text: str) -> Dict[str, Optional[str]]:
     }
 
 
+def _check_brand_variations(text: str) -> Optional[str]:
+    """Check for brand name variations (nicknames, misspellings)."""
+    for brand_key, variations in BRAND_VARIATIONS.items():
+        for variation in variations:
+            if re.search(rf"\b{variation}\b", text):
+                return brand_key.title()
+    return None
+
+
+def _check_brand_patterns(text: str) -> Optional[str]:
+    """Check for direct brand matches from dataset."""
+    for brand in PATTERNS["brands"]:
+        brand_words = brand.split()
+        if any(re.search(rf"\b{word}\b", text) for word in brand_words):
+            return brand.title()
+    return None
+
+
+def _fuzzy_match_brand(text: str) -> Optional[str]:
+    """Use fuzzy matching to find brand from typos."""
+    words = text.split()
+    all_brands = list(BRAND_VARIATIONS.keys()) + PATTERNS["brands"]
+    
+    for word in words:
+        if len(word) > 3:  # Only check meaningful words
+            for brand in all_brands:
+                if fuzzy_match(brand, word, threshold=0.75):
+                    return brand.title()
+    return None
+
+
 def _extract_brand(text: str, original_text: str, use_context: bool = True) -> Optional[str]:
     """
     RISC AI Enhancement 1+2: ENHANCE_KEYWORDS + FUZZY_MATCH
@@ -302,27 +344,19 @@ def _extract_brand(text: str, original_text: str, use_context: bool = True) -> O
         Brand name or None
     """
     # Step 1: Check enhanced brand variations (nicknames, common misspellings)
-    for brand_key, variations in BRAND_VARIATIONS.items():
-        for variation in variations:
-            if re.search(rf"\b{variation}\b", text):
-                return brand_key.title()
+    brand = _check_brand_variations(text)
+    if brand:
+        return brand
     
     # Step 2: Direct match from dataset
-    for brand in PATTERNS["brands"]:
-        brand_words = brand.split()
-        if any(re.search(rf"\b{word}\b", text) for word in brand_words):
-            return brand.title()
+    brand = _check_brand_patterns(text)
+    if brand:
+        return brand
     
     # Step 3: RISC FUZZY_MATCH - Use Levenshtein distance for typos
-    words = text.split()
-    all_brands = list(BRAND_VARIATIONS.keys()) + PATTERNS["brands"]
-    
-    for word in words:
-        if len(word) > 3:  # Only check meaningful words
-            for brand in all_brands:
-                # Use our custom fuzzy matcher
-                if fuzzy_match(brand, word, threshold=0.75):
-                    return brand.title()
+    brand = _fuzzy_match_brand(text)
+    if brand:
+        return brand
     
     # Step 4: RISC CONTEXT_STACK - Fallback to context if available
     if use_context:
@@ -376,6 +410,42 @@ def _extract_fuel_type(text: str, negated: Optional[str] = None) -> Optional[str
     return None
 
 
+def _categorize_under_price(amount: int) -> str:
+    """Categorize 'under' price amount into range."""
+    if amount <= 10:
+        return "under_10L"
+    elif amount <= 20:
+        return "under_20L"
+    elif amount <= 30:
+        return "under_30L"
+    else:
+        return "20-30L"
+
+
+def _categorize_above_price(amount: int) -> str:
+    """Categorize 'above' price amount into range."""
+    if amount >= 50:
+        return "above_30L"
+    elif amount >= 30:
+        return "above_30L"
+    elif amount >= 20:
+        return "20-30L"
+    else:
+        return "10-20L"
+
+
+def _categorize_around_price(amount: int) -> str:
+    """Categorize 'around' price amount into range."""
+    if amount <= 10:
+        return "under_10L"
+    elif amount <= 20:
+        return "10-20L"
+    elif amount <= 30:
+        return "20-30L"
+    else:
+        return "above_30L"
+
+
 def _extract_price_range(text: str) -> Optional[str]:
     """Extract price range using regex patterns."""
     # Patterns for Indian currency format
@@ -387,70 +457,80 @@ def _extract_price_range(text: str) -> Optional[str]:
     match = re.search(under_pattern, text)
     if match:
         amount = int(match.group(2))
-        if amount <= 10:
-            return "under_10L"
-        elif amount <= 20:
-            return "under_20L"
-        elif amount <= 30:
-            return "under_30L"
-        else:
-            return "20-30L"
+        return _categorize_under_price(amount)
     
     # Check "above" patterns
     match = re.search(above_pattern, text)
     if match:
         amount = int(match.group(2))
-        if amount >= 50:
-            return "above_30L"
-        elif amount >= 30:
-            return "above_30L"
-        elif amount >= 20:
-            return "20-30L"
-        else:
-            return "10-20L"
+        return _categorize_above_price(amount)
     
     # Check "around" patterns
     match = re.search(around_pattern, text)
     if match:
         amount = int(match.group(2))
-        if amount <= 10:
-            return "under_10L"
-        elif amount <= 20:
-            return "10-20L"
-        elif amount <= 30:
-            return "20-30L"
-        else:
-            return "above_30L"
+        return _categorize_around_price(amount)
     
     return None
 
 
-def _extract_luxury_status(text: str, features: Dict) -> Optional[bool]:
-    """Determine luxury status from keywords and context."""
+def _check_luxury_keywords(text: str) -> Optional[bool]:
+    """Check for explicit luxury or budget keywords."""
     luxury_keywords = ["luxury", "premium", "high-end", "expensive", "flagship", "elite", "prestige"]
     budget_keywords = ["cheap", "affordable", "budget", "economical", "value", "entry-level", "basic", "low-cost"]
-    luxury_brands = ["bmw", "mercedes", "audi", "lexus", "jaguar", "volvo", "land rover"]
     
-    # Check explicit keywords
     if any(re.search(rf"\b{kw}\b", text) for kw in luxury_keywords):
         return True
     
     if any(re.search(rf"\b{kw}\b", text) for kw in budget_keywords):
         return False
     
+    return None
+
+
+def _infer_luxury_from_brand(brand: Optional[str]) -> Optional[bool]:
+    """Infer luxury status from brand name."""
+    if not brand:
+        return None
+    
+    luxury_brands = ["bmw", "mercedes", "audi", "lexus", "jaguar", "volvo", "land rover"]
+    brand_lower = brand.lower()
+    
+    if any(luxury_brand in brand_lower for luxury_brand in luxury_brands):
+        return True
+    
+    return None
+
+
+def _infer_luxury_from_price(price_range: Optional[str]) -> Optional[bool]:
+    """Infer luxury status from price range."""
+    if not price_range:
+        return None
+    
+    if 'above_30L' in price_range:
+        return True
+    elif 'under_10L' in price_range:
+        return False
+    
+    return None
+
+
+def _extract_luxury_status(text: str, features: Dict) -> Optional[bool]:
+    """Determine luxury status from keywords and context."""
+    # Check explicit keywords
+    luxury_status = _check_luxury_keywords(text)
+    if luxury_status is not None:
+        return luxury_status
+    
     # Infer from brand
-    if features.get('brand'):
-        brand_lower = features['brand'].lower()
-        if any(luxury_brand in brand_lower for luxury_brand in luxury_brands):
-            return True
+    luxury_status = _infer_luxury_from_brand(features.get('brand'))
+    if luxury_status is not None:
+        return luxury_status
     
     # Infer from price
-    price_range = features.get('price_range')
-    if price_range:
-        if 'above_30L' in price_range:
-            return True
-        elif 'under_10L' in price_range:
-            return False
+    luxury_status = _infer_luxury_from_price(features.get('price_range'))
+    if luxury_status is not None:
+        return luxury_status
     
     return None
 

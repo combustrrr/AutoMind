@@ -32,6 +32,32 @@ def verify_deliverable_1():
     
     return True
 
+def _print_body_type_synonyms(synonyms):
+    """Print body type synonym mappings."""
+    if 'body_types' in synonyms:
+        total_synonyms = sum(len(v) for v in synonyms['body_types'].values())
+        print(f"   • Body Types: {len(synonyms['body_types'])} types with {total_synonyms} synonyms")
+        for body_type, syns in synonyms['body_types'].items():
+            print(f"     - {body_type}: {', '.join(syns[:3])}{'...' if len(syns) > 3 else ''}")
+
+
+def _print_fuel_type_synonyms(synonyms):
+    """Print fuel type synonym mappings."""
+    if 'fuel_types' in synonyms:
+        total_synonyms = sum(len(v) for v in synonyms['fuel_types'].values())
+        print(f"   • Fuel Types: {len(synonyms['fuel_types'])} types with {total_synonyms} synonyms")
+        for fuel_type, syns in synonyms['fuel_types'].items():
+            print(f"     - {fuel_type}: {', '.join(syns)}")
+
+
+def _print_luxury_keywords(synonyms):
+    """Print luxury keyword mappings."""
+    if 'luxury' in synonyms:
+        print(f"   • Luxury Keywords:")
+        print(f"     - yes (luxury): {len(synonyms['luxury']['yes'])} keywords")
+        print(f"     - no (budget): {len(synonyms['luxury']['no'])} keywords")
+
+
 def verify_deliverable_2():
     """Verify: Synonym & keyword mapping table"""
     print_header("DELIVERABLE 2: Synonym & Keyword Mapping Table")
@@ -61,25 +87,9 @@ def verify_deliverable_2():
     synonyms = data['synonyms']
     print("\n✅ Synonym Mappings:")
     
-    # Body types
-    if 'body_types' in synonyms:
-        total_synonyms = sum(len(v) for v in synonyms['body_types'].values())
-        print(f"   • Body Types: {len(synonyms['body_types'])} types with {total_synonyms} synonyms")
-        for body_type, syns in synonyms['body_types'].items():
-            print(f"     - {body_type}: {', '.join(syns[:3])}{'...' if len(syns) > 3 else ''}")
-    
-    # Fuel types
-    if 'fuel_types' in synonyms:
-        total_synonyms = sum(len(v) for v in synonyms['fuel_types'].values())
-        print(f"   • Fuel Types: {len(synonyms['fuel_types'])} types with {total_synonyms} synonyms")
-        for fuel_type, syns in synonyms['fuel_types'].items():
-            print(f"     - {fuel_type}: {', '.join(syns)}")
-    
-    # Luxury keywords
-    if 'luxury' in synonyms:
-        print(f"   • Luxury Keywords:")
-        print(f"     - yes (luxury): {len(synonyms['luxury']['yes'])} keywords")
-        print(f"     - no (budget): {len(synonyms['luxury']['no'])} keywords")
+    _print_body_type_synonyms(synonyms)
+    _print_fuel_type_synonyms(synonyms)
+    _print_luxury_keywords(synonyms)
     
     return True
 
