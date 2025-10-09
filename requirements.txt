@@ -7,4 +7,8 @@
 # For Streamlit UI (run: pip install streamlit)
 streamlit>=1.20.0  # Optional - for web UI (automind_ui.py)
 
+# ML dependencies (Optional - for ML-powered predictions)
+# For ML-based car prediction (train_ml_model.py, ml_guessing_engine.py)
+scikit-learn>=1.0.0  # Optional - for ML predictions
+
 # The CLI version (automind_cli.py) requires no external dependencies

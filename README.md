@@ -55,6 +55,7 @@ Try these natural language queries:
 - **🆕 Smart Clarification**: Asks for details when confidence is low (< 30%)
 - **🆕 Preference Learning**: Remembers what you like across conversation
 - **🆕 Conversation Repair**: Helpful guidance when queries are unclear
+- **🆕 Machine Learning**: Actual ML-powered predictions with confidence scores
 
 ### 📚 Documentation
 
@@ -62,6 +63,7 @@ Try these natural language queries:
 - **API Reference**: [NLP Deliverables](docs/NLP_DELIVERABLES_SUMMARY.md)
 - **Quick Reference**: [NLP Quick Reference](docs/NLP_QUICK_REFERENCE.md)
 - **🆕 RISC AI Enhancements**: [RISC AI Enhancements](docs/RISC_AI_ENHANCEMENTS.md)
+- **🆕 ML Integration**: [Machine Learning Integration](docs/ML_INTEGRATION.md)
 
 ## NLP Query System (Experiment 5)
 
