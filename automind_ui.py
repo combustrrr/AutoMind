@@ -65,6 +65,27 @@ def main():
     
     # Main input area
     st.markdown("---")
+    
+    # Add helpful tips above input
+    with st.expander("💡 Not sure what to ask? Click here for tips!", expanded=False):
+        col_tip1, col_tip2 = st.columns(2)
+        with col_tip1:
+            st.markdown("""
+            **Good queries include:**
+            - Brand + Type: "Toyota SUV"
+            - Budget: "under 15 lakhs"
+            - Features: "electric sedan"
+            - Luxury level: "cheap hatchback"
+            """)
+        with col_tip2:
+            st.markdown("""
+            **Example queries:**
+            - "A Toyota SUV under 20 lakhs"
+            - "Cheap Maruti hatchback"
+            - "Luxury electric sedan"
+            - "Premium BMW above 50L"
+            """)
+    
     col1, col2 = st.columns([3, 1])
     
     with col1:
@@ -123,6 +144,11 @@ def main():
         if matches:
             st.subheader(f"🎉 Found {len(matches)} matches!")
             
+            # Check if matches are low quality
+            top_score = matches[0][1]
+            if top_score < 30:
+                st.warning("⚠️ Low confidence matches. Try adding more details for better results!")
+            
             # Show top match prominently
             top_car, top_score = matches[0]
             
@@ -155,11 +181,38 @@ def main():
                         with col3:
                             st.write(f"**Price:** {car.get('price_range', 'N/A').replace('_', ' ')}")
         else:
-            st.warning("😕 No strong matches found. Try providing more details!")
+            st.warning("😕 No strong matches found.")
+            
+            # Provide detailed help
+            st.info("**Why this might happen:**")
+            col_help1, col_help2 = st.columns(2)
+            with col_help1:
+                st.markdown("""
+                - Too specific combination
+                - Brand/model not in database
+                - Typo in query
+                """)
+            with col_help2:
+                st.markdown("""
+                - Try simpler query
+                - Check spelling
+                - Use different keywords
+                """)
             
             # Suggest follow-up
             followup = st.session_state.engine.suggest_followup_question(features)
-            st.info(f"💡 Suggestion: {followup}")
+            st.success(f"💡 **Suggestion:** {followup}")
+            
+            # Show example queries
+            st.markdown("**Try one of these instead:**")
+            examples = [
+                "Toyota SUV under 20 lakhs",
+                "Cheap Maruti hatchback",
+                "Electric cars",
+                "Luxury sedan above 30L"
+            ]
+            for example in examples:
+                st.code(example, language=None)
     
     # Show history
     if st.session_state.history:

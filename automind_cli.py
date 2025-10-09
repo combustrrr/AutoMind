@@ -4,7 +4,7 @@ AutoMind CLI - Simple command-line interface
 For when Streamlit is not available
 """
 
-from nlp_engine import extract_features
+from nlp_engine import extract_features, suggest_similar_queries
 from guessing_engine import GuessingEngine
 
 
@@ -62,15 +62,20 @@ def display_features(features):
     print("-" * 70)
 
 
-def display_matches(matches, engine):
+def display_matches(matches, engine, features):
     """Display car matches."""
     if not matches:
         print("\n😕 NO MATCHES FOUND")
-        print("Try providing more details or different criteria.")
-        return
+        print("\nI couldn't find any cars matching your criteria.")
+        print("This might happen if:")
+        print("  • The combination is too specific (try removing some filters)")
+        print("  • The brand/model isn't in our database")
+        print("  • There's a typo in the query")
+        return False
     
     print(f"\n🎉 FOUND {len(matches)} MATCHES!\n")
     print("=" * 70)
+    return True
     
     # Display top match prominently
     top_car, top_score = matches[0]
@@ -143,12 +148,24 @@ def main():
             matches = engine.find_matches(features, top_n=5)
             
             # Display results
-            display_matches(matches, engine)
+            has_matches = display_matches(matches, engine, features)
             
-            # Suggest follow-up if no matches
-            if not matches:
+            # Suggest follow-up if no matches or weak matches
+            if not has_matches:
                 followup = engine.suggest_followup_question(features)
-                print(f"💡 SUGGESTION: {followup}\n")
+                print(f"\n💡 TIP: {followup}")
+                
+                # Get smart suggestions based on query
+                suggestions = suggest_similar_queries(user_input)
+                print("\n🔄 You could also try:")
+                for suggestion in suggestions:
+                    print(f"  • {suggestion}")
+                print()
+            elif matches and matches[0][1] < 30:
+                print(f"\n⚠️  Low confidence match (score: {matches[0][1]}/100)")
+                print("💡 TIP: Try adding more details for better results:")
+                followup = engine.suggest_followup_question(features)
+                print(f"   - {followup}\n")
             
             print("=" * 70)
             print()

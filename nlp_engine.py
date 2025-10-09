@@ -38,6 +38,19 @@ def extract_features(text: str) -> Dict[str, Optional[str]]:
     # Preprocessing
     original_text = text
     text = text.lower()
+    
+    # Handle common variations and unclear queries
+    if len(text.strip()) < 3:
+        print(f"[NLP Engine] Input too short: '{original_text}'")
+        return _empty_features(original_text)
+    
+    # Check if query is too vague
+    vague_queries = ['car', 'vehicle', 'automobile', 'something', 'anything', 'good', 'nice', 'best']
+    words = text.split()
+    if len(words) <= 2 and any(vague in text for vague in vague_queries):
+        print(f"[NLP Engine] Vague input: '{original_text}'")
+        print(f"[NLP Engine] Please be more specific (e.g., 'Toyota SUV', 'cheap hatchback')")
+    
     text = re.sub(r'\b(car|cars|vehicle|vehicles|want|looking|show|give|me|a|an|the)\b', '', text)
     text = text.strip()
     
@@ -96,6 +109,19 @@ def extract_features(text: str) -> Dict[str, Optional[str]]:
     print(f"[NLP Engine] Detected: {features}")
     
     return features
+
+
+def _empty_features(original_text: str) -> Dict[str, Optional[str]]:
+    """Return empty features dictionary for unclear queries."""
+    print(f"[NLP Engine] Input: '{original_text}'")
+    print(f"[NLP Engine] Detected: No clear features - query too vague")
+    return {
+        "brand": None,
+        "type": None,
+        "fuel": None,
+        "price_range": None,
+        "luxury": None
+    }
 
 
 def _extract_brand(text: str, original_text: str) -> Optional[str]:
@@ -273,6 +299,38 @@ def get_supported_types() -> List[str]:
 def get_supported_fuels() -> List[str]:
     """Return list of supported fuel types."""
     return ["electric", "diesel", "petrol"]
+
+
+def suggest_similar_queries(text: str) -> List[str]:
+    """Suggest similar queries based on unclear input."""
+    suggestions = []
+    
+    text_lower = text.lower()
+    
+    # If mentions price but no other details
+    if any(word in text_lower for word in ['cheap', 'budget', 'under', 'above', 'lakhs', 'lacs']):
+        suggestions.append("Try: 'Cheap hatchback under 10 lakhs'")
+        suggestions.append("Or: 'SUV under 20 lakhs'")
+    
+    # If mentions luxury but no details
+    if any(word in text_lower for word in ['luxury', 'premium', 'expensive']):
+        suggestions.append("Try: 'Luxury sedan above 30 lakhs'")
+        suggestions.append("Or: 'Premium BMW sedan'")
+    
+    # If mentions fuel but no type
+    if any(word in text_lower for word in ['electric', 'ev', 'diesel', 'petrol']):
+        suggestions.append("Try: 'Electric hatchback'")
+        suggestions.append("Or: 'Diesel SUV under 25 lakhs'")
+    
+    # Generic suggestions if none match
+    if not suggestions:
+        suggestions = [
+            "Try: 'Toyota SUV under 20 lakhs'",
+            "Or: 'Cheap Maruti hatchback'",
+            "Or: 'Electric cars under 30 lakhs'"
+        ]
+    
+    return suggestions[:3]  # Return top 3
 
 
 if __name__ == "__main__":
