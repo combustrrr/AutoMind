@@ -61,7 +61,7 @@ def main():
         
         if st.button("Clear History"):
             st.session_state.history = []
-            st.experimental_rerun()
+            st.rerun()
     
     # Main input area
     st.markdown("---")

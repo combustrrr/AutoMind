@@ -476,7 +476,8 @@ def _extract_price_range(text: str) -> Optional[str]:
 
 def _check_luxury_keywords(text: str) -> Optional[bool]:
     """Check for explicit luxury or budget keywords."""
-    luxury_keywords = ["luxury", "premium", "high-end", "expensive", "flagship", "elite", "prestige"]
+    luxury_keywords = ["luxury", "premium", "high-end", "expensive", "flagship", "elite", "prestige", 
+                       "fast", "sporty", "powerful", "performance", "sport", "turbo", "racing", "speed"]
     budget_keywords = ["cheap", "affordable", "budget", "economical", "value", "entry-level", "basic", "low-cost"]
     
     if any(re.search(rf"\b{kw}\b", text) for kw in luxury_keywords):
@@ -593,24 +594,28 @@ def calculate_confidence(features: Dict[str, Optional[str]]) -> float:
     score = 0.0
     max_score = 100.0
     
-    # Brand detection: 30 points
+    # Brand detection: 35 points (increased for strong brand signal)
     if features.get('brand'):
-        score += 30
+        score += 35
     
-    # Body type detection: 20 points
+    # Body type detection: 25 points 
     if features.get('type'):
-        score += 20
+        score += 25
     
     # Fuel type detection: 20 points
     if features.get('fuel'):
         score += 20
     
-    # Price range detection: 20 points
+    # Price range detection: 15 points
     if features.get('price_range'):
-        score += 20
+        score += 15
     
-    # Luxury status detection: 10 points
+    # Luxury status detection: 15 points (increased for performance indicators)
     if features.get('luxury') is not None:
+        score += 15
+    
+    # Bonus points for having both brand and luxury (strong signal)
+    if features.get('brand') and features.get('luxury') is not None:
         score += 10
     
     return score / max_score
