@@ -2,19 +2,154 @@
 """
 NLP Engine for AutoMind Car Recommendation System
 Extracts structured features from natural language user input
+
+RISC-Style AI Architecture:
+- ENHANCE_KEYWORDS: Common variations and misspellings
+- FUZZY_MATCH: Levenshtein distance matching
+- CONTEXT_STACK: Multi-turn conversation memory
 """
 
 import re
 import json
 import difflib
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Tuple
 
 # Load pattern database
 with open("src/keywords.json") as f:
     PATTERNS = json.load(f)
 
+# RISC AI Enhancement 1: ENHANCED_KEYWORDS
+# Common variations, nicknames, and misspellings
+BRAND_VARIATIONS = {
+    'maruti': ['maruti', 'maruti suzuki', 'suzuki', 'maruthi'],
+    'toyota': ['toyota', 'tayota', 'toyata'],
+    'hyundai': ['hyundai', 'hundai', 'hyunday', 'hyndai'],
+    'honda': ['honda', 'handa', 'hunda'],
+    'bmw': ['bmw', 'beemer', 'bimmer'],
+    'mercedes': ['mercedes', 'merc', 'benz', 'mercedes-benz'],
+    'tata': ['tata', 'tataa'],
+    'mahindra': ['mahindra', 'mahendra'],
+    'ford': ['ford', 'fard'],
+    'kia': ['kia', 'keya'],
+}
 
-def extract_features(text: str) -> Dict[str, Optional[str]]:
+MODEL_VARIATIONS = {
+    'civic': ['civic', 'sivic'],
+    'accord': ['accord', 'acord'],
+    'crv': ['crv', 'cr-v', 'honda crv'],
+    'camry': ['camry', 'camery'],
+    'corolla': ['corolla', 'carolla', 'corola'],
+    'fortuner': ['fortuner', 'fortner', 'fortunar'],
+    'swift': ['swift', 'swfit'],
+    'creta': ['creta', 'creeta'],
+}
+
+# RISC AI Enhancement 3: CONTEXT_STACK
+# Simple conversation context memory
+CONTEXT_STACK = []
+MAX_CONTEXT_TURNS = 3
+
+
+def levenshtein_distance(s1: str, s2: str) -> int:
+    """
+    RISC AI Enhancement 2: FUZZY_MATCH
+    Calculate Levenshtein distance between two strings.
+    Simpler than difflib for basic fuzzy matching.
+    
+    Args:
+        s1, s2: Strings to compare
+        
+    Returns:
+        Edit distance (number of operations to transform s1 to s2)
+    """
+    if len(s1) < len(s2):
+        return levenshtein_distance(s2, s1)
+    
+    if len(s2) == 0:
+        return len(s1)
+    
+    previous_row = range(len(s2) + 1)
+    for i, c1 in enumerate(s1):
+        current_row = [i + 1]
+        for j, c2 in enumerate(s2):
+            # Cost of insertions, deletions, or substitutions
+            insertions = previous_row[j + 1] + 1
+            deletions = current_row[j] + 1
+            substitutions = previous_row[j] + (c1 != c2)
+            current_row.append(min(insertions, deletions, substitutions))
+        previous_row = current_row
+    
+    return previous_row[-1]
+
+
+def fuzzy_match(target: str, query: str, threshold: float = 0.75) -> bool:
+    """
+    RISC AI Enhancement 2: FUZZY_MATCH
+    Check if target matches query using fuzzy matching.
+    
+    Args:
+        target: The string to match against
+        query: The search string
+        threshold: Similarity threshold (0-1), default 0.75
+        
+    Returns:
+        True if match is above threshold
+    """
+    # Exact match
+    if target in query or query in target:
+        return True
+    
+    # Fuzzy match using Levenshtein distance
+    max_len = max(len(target), len(query))
+    if max_len == 0:
+        return False
+    
+    distance = levenshtein_distance(target, query)
+    similarity = 1 - (distance / max_len)
+    
+    return similarity >= threshold
+
+
+def update_context(query: str, features: Dict[str, Optional[str]]) -> None:
+    """
+    RISC AI Enhancement 3: CONTEXT_STACK
+    Update conversation context with latest query and features.
+    
+    Args:
+        query: User's query text
+        features: Extracted features from query
+    """
+    global CONTEXT_STACK
+    
+    CONTEXT_STACK.append({
+        'query': query,
+        'features': features.copy()
+    })
+    
+    # Keep only last N turns
+    if len(CONTEXT_STACK) > MAX_CONTEXT_TURNS:
+        CONTEXT_STACK.pop(0)
+
+
+def get_context_feature(feature_name: str) -> Optional[str]:
+    """
+    RISC AI Enhancement 3: CONTEXT_STACK
+    Get feature value from recent context if not found in current query.
+    
+    Args:
+        feature_name: Name of feature to retrieve
+        
+    Returns:
+        Feature value from context or None
+    """
+    # Search backwards through context (most recent first)
+    for context in reversed(CONTEXT_STACK):
+        if context['features'].get(feature_name):
+            return context['features'][feature_name]
+    return None
+
+
+def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[str]]:
     """
     Extract car features from user input text.
     
@@ -90,7 +225,7 @@ def extract_features(text: str) -> Dict[str, Optional[str]]:
                     negations['type'] = negated_word
     
     # 1. BRAND DETECTION with fuzzy matching
-    features['brand'] = _extract_brand(text, original_text)
+    features['brand'] = _extract_brand(text, original_text, use_context)
     
     # 2. BODY TYPE DETECTION with synonyms
     features['type'] = _extract_body_type(text, negations.get('type'))
@@ -103,6 +238,10 @@ def extract_features(text: str) -> Dict[str, Optional[str]]:
     
     # 5. LUXURY/BUDGET DETECTION
     features['luxury'] = _extract_luxury_status(text, features)
+    
+    # RISC AI Enhancement 3: Update context stack
+    if use_context:
+        update_context(original_text, features)
     
     # Log what was detected (for debugging)
     print(f"[NLP Engine] Input: '{original_text}'")
@@ -124,30 +263,48 @@ def _empty_features(original_text: str) -> Dict[str, Optional[str]]:
     }
 
 
-def _extract_brand(text: str, original_text: str) -> Optional[str]:
-    """Extract car brand with fuzzy matching for typos."""
-    # Direct match
+def _extract_brand(text: str, original_text: str, use_context: bool = True) -> Optional[str]:
+    """
+    RISC AI Enhancement 1+2: ENHANCE_KEYWORDS + FUZZY_MATCH
+    Extract car brand with enhanced keywords and fuzzy matching.
+    
+    Args:
+        text: Preprocessed query text (lowercase)
+        original_text: Original user query
+        use_context: Whether to use context stack for fallback
+        
+    Returns:
+        Brand name or None
+    """
+    # Step 1: Check enhanced brand variations (nicknames, common misspellings)
+    for brand_key, variations in BRAND_VARIATIONS.items():
+        for variation in variations:
+            if re.search(rf"\b{variation}\b", text):
+                return brand_key.title()
+    
+    # Step 2: Direct match from dataset
     for brand in PATTERNS["brands"]:
         brand_words = brand.split()
         if any(re.search(rf"\b{word}\b", text) for word in brand_words):
             return brand.title()
     
-    # Common brands not in dataset
-    common_brands = ["bmw", "audi", "mercedes", "lexus", "jaguar", "volvo", "tesla"]
-    for brand in common_brands:
-        if re.search(rf"\b{brand}\b", text):
-            return brand.upper() if brand == "bmw" else brand.title()
-    
-    # Fuzzy matching for typos (e.g., "Tayota" -> "Toyota")
-    words = original_text.lower().split()
-    all_brands = PATTERNS["brands"] + common_brands
+    # Step 3: RISC FUZZY_MATCH - Use Levenshtein distance for typos
+    words = text.split()
+    all_brands = list(BRAND_VARIATIONS.keys()) + PATTERNS["brands"]
     
     for word in words:
-        if len(word) > 3:  # Only check words longer than 3 chars
-            matches = difflib.get_close_matches(word, all_brands, n=1, cutoff=0.75)
-            if matches:
-                brand = matches[0]
-                return brand.upper() if brand == "bmw" else brand.title()
+        if len(word) > 3:  # Only check meaningful words
+            for brand in all_brands:
+                # Use our custom fuzzy matcher
+                if fuzzy_match(brand, word, threshold=0.75):
+                    return brand.title()
+    
+    # Step 4: RISC CONTEXT_STACK - Fallback to context if available
+    if use_context:
+        context_brand = get_context_feature('brand')
+        if context_brand:
+            print(f"[NLP Engine] Using brand from context: {context_brand}")
+            return context_brand
     
     return None
 
@@ -299,6 +456,22 @@ def get_supported_types() -> List[str]:
 def get_supported_fuels() -> List[str]:
     """Return list of supported fuel types."""
     return ["electric", "diesel", "petrol"]
+
+
+def get_context_stack() -> List[Dict]:
+    """
+    Get current conversation context.
+    
+    Returns:
+        List of context turns (recent first)
+    """
+    return list(reversed(CONTEXT_STACK))
+
+
+def clear_context() -> None:
+    """Clear conversation context (start fresh conversation)."""
+    global CONTEXT_STACK
+    CONTEXT_STACK = []
 
 
 def suggest_similar_queries(text: str) -> List[str]:

@@ -4,7 +4,7 @@ AutoMind CLI - Simple command-line interface
 For when Streamlit is not available
 """
 
-from nlp_engine import extract_features, suggest_similar_queries
+from nlp_engine import extract_features, suggest_similar_queries, clear_context, get_context_stack
 from guessing_engine import GuessingEngine
 
 
@@ -34,6 +34,12 @@ def print_help():
     print("  • Fuel: Petrol, Diesel, Electric")
     print("  • Price: under 10L, 20-30L, above 30L, etc.")
     print("  • Luxury: premium, luxury, cheap, budget, etc.")
+    print()
+    print("🤖 AI FEATURES (RISC-Style):")
+    print("  • Nickname recognition: 'beemer' → BMW, 'merc' → Mercedes")
+    print("  • Typo correction: 'Tayota' → Toyota, 'Hundai' → Hyundai")
+    print("  • Context memory: Say 'the sedan one' after mentioning a brand")
+    print("  • Type 'clear' to reset conversation context")
     print()
 
 
@@ -111,10 +117,11 @@ def main():
     # Initialize engine
     print("Loading car database...")
     engine = GuessingEngine()
-    print(f"✅ Ready! {len(engine.cars)} cars loaded.\n")
+    print(f"✅ Ready! {len(engine.cars)} cars loaded.")
+    print("💡 Tip: Type 'help' for examples, 'clear' to reset context\n")
     
     # Main loop
-    query_count = 0
+    query_count = 0  # Move inside main function
     
     while True:
         try:
@@ -127,14 +134,26 @@ def main():
             
             if user_input.lower() in ['quit', 'exit', 'q']:
                 print("\n👋 Thank you for using AutoMind! Goodbye!")
+                print(f"\n📊 Session Summary: {query_count} queries processed")
                 break
             
             if user_input.lower() in ['help', 'h', '?']:
                 print_help()
                 continue
             
+            if user_input.lower() == 'clear':
+                clear_context()
+                query_count = 0
+                print("✨ Context cleared! Starting fresh conversation.\n")
+                continue
+            
             query_count += 1
             print()
+            
+            # Show context info if we have history
+            context = get_context_stack()
+            if len(context) > 0:
+                print(f"💭 Context: Remembering {len(context)} previous turn(s)")
             
             # Extract features
             print("⚙️  Analyzing your query...")
