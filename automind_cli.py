@@ -4,7 +4,7 @@ AutoMind CLI - Simple command-line interface
 For when Streamlit is not available
 """
 
-from nlp_engine import extract_features, suggest_similar_queries, clear_context, get_context_stack
+from nlp_engine import extract_features, suggest_similar_queries, clear_context, get_context_stack, get_preferences, reset_preferences, calculate_confidence
 from guessing_engine import GuessingEngine
 
 
@@ -39,7 +39,10 @@ def print_help():
     print("  • Nickname recognition: 'beemer' → BMW, 'merc' → Mercedes")
     print("  • Typo correction: 'Tayota' → Toyota, 'Hundai' → Hyundai")
     print("  • Context memory: Say 'the sedan one' after mentioning a brand")
+    print("  • Smart clarification: Asks for more details when unsure")
+    print("  • Preference learning: Remembers what you like across conversation")
     print("  • Type 'clear' to reset conversation context")
+    print("  • Type 'prefs' to see your learned preferences")
     print()
 
 
@@ -110,6 +113,98 @@ def display_matches(matches, engine, features):
     print()
 
 
+def _handle_help_command():
+    """Handle help command."""
+    print_help()
+
+
+def _handle_clear_command():
+    """Handle clear command."""
+    clear_context()
+    reset_preferences()
+    print("✨ Context and preferences cleared! Starting fresh conversation.\n")
+    return 0  # Reset query count
+
+
+def _display_preferences():
+    """Display user preferences."""
+    prefs = get_preferences()
+    print("\n🧠 YOUR LEARNED PREFERENCES:")
+    print("-" * 70)
+    
+    if prefs['prefers_electric'] is True:
+        print("  • Prefers: Electric vehicles")
+    elif prefs['prefers_electric'] is False:
+        print("  • Prefers: Non-electric vehicles")
+    
+    if prefs['prefers_suv'] is True:
+        print("  • Prefers: SUVs")
+    elif prefs['prefers_suv'] is False:
+        print("  • Prefers: Non-SUV body types")
+    
+    if prefs['preferred_brands']:
+        print(f"  • Brands you've searched: {', '.join(prefs['preferred_brands'])}")
+    
+    if prefs['price_sensitivity']:
+        print(f"  • Price sensitivity: {prefs['price_sensitivity']}")
+    
+    if not any([prefs['prefers_electric'], prefs['prefers_suv'], 
+               prefs['preferred_brands'], prefs['price_sensitivity']]):
+        print("  • No preferences learned yet. Keep searching!")
+    print("-" * 70)
+    print()
+
+
+def _show_context_info():
+    """Show context information if available."""
+    context = get_context_stack()
+    if len(context) > 0:
+        print(f"💭 Context: Remembering {len(context)} previous turn(s)")
+
+
+def _suggest_followup(has_matches, matches, engine, features, user_input):
+    """Suggest follow-up queries based on results."""
+    if not has_matches:
+        followup = engine.suggest_followup_question(features)
+        print(f"\n💡 TIP: {followup}")
+        
+        # Get smart suggestions based on query
+        suggestions = suggest_similar_queries(user_input)
+        print("\n🔄 You could also try:")
+        for suggestion in suggestions:
+            print(f"  • {suggestion}")
+        print()
+    elif matches and matches[0][1] < 30:
+        print(f"\n⚠️  Low confidence match (score: {matches[0][1]}/100)")
+        print("💡 TIP: Try adding more details for better results:")
+        followup = engine.suggest_followup_question(features)
+        print(f"   - {followup}\n")
+
+
+def _process_query(user_input: str, engine: GuessingEngine):
+    """Process a user query and display results."""
+    _show_context_info()
+    
+    # Extract features
+    print("⚙️  Analyzing your query...")
+    features = extract_features(user_input)
+    
+    # Display extracted features
+    display_features(features)
+    
+    # Find matches
+    print("\n🔎 Searching database...")
+    matches = engine.find_matches(features, top_n=5)
+    
+    # Display results
+    has_matches = display_matches(matches, engine, features)
+    
+    # Suggest follow-up
+    _suggest_followup(has_matches, matches, engine, features, user_input)
+    
+    print("=" * 70)
+
+
 def main():
     """Main CLI loop."""
     print_banner()
@@ -121,7 +216,7 @@ def main():
     print("💡 Tip: Type 'help' for examples, 'clear' to reset context\n")
     
     # Main loop
-    query_count = 0  # Move inside main function
+    query_count = 0
     
     while True:
         try:
@@ -138,55 +233,21 @@ def main():
                 break
             
             if user_input.lower() in ['help', 'h', '?']:
-                print_help()
+                _handle_help_command()
                 continue
             
             if user_input.lower() == 'clear':
-                clear_context()
-                query_count = 0
-                print("✨ Context cleared! Starting fresh conversation.\n")
+                query_count = _handle_clear_command()
+                continue
+            
+            if user_input.lower() in ['prefs', 'preferences']:
+                _display_preferences()
                 continue
             
             query_count += 1
             print()
             
-            # Show context info if we have history
-            context = get_context_stack()
-            if len(context) > 0:
-                print(f"💭 Context: Remembering {len(context)} previous turn(s)")
-            
-            # Extract features
-            print("⚙️  Analyzing your query...")
-            features = extract_features(user_input)
-            
-            # Display extracted features
-            display_features(features)
-            
-            # Find matches
-            print("\n🔎 Searching database...")
-            matches = engine.find_matches(features, top_n=5)
-            
-            # Display results
-            has_matches = display_matches(matches, engine, features)
-            
-            # Suggest follow-up if no matches or weak matches
-            if not has_matches:
-                followup = engine.suggest_followup_question(features)
-                print(f"\n💡 TIP: {followup}")
-                
-                # Get smart suggestions based on query
-                suggestions = suggest_similar_queries(user_input)
-                print("\n🔄 You could also try:")
-                for suggestion in suggestions:
-                    print(f"  • {suggestion}")
-                print()
-            elif matches and matches[0][1] < 30:
-                print(f"\n⚠️  Low confidence match (score: {matches[0][1]}/100)")
-                print("💡 TIP: Try adding more details for better results:")
-                followup = engine.suggest_followup_question(features)
-                print(f"   - {followup}\n")
-            
-            print("=" * 70)
+            _process_query(user_input, engine)
             print()
             
         except KeyboardInterrupt:

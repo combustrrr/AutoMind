@@ -8,14 +8,26 @@ The AutoMind NLP (Natural Language Processing) module enables the car recommenda
 
 ```
 User Input → NLP Engine → Feature Dictionary → Guessing Engine → Car Recommendations
+                ↓              ↓                    ↓
+         Confidence Score  Preferences      Smart Clarification
 ```
 
 ### Components
 
-1. **nlp_engine.py** - Extracts features from text
+1. **nlp_engine.py** - Extracts features from text with AI enhancements
 2. **guessing_engine.py** - Matches features to cars
 3. **automind_ui.py** - Streamlit web interface
 4. **automind_cli.py** - Command-line interface
+
+### RISC AI Enhancements
+
+The NLP Engine implements three intelligent enhancements:
+
+1. **Smart Clarification** - Asks for details when confidence < 30%
+2. **Preference Learning** - Tracks user preferences across conversation
+3. **Conversation Repair** - Provides helpful guidance for unclear queries
+
+See [RISC AI Enhancements](RISC_AI_ENHANCEMENTS.md) for detailed documentation.
 
 ## NLP Engine (`nlp_engine.py`)
 
@@ -86,6 +98,45 @@ features = extract_features("A Toyota SUV under 20 lakhs")
 - **Price inference**: above 30L → luxury, under 10L → budget
 
 ### Advanced Features
+
+#### Smart Clarification (NEW!)
+Provides guidance when confidence is low (< 30%):
+```python
+extract_features("a car")
+# Console output:
+#   Confidence: 0.0%
+#   Suggestion: I could use more details. Consider specifying:
+#               brand (e.g., Toyota, Hyundai, Maruti),
+#               type (SUV, sedan, or hatchback)
+```
+
+#### Preference Learning (NEW!)
+Tracks user preferences across queries:
+```python
+from nlp_engine import extract_features, get_preferences
+
+extract_features("electric car")
+extract_features("Toyota SUV")
+
+prefs = get_preferences()
+# Returns:
+# {
+#     'prefers_electric': True,
+#     'prefers_suv': True,
+#     'preferred_brands': ['Toyota'],
+#     'price_sensitivity': None
+# }
+```
+
+#### Conversation Repair (NEW!)
+Helps users formulate better queries:
+```python
+from nlp_engine import handle_confusion
+
+message = handle_confusion()
+# Returns: "I'm not sure I understand. Could you mention the brand 
+#           name or car type? For example: 'Toyota SUV' or 'luxury sedan'"
+```
 
 #### Negation Handling
 Detects "not", "no", "without" patterns:

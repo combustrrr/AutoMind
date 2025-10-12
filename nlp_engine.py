@@ -49,6 +49,19 @@ MODEL_VARIATIONS = {
 CONTEXT_STACK = []
 MAX_CONTEXT_TURNS = 3
 
+# RISC AI Enhancement 4: SMART CLARIFICATION
+# Low confidence threshold for asking clarifying questions
+CLARIFY_WHEN_CONFIDENT = 0.3  # Ask for clarification when confidence < 30%
+
+# RISC AI Enhancement 5: PREFERENCE LEARNING
+# Simple user preference tracking
+USER_PREFERENCES = {
+    'prefers_electric': None,
+    'prefers_suv': None,
+    'preferred_brands': [],
+    'price_sensitivity': None  # 'budget', 'luxury', or None
+}
+
 
 def levenshtein_distance(s1: str, s2: str) -> int:
     """
@@ -149,6 +162,42 @@ def get_context_feature(feature_name: str) -> Optional[str]:
     return None
 
 
+def _is_vague_query(text: str) -> bool:
+    """Check if query is too vague to process."""
+    vague_queries = ['car', 'vehicle', 'automobile', 'something', 'anything', 'good', 'nice', 'best']
+    words = text.split()
+    return len(words) <= 2 and any(vague in text for vague in vague_queries)
+
+
+def _detect_negations(text: str) -> Dict[str, Optional[str]]:
+    """Detect negated terms in query."""
+    negations = {
+        "brand": None,
+        "type": None,
+        "fuel": None
+    }
+    
+    negation_patterns = [
+        (r'not\s+(\w+)', 'not'),
+        (r'no\s+(\w+)', 'no'),
+        (r'without\s+(\w+)', 'without')
+    ]
+    
+    for pattern, neg_type in negation_patterns:
+        matches = re.finditer(pattern, text)
+        for match in matches:
+            negated_word = match.group(1)
+            # Check what's being negated
+            for fuel_type in ['electric', 'diesel', 'petrol', 'ev', 'gasoline']:
+                if fuel_type in negated_word:
+                    negations['fuel'] = negated_word
+            for body_type in ['suv', 'sedan', 'hatchback']:
+                if body_type in negated_word:
+                    negations['type'] = negated_word
+    
+    return negations
+
+
 def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[str]]:
     """
     Extract car features from user input text.
@@ -180,9 +229,7 @@ def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[
         return _empty_features(original_text)
     
     # Check if query is too vague
-    vague_queries = ['car', 'vehicle', 'automobile', 'something', 'anything', 'good', 'nice', 'best']
-    words = text.split()
-    if len(words) <= 2 and any(vague in text for vague in vague_queries):
+    if _is_vague_query(text):
         print(f"[NLP Engine] Vague input: '{original_text}'")
         print(f"[NLP Engine] Please be more specific (e.g., 'Toyota SUV', 'cheap hatchback')")
     
@@ -198,31 +245,8 @@ def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[
         "luxury": None
     }
     
-    # Check for negations
-    negations = {
-        "brand": None,
-        "type": None,
-        "fuel": None
-    }
-    
     # Detect negations
-    negation_patterns = [
-        (r'not\s+(\w+)', 'not'),
-        (r'no\s+(\w+)', 'no'),
-        (r'without\s+(\w+)', 'without')
-    ]
-    
-    for pattern, neg_type in negation_patterns:
-        matches = re.finditer(pattern, text)
-        for match in matches:
-            negated_word = match.group(1)
-            # Check what's being negated
-            for fuel_type in ['electric', 'diesel', 'petrol', 'ev', 'gasoline']:
-                if fuel_type in negated_word:
-                    negations['fuel'] = negated_word
-            for body_type in ['suv', 'sedan', 'hatchback']:
-                if body_type in negated_word:
-                    negations['type'] = negated_word
+    negations = _detect_negations(text)
     
     # 1. BRAND DETECTION with fuzzy matching
     features['brand'] = _extract_brand(text, original_text, use_context)
@@ -243,9 +267,21 @@ def extract_features(text: str, use_context: bool = True) -> Dict[str, Optional[
     if use_context:
         update_context(original_text, features)
     
+    # RISC AI Enhancement 5: Update preferences
+    update_preferences(features)
+    
+    # Calculate confidence score
+    confidence = calculate_confidence(features)
+    
     # Log what was detected (for debugging)
     print(f"[NLP Engine] Input: '{original_text}'")
     print(f"[NLP Engine] Detected: {features}")
+    print(f"[NLP Engine] Confidence: {confidence:.1%}")
+    
+    # RISC AI Enhancement 4: Suggest clarification if needed
+    clarification = suggest_clarification(features, confidence)
+    if clarification:
+        print(f"[NLP Engine] Suggestion: {clarification}")
     
     return features
 
@@ -263,6 +299,37 @@ def _empty_features(original_text: str) -> Dict[str, Optional[str]]:
     }
 
 
+def _check_brand_variations(text: str) -> Optional[str]:
+    """Check for brand name variations (nicknames, misspellings)."""
+    for brand_key, variations in BRAND_VARIATIONS.items():
+        for variation in variations:
+            if re.search(rf"\b{variation}\b", text):
+                return brand_key.title()
+    return None
+
+
+def _check_brand_patterns(text: str) -> Optional[str]:
+    """Check for direct brand matches from dataset."""
+    for brand in PATTERNS["brands"]:
+        brand_words = brand.split()
+        if any(re.search(rf"\b{word}\b", text) for word in brand_words):
+            return brand.title()
+    return None
+
+
+def _fuzzy_match_brand(text: str) -> Optional[str]:
+    """Use fuzzy matching to find brand from typos."""
+    words = text.split()
+    all_brands = list(BRAND_VARIATIONS.keys()) + PATTERNS["brands"]
+    
+    for word in words:
+        if len(word) > 3:  # Only check meaningful words
+            for brand in all_brands:
+                if fuzzy_match(brand, word, threshold=0.75):
+                    return brand.title()
+    return None
+
+
 def _extract_brand(text: str, original_text: str, use_context: bool = True) -> Optional[str]:
     """
     RISC AI Enhancement 1+2: ENHANCE_KEYWORDS + FUZZY_MATCH
@@ -277,27 +344,19 @@ def _extract_brand(text: str, original_text: str, use_context: bool = True) -> O
         Brand name or None
     """
     # Step 1: Check enhanced brand variations (nicknames, common misspellings)
-    for brand_key, variations in BRAND_VARIATIONS.items():
-        for variation in variations:
-            if re.search(rf"\b{variation}\b", text):
-                return brand_key.title()
+    brand = _check_brand_variations(text)
+    if brand:
+        return brand
     
     # Step 2: Direct match from dataset
-    for brand in PATTERNS["brands"]:
-        brand_words = brand.split()
-        if any(re.search(rf"\b{word}\b", text) for word in brand_words):
-            return brand.title()
+    brand = _check_brand_patterns(text)
+    if brand:
+        return brand
     
     # Step 3: RISC FUZZY_MATCH - Use Levenshtein distance for typos
-    words = text.split()
-    all_brands = list(BRAND_VARIATIONS.keys()) + PATTERNS["brands"]
-    
-    for word in words:
-        if len(word) > 3:  # Only check meaningful words
-            for brand in all_brands:
-                # Use our custom fuzzy matcher
-                if fuzzy_match(brand, word, threshold=0.75):
-                    return brand.title()
+    brand = _fuzzy_match_brand(text)
+    if brand:
+        return brand
     
     # Step 4: RISC CONTEXT_STACK - Fallback to context if available
     if use_context:
@@ -351,6 +410,42 @@ def _extract_fuel_type(text: str, negated: Optional[str] = None) -> Optional[str
     return None
 
 
+def _categorize_under_price(amount: int) -> str:
+    """Categorize 'under' price amount into range."""
+    if amount <= 10:
+        return "under_10L"
+    elif amount <= 20:
+        return "under_20L"
+    elif amount <= 30:
+        return "under_30L"
+    else:
+        return "20-30L"
+
+
+def _categorize_above_price(amount: int) -> str:
+    """Categorize 'above' price amount into range."""
+    if amount >= 50:
+        return "above_30L"
+    elif amount >= 30:
+        return "above_30L"
+    elif amount >= 20:
+        return "20-30L"
+    else:
+        return "10-20L"
+
+
+def _categorize_around_price(amount: int) -> str:
+    """Categorize 'around' price amount into range."""
+    if amount <= 10:
+        return "under_10L"
+    elif amount <= 20:
+        return "10-20L"
+    elif amount <= 30:
+        return "20-30L"
+    else:
+        return "above_30L"
+
+
 def _extract_price_range(text: str) -> Optional[str]:
     """Extract price range using regex patterns."""
     # Patterns for Indian currency format
@@ -362,70 +457,81 @@ def _extract_price_range(text: str) -> Optional[str]:
     match = re.search(under_pattern, text)
     if match:
         amount = int(match.group(2))
-        if amount <= 10:
-            return "under_10L"
-        elif amount <= 20:
-            return "under_20L"
-        elif amount <= 30:
-            return "under_30L"
-        else:
-            return "20-30L"
+        return _categorize_under_price(amount)
     
     # Check "above" patterns
     match = re.search(above_pattern, text)
     if match:
         amount = int(match.group(2))
-        if amount >= 50:
-            return "above_30L"
-        elif amount >= 30:
-            return "above_30L"
-        elif amount >= 20:
-            return "20-30L"
-        else:
-            return "10-20L"
+        return _categorize_above_price(amount)
     
     # Check "around" patterns
     match = re.search(around_pattern, text)
     if match:
         amount = int(match.group(2))
-        if amount <= 10:
-            return "under_10L"
-        elif amount <= 20:
-            return "10-20L"
-        elif amount <= 30:
-            return "20-30L"
-        else:
-            return "above_30L"
+        return _categorize_around_price(amount)
     
     return None
 
 
-def _extract_luxury_status(text: str, features: Dict) -> Optional[bool]:
-    """Determine luxury status from keywords and context."""
-    luxury_keywords = ["luxury", "premium", "high-end", "expensive", "flagship", "elite", "prestige"]
+def _check_luxury_keywords(text: str) -> Optional[bool]:
+    """Check for explicit luxury or budget keywords."""
+    luxury_keywords = ["luxury", "premium", "high-end", "expensive", "flagship", "elite", "prestige", 
+                       "fast", "sporty", "powerful", "performance", "sport", "turbo", "racing", "speed"]
     budget_keywords = ["cheap", "affordable", "budget", "economical", "value", "entry-level", "basic", "low-cost"]
-    luxury_brands = ["bmw", "mercedes", "audi", "lexus", "jaguar", "volvo", "land rover"]
     
-    # Check explicit keywords
     if any(re.search(rf"\b{kw}\b", text) for kw in luxury_keywords):
         return True
     
     if any(re.search(rf"\b{kw}\b", text) for kw in budget_keywords):
         return False
     
+    return None
+
+
+def _infer_luxury_from_brand(brand: Optional[str]) -> Optional[bool]:
+    """Infer luxury status from brand name."""
+    if not brand:
+        return None
+    
+    luxury_brands = ["bmw", "mercedes", "audi", "lexus", "jaguar", "volvo", "land rover"]
+    brand_lower = brand.lower()
+    
+    if any(luxury_brand in brand_lower for luxury_brand in luxury_brands):
+        return True
+    
+    return None
+
+
+def _infer_luxury_from_price(price_range: Optional[str]) -> Optional[bool]:
+    """Infer luxury status from price range."""
+    if not price_range:
+        return None
+    
+    if 'above_30L' in price_range:
+        return True
+    elif 'under_10L' in price_range:
+        return False
+    
+    return None
+
+
+def _extract_luxury_status(text: str, features: Dict) -> Optional[bool]:
+    """Determine luxury status from keywords and context."""
+    # Check explicit keywords
+    luxury_status = _check_luxury_keywords(text)
+    if luxury_status is not None:
+        return luxury_status
+    
     # Infer from brand
-    if features.get('brand'):
-        brand_lower = features['brand'].lower()
-        if any(luxury_brand in brand_lower for luxury_brand in luxury_brands):
-            return True
+    luxury_status = _infer_luxury_from_brand(features.get('brand'))
+    if luxury_status is not None:
+        return luxury_status
     
     # Infer from price
-    price_range = features.get('price_range')
-    if price_range:
-        if 'above_30L' in price_range:
-            return True
-        elif 'under_10L' in price_range:
-            return False
+    luxury_status = _infer_luxury_from_price(features.get('price_range'))
+    if luxury_status is not None:
+        return luxury_status
     
     return None
 
@@ -472,6 +578,155 @@ def clear_context() -> None:
     """Clear conversation context (start fresh conversation)."""
     global CONTEXT_STACK
     CONTEXT_STACK = []
+
+
+def calculate_confidence(features: Dict[str, Optional[str]]) -> float:
+    """
+    RISC AI Enhancement 4: SMART CLARIFICATION
+    Calculate confidence score based on number and quality of extracted features.
+    
+    Args:
+        features: Extracted features dictionary
+        
+    Returns:
+        Confidence score between 0.0 and 1.0
+    """
+    score = 0.0
+    max_score = 100.0
+    
+    # Brand detection: 35 points (increased for strong brand signal)
+    if features.get('brand'):
+        score += 35
+    
+    # Body type detection: 25 points 
+    if features.get('type'):
+        score += 25
+    
+    # Fuel type detection: 20 points
+    if features.get('fuel'):
+        score += 20
+    
+    # Price range detection: 15 points
+    if features.get('price_range'):
+        score += 15
+    
+    # Luxury status detection: 15 points (increased for performance indicators)
+    if features.get('luxury') is not None:
+        score += 15
+    
+    # Bonus points for having both brand and luxury (strong signal)
+    if features.get('brand') and features.get('luxury') is not None:
+        score += 10
+    
+    return score / max_score
+
+
+def handle_confusion() -> str:
+    """
+    RISC AI Enhancement 6: CONVERSATION REPAIR
+    Provide helpful message when query is unclear or confusing.
+    
+    Returns:
+        Helpful guidance message
+    """
+    return "I'm not sure I understand. Could you mention the brand name or car type? For example: 'Toyota SUV' or 'luxury sedan'"
+
+
+def suggest_clarification(features: Dict[str, Optional[str]], confidence: float) -> Optional[str]:
+    """
+    RISC AI Enhancement 4: SMART CLARIFICATION
+    Suggest clarification questions when confidence is low.
+    
+    Args:
+        features: Extracted features
+        confidence: Confidence score (0-1)
+        
+    Returns:
+        Clarification question or None if confidence is sufficient
+    """
+    if confidence >= CLARIFY_WHEN_CONFIDENT:
+        return None
+    
+    # Build clarification based on what's missing
+    missing = []
+    if not features.get('brand'):
+        missing.append("brand (e.g., Toyota, Hyundai, Maruti)")
+    if not features.get('type'):
+        missing.append("type (SUV, sedan, or hatchback)")
+    if not features.get('fuel'):
+        missing.append("fuel type (petrol, diesel, electric)")
+    if not features.get('price_range'):
+        missing.append("budget (e.g., under 20 lakhs)")
+    
+    if missing:
+        return f"I could use more details. Consider specifying: {', '.join(missing[:2])}"
+    
+    return None
+
+
+def update_preferences(features: Dict[str, Optional[str]]) -> None:
+    """
+    RISC AI Enhancement 5: PREFERENCE LEARNING
+    Update user preferences based on their queries.
+    
+    Args:
+        features: Extracted features from query
+    """
+    global USER_PREFERENCES
+    
+    # Track electric preference
+    if features.get('fuel') == 'electric':
+        USER_PREFERENCES['prefers_electric'] = True
+    elif features.get('fuel') in ['petrol', 'diesel']:
+        if USER_PREFERENCES['prefers_electric'] is None:
+            USER_PREFERENCES['prefers_electric'] = False
+    
+    # Track SUV preference
+    if features.get('type') == 'suv':
+        USER_PREFERENCES['prefers_suv'] = True
+    elif features.get('type') in ['sedan', 'hatchback']:
+        if USER_PREFERENCES['prefers_suv'] is None:
+            USER_PREFERENCES['prefers_suv'] = False
+    
+    # Track brand preferences
+    if features.get('brand'):
+        brand = features['brand']
+        if brand not in USER_PREFERENCES['preferred_brands']:
+            USER_PREFERENCES['preferred_brands'].append(brand)
+            # Keep only last 3 brands
+            if len(USER_PREFERENCES['preferred_brands']) > 3:
+                USER_PREFERENCES['preferred_brands'].pop(0)
+    
+    # Track price sensitivity
+    if features.get('luxury') is True:
+        USER_PREFERENCES['price_sensitivity'] = 'luxury'
+    elif features.get('luxury') is False:
+        USER_PREFERENCES['price_sensitivity'] = 'budget'
+
+
+def get_preferences() -> Dict:
+    """
+    RISC AI Enhancement 5: PREFERENCE LEARNING
+    Get current user preferences.
+    
+    Returns:
+        User preferences dictionary
+    """
+    return USER_PREFERENCES.copy()
+
+
+def reset_preferences() -> None:
+    """
+    RISC AI Enhancement 5: PREFERENCE LEARNING
+    Reset user preferences to defaults.
+    """
+    global USER_PREFERENCES
+    USER_PREFERENCES = {
+        'prefers_electric': None,
+        'prefers_suv': None,
+        'preferred_brands': [],
+        'price_sensitivity': None
+    }
 
 
 def suggest_similar_queries(text: str) -> List[str]:

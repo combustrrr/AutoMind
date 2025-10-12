@@ -10,6 +10,12 @@ ENV/
 env.bak/
 venv.bak/
 
+# ML Model files (generated, not version controlled)
+data/ml_model.pkl
+data/vectorizer.pkl
+data/ml_metadata.json
+data/training_data.json
+
 # IDE
 .vscode/
 .idea/

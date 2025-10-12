@@ -1,63 +1,74 @@
-# AutoMind - Guess the Car Game 🚗
+# AutoMind - AI-Powered Car Recommendation System 🚗🤖
 
-A fun and interactive car guessing game featuring 50 popular Indian market cars. Test your automotive knowledge by identifying cars from clues about their brand, specifications, and characteristics.
+An intelligent car recommendation system demonstrating **classic AI techniques** (Expert Systems, Knowledge Representation, Inference Engines) alongside modern **Machine Learning**. Perfect for AI coursework and educational purposes.
 
-## Features
+## 🎓 AI Techniques Demonstrated
 
-- 🎯 **Progressive Clues**: Get hints about brand, body type, fuel type, price range, and more
-- 🏆 **Scoring System**: Earn points based on how quickly you guess correctly
-- 📊 **Comprehensive Data**: 50 real Indian market cars with detailed specifications
-- 🎮 **Multiple Rounds**: Play as many rounds as you want
-- 💡 **Smart Matching**: Flexible guess matching for model names
-- 🤖 **NLP Chatbot**: Natural language understanding for car queries (Experiment 5)
-- 🚗 **Car Recommender**: Intelligent car recommendation system with Web & CLI interfaces
+### Classic AI (Expert System)
+- ✅ **Knowledge Base** - Frame-based representation with 50+ cars
+- ✅ **Inference Engine** - Forward chaining, rule-based reasoning
+- ✅ **Information Gain** - Optimal question selection using entropy
+- ✅ **Belief State Management** - Probabilistic reasoning, uncertainty handling
+- ✅ **Symbolic AI** - Explainable, traceable decision-making
 
-## AutoMind Car Recommender (NEW!)
+### Machine Learning
+- ✅ **TF-IDF Vectorization** - Text feature extraction
+- ✅ **Random Forest Classifier** - Multi-class car prediction
+- ✅ **Confidence Scoring** - Probabilistic predictions
+- ✅ **Training Pipeline** - Data generation and model training
 
-### 🌟 Natural Language Car Search
+### NLP & Context Awareness
+- ✅ **Natural Language Processing** - Query understanding
+- ✅ **Fuzzy Matching** - Typo tolerance (Levenshtein distance)
+- ✅ **Context Stack** - Multi-turn conversations
+- ✅ **Preference Learning** - User preference tracking
 
-AutoMind now includes an intelligent car recommendation system that understands natural language queries!
+## 🚀 Quick Start
 
-**Quick Start:**
+### Expert System (Recommended for AI Coursework)
 
 ```bash
-# Option 1: Web UI (Streamlit - Recommended for demo)
-pip install streamlit
-streamlit run automind_ui.py
-
-# Option 2: Command Line Interface (No installation needed)
-python automind_cli.py
+# Interactive expert system using AI reasoning
+python expert_system_cli.py
 ```
 
-### 📋 Example Queries
+**What makes it "True AI":**
+- Uses information theory (entropy, information gain)
+- Forward chaining inference engine
+- Knowledge-based reasoning
+- Fully explainable decisions
 
-Try these natural language queries:
-- "A Toyota SUV under 20 lakhs"
-- "Luxury electric sedan above 50L"
-- "Cheap Maruti hatchback under 10L"
-- "Premium BMW sedan"
-- "Budget friendly diesel car from Hyundai"
+### Dataset Expansion (NEW!)
 
-### 🎯 How It Works
+Expand from 50 to 100s+ cars using real Kaggle data:
 
-1. **Type your query** in natural language
-2. **NLP Engine** extracts features (brand, type, fuel, price, luxury)
-3. **Guessing Engine** scores cars from database
-4. **Get recommendations** ranked by match score
+```bash
+# Install dependencies
+pip install kagglehub pandas
 
-### ✨ Advanced Features
+# Download and integrate CardDekho dataset
+python download_kaggle_dataset.py
+```
 
-- **Fuzzy Matching**: Handles typos (e.g., "Tayota" → "Toyota")
+See `KAGGLE_DATASET_GUIDE.md` for details.
+
+### Natural Language Interface
 - **Synonym Support**: "EV" → "electric", "crossover" → "SUV"
 - **Compound Queries**: Multiple features in one sentence
 - **Negation Handling**: "not diesel" excludes diesel cars
 - **Smart Inference**: Infers luxury from brand/price
+- **🆕 Smart Clarification**: Asks for details when confidence is low (< 30%)
+- **🆕 Preference Learning**: Remembers what you like across conversation
+- **🆕 Conversation Repair**: Helpful guidance when queries are unclear
+- **🆕 Machine Learning**: Actual ML-powered predictions with confidence scores
 
 ### 📚 Documentation
 
 - **Full NLP Docs**: [NLP Module Documentation](docs/NLP_MODULE_DOCUMENTATION.md)
 - **API Reference**: [NLP Deliverables](docs/NLP_DELIVERABLES_SUMMARY.md)
 - **Quick Reference**: [NLP Quick Reference](docs/NLP_QUICK_REFERENCE.md)
+- **🆕 RISC AI Enhancements**: [RISC AI Enhancements](docs/RISC_AI_ENHANCEMENTS.md)
+- **🆕 ML Integration**: [Machine Learning Integration](docs/ML_INTEGRATION.md)
 
 ## NLP Query System (Experiment 5)
 
