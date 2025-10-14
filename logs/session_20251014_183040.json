@@ -1,0 +1,49 @@
+{
+  "session_id": "20251014_183040",
+  "mode": "guessing",
+  "timestamp": "2025-10-14T18:31:24.553174",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:30:49.637939",
+      "question": "What era or generation is the car from?",
+      "answer": "Any era / Not sure",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:30:51.946317",
+      "question": "Do you have a brand in mind?",
+      "answer": "Maruti Suzuki",
+      "value": "maruti suzuki"
+    },
+    {
+      "timestamp": "2025-10-14T18:30:54.016304",
+      "question": "Which body style fits best?",
+      "answer": "HATCHBACK",
+      "value": "hatchback"
+    },
+    {
+      "timestamp": "2025-10-14T18:30:56.266719",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Petrol",
+      "value": "petrol"
+    },
+    {
+      "timestamp": "2025-10-14T18:30:57.690595",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Balanced (1.2L-1.6L)",
+      "value": "balanced"
+    },
+    {
+      "timestamp": "2025-10-14T18:31:00.802400",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "Under 10 Lakhs",
+      "value": "under_10l"
+    },
+    {
+      "timestamp": "2025-10-14T18:31:24.553164",
+      "result": "incorrect",
+      "guessed_car": "Ritz VXI BS-IV",
+      "actual_car": "Swift"
+    }
+  ]
+}

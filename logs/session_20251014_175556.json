@@ -1,0 +1,65 @@
+{
+  "session_id": "20251014_175556",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T17:56:27.923909",
+      "question": "What usage scenario fits your needs?",
+      "answer": "Adventure tourer",
+      "value": "adventure"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:31.272427",
+      "question": "Do you have a brand in mind?",
+      "answer": "Mercedes-Benz",
+      "value": "mercedes-benz"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:35.256617",
+      "question": "Which buyer persona matches you most?",
+      "answer": "Status driven",
+      "value": "status"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:39.909390",
+      "question": "What passenger capacity do you need?",
+      "answer": "Small family",
+      "value": "medium"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:43.912401",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "Above 30 Lakhs",
+      "value": "above_30l"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:50.270132",
+      "question": "How would you describe the overall spend level?",
+      "answer": "Value seeker",
+      "value": "value"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:52.643575",
+      "question": "Is a luxury badge important?",
+      "answer": "Yes, luxury or premium",
+      "value": "True"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:55.730062",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Petrol",
+      "value": "petrol"
+    },
+    {
+      "timestamp": "2025-10-14T17:56:59.542922",
+      "question": "Which body style fits best?",
+      "answer": "SUV",
+      "value": "suv"
+    },
+    {
+      "timestamp": "2025-10-14T17:57:02.284873",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Performance (>= 1.6L)",
+      "value": "performance"
+    }
+  ]
+}

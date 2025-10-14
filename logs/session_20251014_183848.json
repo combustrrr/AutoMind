@@ -1,0 +1,49 @@
+{
+  "session_id": "20251014_183848",
+  "mode": "guessing",
+  "timestamp": "2025-10-14T18:39:23.583149",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:38:53.551408",
+      "question": "What era or generation is the car from?",
+      "answer": "Any era / Not sure",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:38:55.569183",
+      "question": "Do you have a brand in mind?",
+      "answer": "Another brand (not listed)",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:38:57.707165",
+      "question": "Which body style fits best?",
+      "answer": "Not sure / skip",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:38:59.371339",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "Not sure / skip",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:39:01.059198",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Not sure / skip",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:39:02.876141",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Not sure / skip",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:39:23.583138",
+      "result": "incorrect",
+      "guessed_car": "Amaze 1.2 VX i-VTEC",
+      "actual_car": "Nothing"
+    }
+  ]
+}

@@ -1,51 +1,1051 @@
-model,keywords,brand,body_type,fuel_type,price_range,luxury,engine_cc
-Swift,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,1197
-Baleno,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,1197
-WagonR,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,998
-Alto 800,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,796
-Celerio,"reliable,compact,city-friendly,smooth,affordable",Maruti Suzuki,Hatchback,Petrol,under_10L,False,998
-Grand i10 Nios,"feature-rich,compact,city-friendly,smooth,affordable",Hyundai,Hatchback,Petrol,under_10L,False,1197
-i20,"feature-rich,compact,city-friendly,smooth,affordable",Hyundai,Hatchback,Petrol,under_10L,False,1197
-Santro,"feature-rich,compact,city-friendly,smooth,affordable",Hyundai,Hatchback,Petrol,under_10L,False,1086
-Tiago,"safety,compact,city-friendly,smooth,affordable",Tata,Hatchback,Petrol,under_10L,False,1199
-Altroz,"safety,compact,city-friendly,smooth,affordable",Tata,Hatchback,Petrol,under_10L,False,1199
-Polo,"german-engineering,compact,city-friendly,smooth,affordable",Volkswagen,Hatchback,Petrol,under_10L,False,999
-Punch,"safety,versatile,commanding,smooth,affordable",Tata,SUV,Petrol,under_10L,False,1199
-Kwid,"french-design,compact,city-friendly,smooth,affordable",Renault,Hatchback,Petrol,under_10L,False,999
-Dzire,"reliable,spacious,comfortable,smooth,affordable",Maruti Suzuki,Sedan,Petrol,under_10L,False,1197
-Amaze,"refined,spacious,comfortable,smooth,affordable",Honda,Sedan,Petrol,under_10L,False,1199
-Aura,"feature-rich,spacious,comfortable,smooth,affordable",Hyundai,Sedan,Petrol,under_10L,False,1197
-Tigor,"safety,spacious,comfortable,smooth,affordable",Tata,Sedan,Petrol,under_10L,False,1199
-Aspire,"performance,spacious,comfortable,smooth,affordable",Ford,Sedan,Petrol,under_10L,False,1196
-Ciaz,"reliable,spacious,comfortable,smooth,premium",Maruti Suzuki,Sedan,Petrol,10-20L,False,1462
-Verna,"feature-rich,spacious,comfortable,smooth,premium",Hyundai,Sedan,Petrol,10-20L,False,1497
-City,"refined,spacious,comfortable,smooth,premium",Honda,Sedan,Petrol,10-20L,False,1498
-Rapid,"german-engineering,spacious,comfortable,smooth,premium",Skoda,Sedan,Petrol,10-20L,False,999
-Virtus,"german-engineering,spacious,comfortable,smooth,premium",Volkswagen,Sedan,Petrol,10-20L,False,999
-Slavia,"german-engineering,spacious,comfortable,smooth,premium",Skoda,Sedan,Petrol,10-20L,False,999
-Vitara Brezza,"reliable,versatile,commanding,smooth,affordable",Maruti Suzuki,SUV,Petrol,under_10L,False,1462
-Venue,"feature-rich,versatile,commanding,smooth,affordable",Hyundai,SUV,Petrol,under_10L,False,998
-Nexon,"safety,versatile,commanding,smooth,affordable",Tata,SUV,Petrol,under_10L,False,1199
-Ecosport,"performance,versatile,commanding,smooth,affordable",Ford,SUV,Petrol,under_10L,False,999
-XUV300,"rugged,versatile,commanding,torquey,affordable",Mahindra,SUV,Diesel,under_10L,False,1497
-Sonet,"stylish,versatile,commanding,smooth,affordable",Kia,SUV,Petrol,under_10L,False,998
-Brezza,"reliable,versatile,commanding,smooth,affordable",Maruti Suzuki,SUV,Petrol,under_10L,False,1462
-Creta,"feature-rich,versatile,commanding,smooth,premium",Hyundai,SUV,Petrol,10-20L,False,1497
-Seltos,"stylish,versatile,commanding,smooth,premium",Kia,SUV,Petrol,10-20L,False,1497
-Harrier,"safety,versatile,commanding,torquey,premium",Tata,SUV,Diesel,10-20L,False,1956
-Safari,"safety,versatile,commanding,torquey,premium",Tata,SUV,Diesel,10-20L,False,1956
-XUV700,"rugged,versatile,commanding,smooth,premium",Mahindra,SUV,Petrol,10-20L,False,1997
-Kushaq,"german-engineering,versatile,commanding,smooth,premium",Skoda,SUV,Petrol,10-20L,False,999
-Taigun,"german-engineering,versatile,commanding,smooth,premium",Volkswagen,SUV,Petrol,10-20L,False,999
-Astor,"tech-savvy,versatile,commanding,smooth,premium",MG,SUV,Petrol,10-20L,False,1349
-Hector,"tech-savvy,versatile,commanding,smooth,premium",MG,SUV,Petrol,10-20L,False,1451
-Innova Crysta,"durable,versatile,commanding,torquey,premium",Toyota,SUV,Diesel,10-20L,False,2393
-Fortuner,"durable,versatile,commanding,torquey,luxury",Toyota,SUV,Diesel,20-30L,True,2755
-Endeavour,"performance,versatile,commanding,torquey,luxury",Ford,SUV,Diesel,20-30L,True,1996
-Compass,"off-road,versatile,commanding,smooth,premium",Jeep,SUV,Petrol,10-20L,True,1368
-Alcazar,"feature-rich,versatile,commanding,smooth,premium",Hyundai,SUV,Petrol,10-20L,False,1497
-Nexon EV,"safety,versatile,commanding,eco-friendly,silent",Tata,SUV,Electric,10-20L,False,0
-ZS EV,"tech-savvy,versatile,commanding,eco-friendly,silent",MG,SUV,Electric,10-20L,False,0
-Tigor EV,"safety,spacious,comfortable,eco-friendly,silent",Tata,Sedan,Electric,under_10L,False,0
-e-Verito,"rugged,spacious,comfortable,eco-friendly,silent",Mahindra,Sedan,Electric,under_10L,False,0
-
+brand,model,body_type,fuel_type,price_range,luxury,engine_cc,keywords,era
+Honda,Amaze 1.2 VX i-VTEC,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Maruti Suzuki,Swift DZire VDI,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Hyundai,i10 Magna 1.2 Kappa2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Toyota,Glanza G,hatchback,petrol,under_10l,False,1197,"Toyota,hatchback,petrol",recent
+Toyota,Innova 2.4 VX 7 STR [2016-2020],muv,diesel,10-20l,False,2393,"Toyota,muv,diesel",current
+Maruti Suzuki,Ciaz ZXi,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Mercedes-Benz,CLA 200 Petrol Sport,sedan,petrol,10-20l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+BMW,X1 xDrive20d M Sport,sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Skoda,Octavia 1.8 TSI Style Plus AT [2017],sedan,petrol,10-20l,False,1798,"Skoda,sedan,petrol",recent
+Nissan,Terrano XL (D),sedan,diesel,under_10l,False,1461,"Nissan,sedan,diesel",recent
+Hyundai,Elite i20 Sportz 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Renault,Kwid 1.0 RXT [2016-2019],sedan,petrol,under_10l,False,999,"Renault,sedan,petrol",recent
+Maruti Suzuki,Ciaz Alpha Hybrid 1.5 AT [2018-2020],sedan,petrol,10-20l,False,1462,"Maruti Suzuki,sedan,petrol",current
+Tata,Harrier XZ [2019-2020],suv,diesel,10-20l,False,1956,"Tata,suv,diesel",current
+Volkswagen,Polo GT TSI,hatchback,petrol,under_10l,False,1197,"Volkswagen,hatchback,petrol",recent
+Maruti Suzuki,Celerio ZXi AMT [2019-2020],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",current
+Maruti Suzuki,Alto 800 LXi (O),hatchback,petrol,under_10l,False,796,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Baleno Alpha Automatic,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Wagon R ZXi 1.2 AMT,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Hyundai,Creta 1.6 E Petrol,suv,petrol,under_10l,False,1591,"Hyundai,suv,petrol",current
+Maruti Suzuki,S-Presso VXi AMT,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Volkswagen,Vento Comfortline Petrol AT,sedan,petrol,under_10l,False,1197,"Volkswagen,sedan,petrol",recent
+Hyundai,Santro Sportz AMT [2018-2020],sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",current
+Hyundai,Venue SX 1.0 (O) Petrol [2019-2020],suv,petrol,under_10l,False,998,"Hyundai,suv,petrol",current
+Maruti Suzuki,Alto LXi CNG,hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",recent
+Maruti Suzuki,Ritz Zxi BS-IV,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",classic
+Hyundai,Creta 1.6 SX Plus Petrol,suv,petrol,10-20l,False,1591,"Hyundai,suv,petrol",current
+Honda,Brio V MT,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Hyundai,Elite i20 Asta 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Honda,WR-V VX MT Petrol,sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",recent
+Hyundai,Venue SX 1.0 Turbo iMT,suv,petrol,under_10l,False,998,"Hyundai,suv,petrol",current
+Hyundai,Creta 1.6 SX Plus AT,suv,diesel,under_10l,False,1582,"Hyundai,suv,diesel",current
+Ford,Ecosport Titanium+ 1.0L EcoBoost,sedan,petrol,under_10l,False,999,"Ford,sedan,petrol",recent
+Honda,CR-V 2.4 AT,hatchback,petrol,under_10l,False,1200,"Honda,hatchback,petrol",recent
+Hyundai,Santro GL (CNG),sedan,cng,under_10l,False,1086,"Hyundai,sedan,cng",recent
+Tata,Tiago Revotron XE [2016-2019],sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Tata,Tigor Revotorq XT,sedan,diesel,under_10l,False,1047,"Tata,sedan,diesel",recent
+Toyota,Innova 2.4 G 8 STR [2016-2017],muv,diesel,10-20l,False,2393,"Toyota,muv,diesel",recent
+Mercedes-Benz,GLC 220 d Progressive,sedan,diesel,above_30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,Creta SX 1.6 CRDi (O),suv,diesel,10-20l,False,1582,"Hyundai,suv,diesel",current
+Mercedes-Benz,M-Class ML 250 CDI,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Toyota,Corolla Altis VL AT Petrol,sedan,petrol,10-20l,False,1798,"Toyota,sedan,petrol",recent
+Audi,A4 2.0 TDI (177bhp) Premium Plus,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Mercedes-Benz,SLK-Class SLK 200 K,hatchback,petrol,20-30l,True,1796,"Mercedes-Benz,hatchback,petrol",recent
+Mahindra,Thar CRDe 4x4 AC,suv,diesel,under_10l,False,2498,"Mahindra,suv,diesel",current
+Maruti Suzuki,Baleno Delta 1.2,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Celerio VXi AMT,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Maruti Suzuki,Ciaz VDi SHVS,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Maruti Suzuki,Ciaz VXi,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Hyundai,Creta SX Plus 1.6 AT CRDI,suv,diesel,10-20l,False,1582,"Hyundai,suv,diesel",current
+Hyundai,Creta SX Plus 1.6  Petrol,suv,petrol,under_10l,False,1591,"Hyundai,suv,petrol",current
+Renault,Kwid 1.0 RXT AMT Opt,sedan,petrol,under_10l,False,999,"Renault,sedan,petrol",recent
+MG,Hector Sharp 2.0 Diesel [2019-2020],suv,diesel,10-20l,False,1956,"MG,suv,diesel",current
+Tata,Tiago Revotron XZA [2017-2019],sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Toyota,Innova 2.5 GX BS IV 7 STR,muv,diesel,under_10l,False,2494,"Toyota,muv,diesel",older
+BMW,X3 xDrive 20d Luxury Line [2018-2020],sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",current
+Jeep,Compass Limited Plus 2.0 Diesel 4x4 AT,suv,diesel,20-30l,False,1956,"Jeep,suv,diesel",current
+Mahindra,Scorpio SLE BS-IV,muv,diesel,under_10l,False,2179,"Mahindra,muv,diesel",older
+Honda,Brio S MT,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+BMW,3-Series 320i Luxury Line,sedan,petrol,20-30l,True,1998,"BMW,sedan,petrol",recent
+Honda,City V Petrol [2017-2019],sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Volkswagen,Polo Highline1.2L (D),hatchback,diesel,under_10l,False,1199,"Volkswagen,hatchback,diesel",recent
+Maruti Suzuki,Vitara Brezza ZXi Plus,suv,petrol,10-20l,False,1462,"Maruti Suzuki,suv,petrol",recent
+Maruti Suzuki,Eeco 7 STR [2019-2020],muv,petrol,under_10l,False,1196,"Maruti Suzuki,muv,petrol",current
+Hyundai,Grand i10 Asta AT 1.2 Kappa VTVT [2013-2016],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+BMW,X3 xDrive20d,sedan,diesel,10-20l,True,1995,"BMW,sedan,diesel",recent
+Toyota,Fortuner 2.8 4x2 AT [2016-2020],muv,diesel,above_30l,True,2755,"Toyota,muv,diesel",current
+Honda,Civic 1.8S MT,sedan,petrol,under_10l,False,1799,"Honda,sedan,petrol",recent
+Audi,A4 2.0 TDI (143 bhp),hatchback,diesel,10-20l,True,1200,"Audi,hatchback,diesel",recent
+Maruti Suzuki,Swift ZXi Plus AMT,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Hyundai,Elite i20 Sportz 1.5 MT Diesel,hatchback,diesel,under_10l,False,1493,"Hyundai,hatchback,diesel",recent
+Audi,A3 35 TDI Technology + Sunroof,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Honda,City V CVT Petrol [2017-2019],sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Ford,Figo Duratorq Diesel Titanium 1.4,sedan,diesel,under_10l,False,1399,"Ford,sedan,diesel",recent
+Honda,Jazz VX Petrol,hatchback,petrol,under_10l,False,1199,"Honda,hatchback,petrol",recent
+Volkswagen,Polo Highline1.2L (P),hatchback,petrol,under_10l,False,1198,"Volkswagen,hatchback,petrol",recent
+Honda,Amaze 1.5 SX i-DTEC,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Toyota,Camry 2.5L AT,sedan,petrol,20-30l,False,2494,"Toyota,sedan,petrol",recent
+Mahindra,Thar LX 4-STR Hard Top Petrol AT,suv,petrol,10-20l,False,1997,"Mahindra,suv,petrol",current
+Mercedes-Benz,C-Class 250 CDI Elegance,sedan,diesel,10-20l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Audi,Q3 35 TDI quattro Premium Plus,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Maruti Suzuki,Baleno Sigma 1.2,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+BMW,X1 sDrive20d xLine,sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Maruti Suzuki,Baleno Zeta 1.2,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Volkswagen,Vento Comfortline Petrol,sedan,petrol,under_10l,False,1598,"Volkswagen,sedan,petrol",recent
+Mercedes-Benz,C-Class 220 BlueEfficiency,sedan,diesel,10-20l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Toyota,Camry Hybrid,sedan,petrol,10-20l,False,2494,"Toyota,sedan,petrol",recent
+Maruti Suzuki,DZire VXi,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Nissan,Terrano XV D THP 110 PS,sedan,diesel,under_10l,False,1461,"Nissan,sedan,diesel",recent
+Maruti Suzuki,Wagon R LXI CNG,hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",recent
+Maruti Suzuki,Vitara Brezza LDi (O) [2016-2018],suv,diesel,under_10l,False,1248,"Maruti Suzuki,suv,diesel",recent
+BMW,X5 xDrive30d Pure Experience (5 Seater),sedan,diesel,20-30l,True,2993,"BMW,sedan,diesel",recent
+Mercedes-Benz,GLC 220 d Sport,hatchback,diesel,above_30l,True,1200,"Mercedes-Benz,hatchback,diesel",recent
+Porsche,Cayenne Coupe Platinum Edition,hatchback,petrol,above_30l,True,2995,"Porsche,hatchback,petrol",recent
+Mercedes-Benz,C-Class Cabriolet C 300,hatchback,petrol,above_30l,True,1991,"Mercedes-Benz,hatchback,petrol",recent
+Hyundai,Elite i20 Magna 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Hyundai,Verna 1.6 VTVT SX,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+Honda,Amaze 1.2 SX i-VTEC,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Toyota,Corolla Altis 1.8 G,sedan,petrol,under_10l,False,1798,"Toyota,sedan,petrol",recent
+Hyundai,Elite i20 Sportz 1.2 (O),hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Audi,A6 2.0 TDI Premium,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Mahindra,XUV300 W8 (O) 1.5 Diesel,suv,diesel,10-20l,False,1497,"Mahindra,suv,diesel",current
+Maruti Suzuki,Swift ZDi Plus,hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",recent
+Mahindra,Thar LX 4-STR Hard Top Petrol MT,suv,petrol,10-20l,False,1997,"Mahindra,suv,petrol",current
+Honda,City 1.5 S MT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Mercedes-Benz,E-Class E 250 CDI Avantgarde,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Toyota,Fortuner 3.0 4x2 AT,muv,diesel,10-20l,False,2982,"Toyota,muv,diesel",recent
+Tata,Zest XM 75 PS Diesel,sedan,diesel,under_10l,False,1248,"Tata,sedan,diesel",recent
+Skoda,Rapid Ambition 1.6 MPI AT Plus,sedan,petrol,under_10l,False,1598,"Skoda,sedan,petrol",recent
+Maruti Suzuki,Alto 800 Lxi,hatchback,petrol,under_10l,False,796,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Ertiga VDi,muv,diesel,under_10l,False,1248,"Maruti Suzuki,muv,diesel",recent
+Hyundai,Santro GL LPG,sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",recent
+Ford,Figo Duratorq Diesel ZXI 1.4,sedan,diesel,under_10l,False,1399,"Ford,sedan,diesel",recent
+Tata,Harrier XZ Plus,suv,diesel,20-30l,False,1956,"Tata,suv,diesel",current
+Hyundai,Elite i20 Asta (O) 1.0 Turbo DCT,hatchback,petrol,10-20l,False,998,"Hyundai,hatchback,petrol",recent
+Maruti Suzuki,Swift DZire VXI,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Hyundai,Grand i10 Sportz 1.2 Kappa VTVT [2013-2016],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Tata,Nexon EV XZ Plus,suv,electric,10-20l,False,1200,"Tata,suv,electric",current
+Hyundai,Creta SX (O) 1.4 Turbo 7 DCT Dual Tone [2022-2022],suv,petrol,10-20l,False,1353,"Hyundai,suv,petrol",current
+Audi,Q2 Premium Plus I 40 TFSI quattro,sedan,petrol,20-30l,True,1984,"Audi,sedan,petrol",recent
+Audi,Q7 45 TDI Premium Plus,muv,diesel,above_30l,True,2967,"Audi,muv,diesel",recent
+Hyundai,Verna Fluidic 1.6 CRDi SX,sedan,diesel,under_10l,False,1582,"Hyundai,sedan,diesel",recent
+Maruti Suzuki,Wagon R VXI,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+BMW,5-Series 520d Sedan,sedan,diesel,10-20l,True,1995,"BMW,sedan,diesel",recent
+Mahindra,Scorpio 2.6 Turbo 7 Str,muv,diesel,under_10l,False,2609,"Mahindra,muv,diesel",recent
+Hyundai,Grand i10 Magna 1.2 Kappa VTVT [2013-2016],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Maruti Suzuki,Ritz VXI BS-IV,hatchback,petrol,under_10l,False,1200,"Maruti Suzuki,hatchback,petrol",classic
+Audi,Q5 45 TFSI Premium Plus,sedan,petrol,above_30l,True,1984,"Audi,sedan,petrol",recent
+Renault,Duster RXS 1.5 Petrol MT,sedan,petrol,under_10l,False,1498,"Renault,sedan,petrol",recent
+Hyundai,Creta SX 1.6 AT Petrol,suv,petrol,10-20l,False,1591,"Hyundai,suv,petrol",current
+Jeep,Compass Limited (O) 2.0 Diesel [2017-2020],suv,diesel,10-20l,False,1956,"Jeep,suv,diesel",current
+Hyundai,Verna EX 1.6 CRDi [2017-2018],sedan,diesel,under_10l,False,1582,"Hyundai,sedan,diesel",recent
+Hyundai,i20 Magna 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Audi,A6 35 TDI Matrix,sedan,diesel,above_30l,True,1968,"Audi,sedan,diesel",recent
+Mahindra,Marazzo M2 8 STR,muv,diesel,10-20l,False,1497,"Mahindra,muv,diesel",recent
+Kia,Seltos HTX Plus 1.5 Diesel [2020-2021],suv,diesel,10-20l,False,1493,"Kia,suv,diesel",current
+Maruti Suzuki,Baleno Alpha 1.2,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Mercedes-Benz,E-Class E 220d Expression [2019-2019],sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Maruti Suzuki,Ertiga ZDI + SHVS,muv,diesel,under_10l,False,1248,"Maruti Suzuki,muv,diesel",recent
+Hyundai,Verna Fluidic 1.6 VTVT SX,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+Land Rover,Discovery Sport S,muv,diesel,above_30l,True,1999,"Land Rover,muv,diesel",recent
+Mercedes-Benz,GLE 250 d,sedan,diesel,above_30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,Xcent S 1.2 (O),sedan,petrol,under_10l,False,1197,"Hyundai,sedan,petrol",recent
+Mercedes-Benz,S-Class Maybach S 500,hatchback,petrol,above_30l,True,4663,"Mercedes-Benz,hatchback,petrol",recent
+MG,Hector Sharp 1.5 DCT Petrol [2019-2020],suv,petrol,10-20l,False,1451,"MG,suv,petrol",current
+MG,Astor Sharp 1.5 CVT,suv,petrol,10-20l,False,1498,"MG,suv,petrol",current
+Renault,Duster 85 PS RxL,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Hyundai,Grand i10 Sportz (O) 1.2 Kappa VTVT [2017-2018],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Honda,City V,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Mercedes-Benz,C-Class C 200 Avantgarde,sedan,petrol,20-30l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Hyundai,Elite i20 Asta 1.4 (O) CRDi,hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Skoda,Fabia Elegance 1.6 MPI,sedan,petrol,under_10l,False,1598,"Skoda,sedan,petrol",recent
+Skoda,Rapid 1.5 TDI CR Ambition Plus AT,sedan,diesel,under_10l,False,1498,"Skoda,sedan,diesel",recent
+Kia,Sonet GTX Plus 1.0 DCT [2020-2021],sedan,petrol,10-20l,False,998,"Kia,sedan,petrol",current
+Mahindra,XUV500 W11 AT,suv,diesel,20-30l,False,2179,"Mahindra,suv,diesel",recent
+BMW,3-Series 320d Luxury Line,sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Mercedes-Benz,GLA 200 CDI Sport,sedan,diesel,10-20l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Maruti Suzuki,Wagon R VXi,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Audi,A6 35 TDI Premium,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Mahindra,Scorpio VLX 2WD BS-IV,muv,diesel,under_10l,False,2179,"Mahindra,muv,diesel",older
+Toyota,Fortuner 3.0 4x4 MT,muv,diesel,10-20l,False,2982,"Toyota,muv,diesel",recent
+Ford,Ecosport Titanium+ 1.5L TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Audi,Q7 3.0 TDI quattro Premium Plus,hatchback,diesel,20-30l,True,2967,"Audi,hatchback,diesel",recent
+Mercedes-Benz,C-Class C 250 d,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Maruti Suzuki,S-Presso VXi,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Mahindra,Scorpio S5 2WD 7 STR,muv,diesel,10-20l,False,2179,"Mahindra,muv,diesel",recent
+MG,Hector Sharp 2.0 Diesel Turbo MT,suv,diesel,10-20l,False,1956,"MG,suv,diesel",current
+Maruti Suzuki,Swift VDi BS-IV,hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",older
+Maruti Suzuki,Swift ZDi,hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",recent
+Honda,City VX (O) MT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Toyota,Innova 2.5 G4 7 STR,muv,diesel,under_10l,False,2494,"Toyota,muv,diesel",recent
+Renault,Duster 110 PS RxL Diesel,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Audi,Q3 2.0 TDI quattro Premium,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Mercedes-Benz,M-Class 350 CDI,sedan,diesel,above_30l,True,2987,"Mercedes-Benz,sedan,diesel",recent
+Volvo,V40 Cross Country D3,sedan,diesel,10-20l,True,1984,"Volvo,sedan,diesel",recent
+BMW,5-Series 530d M Sport [2013-2017],sedan,diesel,above_30l,True,2993,"BMW,sedan,diesel",recent
+BMW,X5 xDrive 30d M Sport,sedan,diesel,20-30l,True,2993,"BMW,sedan,diesel",recent
+Honda,City 1.5 S AT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Mercedes-Benz,C-Class 200 CGI,sedan,petrol,10-20l,True,1796,"Mercedes-Benz,sedan,petrol",recent
+Mercedes-Benz,E-Class E350 CDI Avantgarde,sedan,diesel,10-20l,True,2987,"Mercedes-Benz,sedan,diesel",recent
+Mercedes-Benz,M-Class ML 350 CDI,sedan,diesel,20-30l,True,2997,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,i20 Magna 1.4 CRDI,hatchback,diesel,under_10l,False,1336,"Hyundai,hatchback,diesel",recent
+Skoda,Rapid Style AT,sedan,petrol,10-20l,False,999,"Skoda,sedan,petrol",recent
+Tata,Nexon XMA Petrol,suv,petrol,under_10l,False,1198,"Tata,suv,petrol",current
+Maruti Suzuki,Swift DZire ZDI,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Kia,Sonet GTX Plus 1.5 AT [2020-2021],sedan,diesel,10-20l,False,1493,"Kia,sedan,diesel",current
+Skoda,Rapid Monte Carlo 1.6 MPI MT,sedan,petrol,under_10l,False,1598,"Skoda,sedan,petrol",recent
+Audi,RS5 4.2 Coupe,sedan,petrol,above_30l,True,4163,"Audi,sedan,petrol",recent
+Hyundai,Grand i10 NIOS Magna AMT 1.2 Kappa VTVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Mercedes-Benz,R-Class R350 4MATIC,muv,petrol,20-30l,True,3496,"Mercedes-Benz,muv,petrol",recent
+Toyota,Innova 2.4 G 7 STR [2016-2017],muv,diesel,20-30l,False,2393,"Toyota,muv,diesel",recent
+Renault,Kwid RXT Opt,sedan,petrol,under_10l,False,799,"Renault,sedan,petrol",recent
+Audi,A6 2.0 TFSi Technology Pack,sedan,petrol,above_30l,True,1984,"Audi,sedan,petrol",recent
+Tata,Safari XZA Plus 6S Adventure New,hatchback,diesel,20-30l,False,1956,"Tata,hatchback,diesel",classic
+Maruti Suzuki,Ritz Vdi BS-IV,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",classic
+Honda,Brio EX MT,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Mahindra,Scorpio S9 2WD 7 STR,muv,diesel,10-20l,False,2179,"Mahindra,muv,diesel",recent
+Toyota,Innova 2.8 GX AT 7 STR [2016-2020],muv,diesel,10-20l,False,2755,"Toyota,muv,diesel",current
+Honda,Amaze VX CVT 1.2 Petrol,sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",recent
+Jeep,Compass Longitude Plus 2.0 Diesel 4x4 AT,suv,diesel,10-20l,False,1956,"Jeep,suv,diesel",current
+Maserati,Levante Diesel,sedan,diesel,above_30l,True,2979,"Maserati,sedan,diesel",recent
+Porsche,Cayenne Turbo,sedan,petrol,above_30l,True,4806,"Porsche,sedan,petrol",recent
+Toyota,Innova GX 2.4 AT 7 STR,muv,diesel,20-30l,False,2393,"Toyota,muv,diesel",recent
+BMW,X5 xDrive 30d,muv,diesel,above_30l,True,2993,"BMW,muv,diesel",recent
+Toyota,Fortuner 3.0 MT,muv,diesel,under_10l,False,2982,"Toyota,muv,diesel",recent
+Audi,Q7 35 TDI Premium + Sunroof,muv,diesel,20-30l,True,2967,"Audi,muv,diesel",recent
+Maruti Suzuki,Wagon R LXi 1.0 CNG [2019-2020],hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",current
+Maruti Suzuki,Alto VXi (O),hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Ciaz VXi (O),sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Maruti Suzuki,Swift VDi AMT [2018-2019],hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",recent
+Mercedes-Benz,C-Class C 43 AMG,hatchback,petrol,above_30l,True,2996,"Mercedes-Benz,hatchback,petrol",recent
+Mercedes-Benz,E-Class E250 CDI BlueEfficiency,sedan,diesel,under_10l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Tata,Nexon XZA Plus Petrol,suv,petrol,10-20l,False,1198,"Tata,suv,petrol",current
+Maruti Suzuki,Alto 800 Vxi,hatchback,petrol,under_10l,False,796,"Maruti Suzuki,hatchback,petrol",recent
+Mahindra,XUV500 W8,suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Honda,Mobilio S Diesel,muv,diesel,under_10l,False,1498,"Honda,muv,diesel",recent
+Tata,Punch Creative iRA Pack MT,sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",current
+Hyundai,Grand i10 Magna 1.2 Kappa VTVT [2017-2020],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",current
+Maruti Suzuki,Baleno Alpha 1.3,hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",recent
+Jaguar,F-Pace Prestige,sedan,diesel,above_30l,True,1999,"Jaguar,sedan,diesel",recent
+Land Rover,Range Rover Sport SE 2.0 Petrol,sedan,petrol,above_30l,True,1997,"Land Rover,sedan,petrol",recent
+Toyota,Fortuner 3.0 4x4 AT,muv,diesel,10-20l,False,2982,"Toyota,muv,diesel",recent
+Renault,Kwid 1.0 RXT Edition,sedan,petrol,under_10l,False,999,"Renault,sedan,petrol",recent
+BMW,X1 sDrive20d Expedition,sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Maruti Suzuki,Wagon R LXi Minor,hatchback,petrol,under_10l,False,1061,"Maruti Suzuki,hatchback,petrol",recent
+Hyundai,Elite i20 Asta 1.2 AT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+BMW,3-Series 320d,hatchback,diesel,under_10l,True,1200,"BMW,hatchback,diesel",recent
+Mahindra,XUV500 W10,suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Porsche,Cayenne Diesel,sedan,diesel,above_30l,True,2967,"Porsche,sedan,diesel",recent
+Nissan,Terrano XL D Plus,sedan,diesel,under_10l,False,1461,"Nissan,sedan,diesel",recent
+Mahindra,Thar LX 4-STR Hard Top Diesel AT,suv,diesel,10-20l,False,2184,"Mahindra,suv,diesel",current
+Land Rover,Discovery Sport HSE 7-Seater,muv,diesel,above_30l,True,2179,"Land Rover,muv,diesel",recent
+BMW,5-Series 525d Sedan,sedan,diesel,10-20l,True,2497,"BMW,sedan,diesel",recent
+Toyota,Glanza G CVT,hatchback,petrol,under_10l,False,1197,"Toyota,hatchback,petrol",recent
+Hyundai,Creta 1.6 SX Plus AT Petrol,suv,petrol,10-20l,False,1591,"Hyundai,suv,petrol",current
+Isuzu,MU-X 4x2,muv,diesel,20-30l,False,2999,"Isuzu,muv,diesel",recent
+Maruti Suzuki,Alto VXi,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Toyota,Corolla Altis G AT Petrol,sedan,petrol,under_10l,False,1798,"Toyota,sedan,petrol",recent
+Hyundai,i10 Sportz 1.2 AT Kappa2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Tata,Hexa XE 4x2 7 STR,muv,diesel,10-20l,False,2179,"Tata,muv,diesel",recent
+Hyundai,i10 Sportz 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Mercedes-Benz,GLS 350 d,muv,diesel,above_30l,True,2987,"Mercedes-Benz,muv,diesel",recent
+Audi,Q3 2.0 TDI quattro Premium Plus,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Volkswagen,Polo Comfortline 1.2L (P),hatchback,petrol,under_10l,False,1198,"Volkswagen,hatchback,petrol",recent
+Jaguar,XE Prestige Diesel,sedan,diesel,above_30l,True,1999,"Jaguar,sedan,diesel",recent
+Tata,Safari 4x2 EX TCIC,muv,diesel,under_10l,False,1948,"Tata,muv,diesel",current
+Audi,Q3 35 TDI Premium + Sunroof,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Maruti Suzuki,Alto LXi BS-III,hatchback,petrol,under_10l,False,796,"Maruti Suzuki,hatchback,petrol",classic
+Jaguar,XF 3.0 V6 Premium Luxury,hatchback,diesel,10-20l,True,1200,"Jaguar,hatchback,diesel",recent
+Hyundai,Verna Fluidic 1.6 VTVT SX Opt,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+Maruti Suzuki,Vitara Brezza VDi,suv,diesel,under_10l,False,1248,"Maruti Suzuki,suv,diesel",recent
+BMW,5-Series 520d Luxury Line [2017-2019],sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",recent
+Honda,Amaze 1.5 S i-DTEC,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Tata,Harrier XZA Plus Dual Tone,suv,diesel,20-30l,False,1956,"Tata,suv,diesel",current
+Porsche,911 Carrera 4,hatchback,petrol,above_30l,True,3436,"Porsche,hatchback,petrol",recent
+Maruti Suzuki,Wagon R LXI CNG (O),hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",recent
+Maruti Suzuki,Ciaz Delta 1.3 Hybrid,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Hyundai,Tucson GL 2WD AT Petrol,sedan,petrol,10-20l,False,1999,"Hyundai,sedan,petrol",current
+Volkswagen,Polo 1.2 TDI,hatchback,diesel,under_10l,False,1200,"Volkswagen,hatchback,diesel",recent
+Hyundai,i20 Sportz 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Volvo,V40 D3 Kinetic,sedan,diesel,10-20l,True,1984,"Volvo,sedan,diesel",recent
+Honda,Jazz V AT Petrol,hatchback,petrol,under_10l,False,1199,"Honda,hatchback,petrol",recent
+Mercedes-Benz,S-Class S 350D [2018-2020],sedan,diesel,above_30l,True,2925,"Mercedes-Benz,sedan,diesel",current
+Honda,Jazz S,hatchback,petrol,under_10l,False,1198,"Honda,hatchback,petrol",recent
+BMW,3-Series 320d Luxury Edition,sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",recent
+Land Rover,Evoque HSE Dynamic,sedan,diesel,20-30l,True,2179,"Land Rover,sedan,diesel",recent
+Mahindra,Xylo D2 BS-IV,muv,diesel,under_10l,False,2489,"Mahindra,muv,diesel",older
+Hyundai,Venue SX 1.5 CRDi,suv,diesel,10-20l,False,1493,"Hyundai,suv,diesel",current
+Mahindra,Scorpio S11 4WD 7 STR,muv,diesel,10-20l,False,2179,"Mahindra,muv,diesel",recent
+Maruti Suzuki,Swift VXi,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Jeep,Compass Limited (O) 1.4 Petrol AT [2017-2020],suv,petrol,10-20l,False,1368,"Jeep,suv,petrol",current
+Maruti Suzuki,Swift VDi,hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",recent
+Honda,WR-V S MT Petrol,sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",recent
+Volkswagen,Vento TSI,sedan,petrol,under_10l,False,1197,"Volkswagen,sedan,petrol",recent
+Renault,Duster RXL Petrol,sedan,petrol,under_10l,False,1498,"Renault,sedan,petrol",recent
+Ford,Fiesta Style Diesel [2011-2014],sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",older
+BMW,5-Series 530i Sport Line,sedan,petrol,above_30l,True,1998,"BMW,sedan,petrol",recent
+Tata,Safari 2.2 EX 4x2,muv,diesel,under_10l,False,2179,"Tata,muv,diesel",current
+Kia,Seltos GTX Plus AT 1.4 [2019-2020],suv,petrol,10-20l,False,1353,"Kia,suv,petrol",current
+Porsche,Cayenne Platinum Edition Diesel,sedan,diesel,above_30l,True,2967,"Porsche,sedan,diesel",recent
+BMW,X5 xDrive30d xLine,sedan,diesel,above_30l,True,2993,"BMW,sedan,diesel",recent
+Ford,Ecosport Trend 1.5 TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Hyundai,Grand i10 NIOS Magna 1.2 Kappa VTVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Hyundai,Elite i20 Sportz 1.4,hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Hyundai,Elantra 1.8 SX MT,sedan,petrol,under_10l,False,1797,"Hyundai,sedan,petrol",recent
+Maruti Suzuki,Swift Lxi (O) [2014-2017],hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Mahindra,Thar AX 4-STR Convertible Petrol MT,suv,petrol,10-20l,False,1997,"Mahindra,suv,petrol",current
+Maruti Suzuki,Swift VXi [2014-2017],hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,DZire VDi,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+BMW,5-Series 520d M Sport,sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",recent
+Maruti Suzuki,Wagon R VXI+,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Vitara Brezza ZDi Plus,suv,diesel,under_10l,False,1248,"Maruti Suzuki,suv,diesel",recent
+Maruti Suzuki,Swift DZire LXi,sedan,petrol,under_10l,False,1298,"Maruti Suzuki,sedan,petrol",recent
+Fiat,Linea Emotion 1.4,sedan,petrol,under_10l,False,1368,"Fiat,sedan,petrol",classic
+Honda,City ZX CVT Petrol,sedan,petrol,10-20l,False,1498,"Honda,sedan,petrol",recent
+Hyundai,Tucson GLS 2WD AT Petrol,sedan,petrol,10-20l,False,1999,"Hyundai,sedan,petrol",current
+Toyota,Innova 2.7 VX 7 STR [2016-2020],muv,petrol,10-20l,False,2694,"Toyota,muv,petrol",current
+Audi,TT 2.0 TFSI Quattro,hatchback,petrol,above_30l,True,1984,"Audi,hatchback,petrol",recent
+Tata,Tiago Revotron XTA [2017-2019],sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Honda,City E [2013-2016],sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Maruti Suzuki,Alto 800 Vxi (Airbag),hatchback,petrol,under_10l,False,796,"Maruti Suzuki,hatchback,petrol",recent
+Tata,Nexon XZ Plus Dark Edition,suv,petrol,10-20l,False,1199,"Tata,suv,petrol",current
+Ford,Ecosport Ambiente 1.5L TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Honda,Jazz SV Petrol,hatchback,petrol,under_10l,False,1199,"Honda,hatchback,petrol",recent
+Hyundai,i10 Sportz 1.2 Kappa2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Honda,Amaze 1.2 VX AT i-VTEC,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Mercedes-Benz,C-Class C 200 Progressive [2018-2020],sedan,petrol,above_30l,True,1497,"Mercedes-Benz,sedan,petrol",current
+Hyundai,Grand i10 NIOS Sportz 1.2 Kappa VTVT CNG,hatchback,cng,under_10l,False,1197,"Hyundai,hatchback,cng",recent
+Hyundai,Xcent E Plus CRDi,sedan,diesel,under_10l,False,1186,"Hyundai,sedan,diesel",recent
+Land Rover,Evoque SE R-Dynamic,sedan,diesel,above_30l,True,1999,"Land Rover,sedan,diesel",recent
+MG,Astor Sharp EX 1.5 MT,suv,petrol,10-20l,False,1498,"MG,suv,petrol",current
+Tata,Grande GX,muv,diesel,under_10l,False,2179,"Tata,muv,diesel",recent
+Toyota,Innova 2.0 V,muv,petrol,under_10l,False,1998,"Toyota,muv,petrol",recent
+Toyota,Etios Liva VD Dual Tone,sedan,diesel,under_10l,False,1364,"Toyota,sedan,diesel",recent
+Honda,City SV Diesel,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Mahindra,Scorpio S10,muv,diesel,10-20l,False,2179,"Mahindra,muv,diesel",recent
+Skoda,Superb L&K TSI AT,sedan,petrol,above_30l,True,1798,"Skoda,sedan,petrol",recent
+Hyundai,i20 Active 1.4 SX,hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Maruti Suzuki,Ciaz Zeta 1.4 AT,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Mercedes-Benz,E-Class E 220d Exclusive [2019-2019],sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Mahindra,Thar AX 6-STR Soft Top Diesel MT,suv,diesel,10-20l,False,2184,"Mahindra,suv,diesel",current
+Honda,City S Diesel,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Maruti Suzuki,Baleno Alpha 1.2 AT,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Celerio X Zxi AMT [2017-2019],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Maruti Suzuki,Wagon R LXI ABS,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Baleno Delta 1.2 AT,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Renault,Kiger RXT Turbo CVT,sedan,petrol,under_10l,False,999,"Renault,sedan,petrol",recent
+Maruti Suzuki,Wagon R VXi 1.0 [2019-2019],hatchback,petrol,under_10l,False,1200,"Maruti Suzuki,hatchback,petrol",recent
+Mercedes-Benz,E-Class 200 K Classic,hatchback,petrol,under_10l,True,1200,"Mercedes-Benz,hatchback,petrol",recent
+Hyundai,Eon 1.0 Kappa Magna + [2014-2016],sedan,petrol,under_10l,False,998,"Hyundai,sedan,petrol",recent
+Mercedes-Benz,S-Class 350 L,sedan,petrol,10-20l,True,3498,"Mercedes-Benz,sedan,petrol",recent
+Maruti Suzuki,S-Presso VXi CNG,hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",recent
+Toyota,Innova 2.4 VX 8 STR [2016-2020],muv,diesel,10-20l,False,2393,"Toyota,muv,diesel",current
+Kia,Seltos GTX Plus AT 1.5 Diesel [2019-2020],suv,diesel,10-20l,False,1493,"Kia,suv,diesel",current
+Hyundai,Creta SX (O) 1.5 Petrol CVT [2020-2022],suv,petrol,10-20l,False,1497,"Hyundai,suv,petrol",current
+Skoda,Rapid Ambition 1.6 TDI CR MT,sedan,diesel,under_10l,False,1598,"Skoda,sedan,diesel",recent
+Hyundai,Elite i20 Asta 1.2 (O) [2016],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Toyota,Innova 2.5 G 8 STR BS-III,muv,diesel,under_10l,False,1200,"Toyota,muv,diesel",classic
+Skoda,Superb L&K TDI AT,sedan,diesel,20-30l,False,1968,"Skoda,sedan,diesel",recent
+Maruti Suzuki,Alto 800 Lxi CNG,hatchback,cng,under_10l,False,796,"Maruti Suzuki,hatchback,cng",recent
+Ford,Figo Duratec Petrol Titanium 1.2,sedan,petrol,under_10l,False,1196,"Ford,sedan,petrol",recent
+Maruti Suzuki,DZire VXi AMT,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Maruti Suzuki,Celerio ZXi (O) AMT [2019-2020],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",current
+Hyundai,Grand i10 Sportz U2 1.2 CRDi,hatchback,diesel,under_10l,False,1186,"Hyundai,hatchback,diesel",recent
+Mercedes-Benz,E-Class E250 Elegance,sedan,petrol,under_10l,True,2497,"Mercedes-Benz,sedan,petrol",recent
+BMW,3-Series 330i M Sport Edition,sedan,petrol,above_30l,True,1998,"BMW,sedan,petrol",recent
+Honda,City SV,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Mercedes-Benz,S-Class Maybach S 560,hatchback,petrol,above_30l,True,3982,"Mercedes-Benz,hatchback,petrol",recent
+Mahindra,XUV500 W8 1.99 [2016-2017],suv,diesel,under_10l,False,1997,"Mahindra,suv,diesel",recent
+Mercedes-Benz,CLA 200 D Urban Sport,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,Xcent SX 1.1 CRDi,sedan,diesel,under_10l,False,1120,"Hyundai,sedan,diesel",recent
+Maruti Suzuki,Wagon R LXi CNG,hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",recent
+Skoda,Kodiaq Style 2.0 TDI 4x4 AT,muv,diesel,10-20l,False,1200,"Skoda,muv,diesel",current
+Tata,Hexa XTA 4x2 7 STR,muv,diesel,10-20l,False,2179,"Tata,muv,diesel",recent
+Ford,Ecosport Titanium 1.5L TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Mercedes-Benz,CLA 200 CDI Sport,sedan,diesel,10-20l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Toyota,Innova 2.4 ZX AT 7 STR,muv,diesel,20-30l,False,2393,"Toyota,muv,diesel",recent
+MINI,Countryman Cooper D,sedan,diesel,10-20l,False,1995,"MINI,sedan,diesel",recent
+Maruti Suzuki,DZire ZDi Plus AMT,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Mahindra,Scorpio S3 2WD 7 STR,muv,diesel,10-20l,False,2523,"Mahindra,muv,diesel",recent
+Tata,Manza Aqua Safire BS-IV,sedan,petrol,under_10l,False,1368,"Tata,sedan,petrol",older
+Maruti Suzuki,XL6 Alpha MT Petrol,muv,petrol,10-20l,False,1462,"Maruti Suzuki,muv,petrol",recent
+Ford,Aspire Titanium1.5 TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Porsche,718 Cayman [2017-2020],hatchback,petrol,above_30l,True,1988,"Porsche,hatchback,petrol",current
+Hyundai,Verna 1.6 VTVT S,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+Hyundai,Eon 1.0 Kappa Magna AirBag,sedan,petrol,under_10l,False,998,"Hyundai,sedan,petrol",recent
+Maruti Suzuki,Grand Vitara 2015 2.0 AT,sedan,petrol,under_10l,False,1995,"Maruti Suzuki,sedan,petrol",current
+Mercedes-Benz,GLE 300d 4MATIC LWB,sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Mahindra,TUV300 T8 AMT mHAWK100,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Honda,City V Diesel,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Mercedes-Benz,S-Class 300,hatchback,petrol,10-20l,True,1200,"Mercedes-Benz,hatchback,petrol",recent
+Mercedes-Benz,GLC 220d 4MATIC Progressive,sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+BMW,3-Series 320d Sport Line,sedan,diesel,10-20l,True,1995,"BMW,sedan,diesel",recent
+Honda,City VX CVT Petrol,sedan,petrol,10-20l,False,1498,"Honda,sedan,petrol",recent
+Ferrari,488 GTB,hatchback,petrol,above_30l,True,3902,"Ferrari,hatchback,petrol",recent
+Volkswagen,Tiguan Highline TDI,sedan,diesel,20-30l,False,1968,"Volkswagen,sedan,diesel",recent
+Land Rover,Evoque Pure SD4,sedan,diesel,20-30l,True,2179,"Land Rover,sedan,diesel",recent
+Maruti Suzuki,Zen LXi BS-II,hatchback,petrol,under_10l,False,1200,"Maruti Suzuki,hatchback,petrol",classic
+Mercedes-Benz,GLE 43 4MATIC [2017-2019],sedan,petrol,above_30l,True,2996,"Mercedes-Benz,sedan,petrol",recent
+Tata,Nano Base,hatchback,petrol,under_10l,False,624,"Tata,hatchback,petrol",recent
+Mahindra,Bolero SLX 2WD,hatchback,diesel,under_10l,False,1200,"Mahindra,hatchback,diesel",recent
+Mercedes-Benz,E-Class E 220 d Avantgarde,sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Maruti Suzuki,S-Cross Zeta 1.3,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Mitsubishi,Pajero 2.5 MT,muv,diesel,10-20l,False,2477,"Mitsubishi,muv,diesel",recent
+Maruti Suzuki,Swift ZXi,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Audi,Q3 35 TDI Premium,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Volkswagen,Vento Highline Plus 1.2 (P) AT 16 Alloy,sedan,petrol,under_10l,False,1197,"Volkswagen,sedan,petrol",recent
+Ford,Endeavour Titanium 3.2 4x4 AT,muv,diesel,above_30l,True,3198,"Ford,muv,diesel",recent
+Tata,Tiago Revotron XT [2016-2019],sedan,petrol,under_10l,False,1047,"Tata,sedan,petrol",recent
+Datsun,Go D,sedan,petrol,under_10l,False,1198,"Datsun,sedan,petrol",recent
+Kia,Seltos HTK Plus 1.5 [2019-2020],suv,petrol,10-20l,False,1497,"Kia,suv,petrol",current
+Mercedes-Benz,C-Class C 250 CDI BlueEFFICIENCY,hatchback,diesel,10-20l,True,1200,"Mercedes-Benz,hatchback,diesel",recent
+Lamborghini,Huracan LP 610-4,hatchback,petrol,above_30l,True,5204,"Lamborghini,hatchback,petrol",recent
+Mercedes-Benz,GLA 200 d Sport,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Mercedes-Benz,C-Class C 220d Progressive [2018-2019],sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,Elite i20 Sportz 1.2 MT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Maruti Suzuki,Estilo VXi BS-IV,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",older
+Hyundai,Eon Era +,sedan,petrol,under_10l,False,814,"Hyundai,sedan,petrol",recent
+Maruti Suzuki,Alto VXi (O) [2014-2019],hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+BMW,7-Series 730Ld M Sport,hatchback,diesel,above_30l,True,2993,"BMW,hatchback,diesel",recent
+Mahindra,XUV500 W7 [2018-2020],suv,diesel,10-20l,False,2179,"Mahindra,suv,diesel",current
+Ford,Endeavour 3.0L 4x4 AT,muv,diesel,under_10l,False,2953,"Ford,muv,diesel",recent
+Hyundai,Tucson 2WD AT GLS Diesel,sedan,diesel,10-20l,False,1995,"Hyundai,sedan,diesel",current
+Toyota,Etios V,sedan,petrol,under_10l,False,1496,"Toyota,sedan,petrol",recent
+Toyota,Fortuner 3.0 4x2 MT,muv,diesel,10-20l,False,2982,"Toyota,muv,diesel",recent
+Maruti Suzuki,Ciaz Alpha 1.4 MT,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Maruti Suzuki,S-Cross Alpha 1.6,sedan,diesel,under_10l,False,1598,"Maruti Suzuki,sedan,diesel",recent
+Volkswagen,Polo Highline1.0L (P),hatchback,petrol,under_10l,False,999,"Volkswagen,hatchback,petrol",recent
+Honda,Amaze 1.2 S i-VTEC,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Audi,A4 35 TDI Technology,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Ford,Ecosport Trend 1.5 Ti-VCT,sedan,petrol,under_10l,False,1499,"Ford,sedan,petrol",recent
+Mercedes-Benz,GLS 400d 4MATIC,muv,diesel,above_30l,True,2925,"Mercedes-Benz,muv,diesel",recent
+Tata,Harrier XZA Plus Dark Edition,suv,diesel,10-20l,False,1956,"Tata,suv,diesel",current
+BMW,5-Series 520d Luxury Line,sedan,diesel,10-20l,True,1995,"BMW,sedan,diesel",recent
+Mercedes-Benz,GL-Class 350 CDI,muv,diesel,above_30l,True,2987,"Mercedes-Benz,muv,diesel",recent
+Tata,Nexon XT Diesel [2017-2019],suv,diesel,under_10l,False,1497,"Tata,suv,diesel",recent
+Mahindra,Scorpio VLX 4WD BS-III,muv,diesel,under_10l,False,2179,"Mahindra,muv,diesel",classic
+MG,Gloster Savvy 6 STR 2.0 Twin Turbo 4WD,hatchback,diesel,above_30l,True,1996,"MG,hatchback,diesel",current
+Maruti Suzuki,Swift DZire VXi,sedan,petrol,under_10l,False,1298,"Maruti Suzuki,sedan,petrol",recent
+Datsun,Redigo S 1.0 AMT [2018-2019],sedan,petrol,under_10l,False,999,"Datsun,sedan,petrol",recent
+Hyundai,Venue SX Plus 1.0 Turbo DCT,suv,petrol,10-20l,False,998,"Hyundai,suv,petrol",current
+Maruti Suzuki,Swift LXi Special Edition,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Mahindra,TUV300 T8,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Toyota,Innova 2.5 G 7 STR BS-IV,muv,diesel,under_10l,False,2494,"Toyota,muv,diesel",older
+Mahindra,XUV500 W6,suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Hyundai,Elite i20 Asta 1.4 CRDI [2016-2017],hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Volkswagen,Vento Highline Petrol AT,hatchback,petrol,under_10l,False,1200,"Volkswagen,hatchback,petrol",recent
+Maruti Suzuki,DZire VDi AMT,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Kia,Sonet GTX Plus 1.0 iMT [2020-2021],sedan,petrol,10-20l,False,998,"Kia,sedan,petrol",current
+Mercedes-Benz,S-Class 500L,sedan,petrol,10-20l,True,5461,"Mercedes-Benz,sedan,petrol",recent
+Mercedes-Benz,E-Class E 200 Exclusive [2019-2019],sedan,petrol,above_30l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Hyundai,Santro Sportz,sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",recent
+Land Rover,Range Rover 3.0 V6 Diesel Vogue,sedan,diesel,above_30l,True,2993,"Land Rover,sedan,diesel",recent
+MINI,Cooper D 3 Door,sedan,diesel,above_30l,True,1496,"MINI,sedan,diesel",recent
+Ford,Endeavour Titanium Plus 3.2 4x4 AT,muv,diesel,above_30l,True,3198,"Ford,muv,diesel",recent
+Renault,Duster 110 PS RXZ 4X2 AMT Diesel,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Maruti Suzuki,Vitara Brezza VDi AGS,suv,diesel,under_10l,False,1248,"Maruti Suzuki,suv,diesel",recent
+Kia,Seltos HTX 1.5 [2020-2021],suv,petrol,10-20l,False,1497,"Kia,suv,petrol",current
+Maruti Suzuki,Eeco 5 STR WITH A/C+HTR [2019-2020],sedan,petrol,under_10l,False,1196,"Maruti Suzuki,sedan,petrol",current
+Maruti Suzuki,S-Cross Alpha 1.3,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Hyundai,Elite i20 Sportz 1.4 CRDI,hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Renault,Fluence 1.5 E4,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Hyundai,Grand i10 Sports Edition 1.2L Kappa VTVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Skoda,Kodiaq L&K 2.0 TDI 4x4 AT,muv,diesel,above_30l,True,1200,"Skoda,muv,diesel",current
+Audi,A3 35 TDI Premium + Sunroof,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Hyundai,Grand i10 NIOS Sportz AMT 1.2 Kappa VTVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Toyota,Fortuner 2.8 4x2 MT [2016-2020],muv,diesel,20-30l,False,2755,"Toyota,muv,diesel",current
+Audi,A4 30 TFSI Technology Pack,sedan,petrol,above_30l,True,1395,"Audi,sedan,petrol",recent
+Honda,Jazz V Petrol,hatchback,petrol,under_10l,False,1199,"Honda,hatchback,petrol",recent
+Mercedes-Benz,GLC 200 Progressive,sedan,petrol,above_30l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Audi,A4 2.0 TDI Sline,hatchback,diesel,under_10l,True,1200,"Audi,hatchback,diesel",recent
+Maruti Suzuki,Celerio ZXi [2017-2019],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Mahindra,Thar LX 4-STR Hard Top Diesel MT,suv,diesel,10-20l,False,2184,"Mahindra,suv,diesel",current
+Hyundai,Eon Magna [2011-2012],sedan,petrol,under_10l,False,814,"Hyundai,sedan,petrol",older
+Maruti Suzuki,Vitara Brezza ZDi+ Dual Tone [2017-2018],suv,diesel,under_10l,False,1248,"Maruti Suzuki,suv,diesel",recent
+Mahindra,XUV700 AX 7 Diesel AT 7 STR,suv,diesel,20-30l,False,2184,"Mahindra,suv,diesel",current
+Maruti Suzuki,Wagon R LXi (O) 1.0 CNG [2019-2020],hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",current
+Hyundai,Elite i20 Sportz 1.2 IVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Honda,City 1.5 V MT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Toyota,Fortuner 4x2 AT,muv,diesel,10-20l,False,2982,"Toyota,muv,diesel",recent
+Hyundai,Verna Fluidic 1.6 CRDi,sedan,diesel,under_10l,False,1582,"Hyundai,sedan,diesel",recent
+Hyundai,i20 Active 1.2 S,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Volkswagen,Vento Trendline Diesel,hatchback,diesel,under_10l,False,1200,"Volkswagen,hatchback,diesel",recent
+Maruti Suzuki,XL6 Zeta MT Petrol,muv,petrol,under_10l,False,1462,"Maruti Suzuki,muv,petrol",recent
+Kia,Seltos GTX Plus 1.4 [2020-2021],suv,petrol,10-20l,False,1353,"Kia,suv,petrol",current
+Maruti Suzuki,Alto VXi AMT,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Tata,Tigor EV XZ Plus,sedan,electric,10-20l,False,1200,"Tata,sedan,electric",recent
+Audi,Q7 Technology 55 TFSI,muv,petrol,above_30l,True,2995,"Audi,muv,petrol",recent
+Mahindra,XUV500 W10 AT,suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Volkswagen,Polo Comfortline 1.2L (D),hatchback,diesel,under_10l,False,1200,"Volkswagen,hatchback,diesel",recent
+BMW,X1 sDrive20i xLine,sedan,petrol,above_30l,True,1998,"BMW,sedan,petrol",recent
+Honda,City E Diesel,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Nissan,Micra XV CVT [2016-2017],sedan,petrol,under_10l,False,1198,"Nissan,sedan,petrol",recent
+Hyundai,Venue SX 1.4 CRDi,suv,diesel,10-20l,False,1396,"Hyundai,suv,diesel",current
+Volkswagen,Tiguan AllSpace 2.0 TSI,muv,petrol,above_30l,True,1984,"Volkswagen,muv,petrol",recent
+Hyundai,Creta SX 1.6 AT CRDi,suv,diesel,10-20l,False,1582,"Hyundai,suv,diesel",current
+Mercedes-Benz,A-Class A 200d,hatchback,diesel,10-20l,True,2143,"Mercedes-Benz,hatchback,diesel",recent
+Hyundai,Creta EX 1.4 CRDi,suv,diesel,10-20l,False,1396,"Hyundai,suv,diesel",current
+Mercedes-Benz,S-Class S 350 CDI,sedan,diesel,above_30l,True,2987,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,Verna SX Plus 1.6 CRDi AT,sedan,diesel,10-20l,False,1582,"Hyundai,sedan,diesel",recent
+Hyundai,Alcazar Signature (O) 6 STR 2.0 Petrol AT,hatchback,petrol,20-30l,False,1999,"Hyundai,hatchback,petrol",current
+Honda,Amaze 1.2 V CVT Petrol [2018-2020],sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",current
+Maruti Suzuki,Ertiga VXI CNG,muv,cng,10-20l,False,1373,"Maruti Suzuki,muv,cng",recent
+Honda,Amaze 1.2 S MT Petrol [2018-2020],sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",current
+Mercedes-Benz,E-Class E 200,sedan,petrol,20-30l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Land Rover,Evoque SE,sedan,diesel,above_30l,True,2179,"Land Rover,sedan,diesel",recent
+Audi,Q5 2.0 TDI quattro Premium Plus,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Mahindra,XUV300 1.5 W6 [2019-2020],suv,diesel,under_10l,False,1497,"Mahindra,suv,diesel",current
+Jaguar,XF Prestige Diesel CBU,sedan,diesel,above_30l,True,1999,"Jaguar,sedan,diesel",recent
+Mercedes-Benz,C-Class C200 Progressive,sedan,petrol,above_30l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Jeep,Compass Model S (O) Diesel 4x4 AT,suv,diesel,20-30l,False,1956,"Jeep,suv,diesel",current
+Toyota,Etios Liva GD,sedan,diesel,under_10l,False,1364,"Toyota,sedan,diesel",recent
+Hyundai,i10 Asta 1.2 AT with Sunroof,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Mahindra,Scorpio VLX 2WD Airbag BS-IV,muv,diesel,under_10l,False,2179,"Mahindra,muv,diesel",older
+Land Rover,Range Rover Sport SDV6 HSE,sedan,diesel,above_30l,True,2993,"Land Rover,sedan,diesel",recent
+Honda,City ZX CVT Petrol [2017-2019],sedan,petrol,10-20l,False,1497,"Honda,sedan,petrol",recent
+Audi,A4 1.8 TFSI Multitronic Premium Plus,sedan,petrol,above_30l,True,1798,"Audi,sedan,petrol",recent
+Chevrolet,Cruze LTZ AT,sedan,diesel,under_10l,False,1998,"Chevrolet,sedan,diesel",recent
+Hyundai,Creta SX 1.6 CRDi,suv,diesel,10-20l,False,1582,"Hyundai,suv,diesel",current
+Maruti Suzuki,Ertiga VDI SHVS,muv,diesel,under_10l,False,1248,"Maruti Suzuki,muv,diesel",recent
+Hyundai,Sonata 2.0 CRDi,sedan,diesel,under_10l,False,1991,"Hyundai,sedan,diesel",recent
+Toyota,Innova 2.8 ZX AT 7 STR [2016-2020],muv,diesel,20-30l,False,2755,"Toyota,muv,diesel",current
+Honda,Amaze 1.5 VX CVT Diesel,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Toyota,Innova ZX 2.7 AT 7 STR,muv,petrol,20-30l,False,2694,"Toyota,muv,petrol",recent
+Ford,Aspire Titanium 1.2 Ti-VCT,sedan,petrol,under_10l,False,1196,"Ford,sedan,petrol",recent
+Maruti Suzuki,Ciaz Delta 1.5 Diesel,sedan,diesel,under_10l,False,1498,"Maruti Suzuki,sedan,diesel",recent
+Maruti Suzuki,Celerio VXi,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Toyota,Urban Cruiser Premium Grade AT,sedan,petrol,10-20l,False,1462,"Toyota,sedan,petrol",recent
+Hyundai,Creta E Plus 1.4 CRDI,suv,diesel,under_10l,False,1396,"Hyundai,suv,diesel",current
+Audi,A3 35 TDI Premium Plus,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Mahindra,XUV500 W8 AWD [2015-2017],suv,diesel,10-20l,False,2179,"Mahindra,suv,diesel",recent
+Hyundai,i10 1.1L iRDE ERA Special Edition,hatchback,petrol,under_10l,False,1086,"Hyundai,hatchback,petrol",recent
+Hyundai,Verna Fluidic 1.6 VTVT SX AT,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+Mahindra,Bolero Power Plus ZLX [2016-2019],muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Audi,A4 2.0 TDI (177bhp) Premium,sedan,diesel,under_10l,True,1968,"Audi,sedan,diesel",recent
+Audi,A3 35 TDI Premium,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Hyundai,Grand i10 Asta 1.2 Kappa VTVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Audi,A3 40 TFSI Premium Plus + sunroof,sedan,petrol,20-30l,True,1798,"Audi,sedan,petrol",recent
+Honda,Brio E MT,hatchback,petrol,under_10l,False,1200,"Honda,hatchback,petrol",recent
+Mercedes-Benz,C-Class C 220 CDI Avantgarde,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Mercedes-Benz,E-Class E 350 d Exclusive [2017-2019],sedan,diesel,above_30l,True,2987,"Mercedes-Benz,sedan,diesel",recent
+Jaguar,XF R 5.0 V8 Supercharged,hatchback,petrol,20-30l,True,1200,"Jaguar,hatchback,petrol",recent
+Mitsubishi,Pajero SFX 2.8,sedan,diesel,under_10l,False,2835,"Mitsubishi,sedan,diesel",recent
+Toyota,Etios G,sedan,petrol,under_10l,False,1496,"Toyota,sedan,petrol",recent
+Mahindra,Marazzo M6 Plus 8 STR,muv,diesel,10-20l,False,1497,"Mahindra,muv,diesel",recent
+Audi,A6 3.0 TDI quattro Premium,sedan,diesel,10-20l,True,2967,"Audi,sedan,diesel",recent
+Toyota,Innova 2.5 VX 7 STR BS-III,muv,diesel,10-20l,False,2494,"Toyota,muv,diesel",classic
+Toyota,Fortuner 2.8 4x4 AT [2016-2020],muv,diesel,above_30l,True,2755,"Toyota,muv,diesel",current
+Datsun,Go T (O),sedan,petrol,under_10l,False,1198,"Datsun,sedan,petrol",recent
+Chevrolet,Cruze LTZ,sedan,diesel,under_10l,False,1991,"Chevrolet,sedan,diesel",recent
+Hyundai,Creta SX 1.4 Turbo 7 DCT,suv,petrol,10-20l,False,1353,"Hyundai,suv,petrol",current
+Volvo,V40 D3 R-Design,sedan,diesel,20-30l,True,1984,"Volvo,sedan,diesel",recent
+MINI,Cooper S,hatchback,petrol,above_30l,True,1998,"MINI,hatchback,petrol",recent
+Mahindra,TUV300 T6 Plus,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Hyundai,Creta 1.6 SX,suv,diesel,10-20l,False,1582,"Hyundai,suv,diesel",current
+Maruti Suzuki,DZire ZXi,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Tata,Tiago Revotron XZ,sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Mercedes-Benz,C-Class 220 CDI AT,sedan,diesel,above_30l,True,2148,"Mercedes-Benz,sedan,diesel",recent
+MG,Gloster Sharp 6 STR 2.0 Twin Turbo 4WD,hatchback,diesel,above_30l,True,1996,"MG,hatchback,diesel",current
+Mercedes-Benz,E-Class E220 CDI Blue Efficiency,sedan,diesel,10-20l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Maruti Suzuki,Vitara Brezza ZDi,suv,diesel,under_10l,False,1248,"Maruti Suzuki,suv,diesel",recent
+Audi,A6 2.0 TDI Premium Plus,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Honda,City VX CVT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Hyundai,Santro Magna [2018-2020],sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",current
+Mahindra,Scorpio S11 2WD 7 STR,muv,diesel,10-20l,False,2179,"Mahindra,muv,diesel",recent
+Hyundai,Grand i10 Sportz 1.2 Kappa VTVT [2016-2017],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Honda,City ZX Diesel,sedan,diesel,10-20l,False,1498,"Honda,sedan,diesel",recent
+Mercedes-Benz,E-Class E250 CDI Avantgarde,sedan,diesel,10-20l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Nissan,Sunny XV Diesel,sedan,diesel,under_10l,False,1461,"Nissan,sedan,diesel",recent
+Ford,Ecosport Titanium 1.5L Ti-VCT,sedan,petrol,under_10l,False,1497,"Ford,sedan,petrol",recent
+Audi,A4 30 TFSI Premium Plus,sedan,petrol,above_30l,True,1395,"Audi,sedan,petrol",recent
+Hyundai,Creta SX 1.6 (O) Petrol,suv,petrol,10-20l,False,1591,"Hyundai,suv,petrol",current
+Porsche,718 Boxster,hatchback,petrol,above_30l,True,1988,"Porsche,hatchback,petrol",recent
+Hyundai,Creta SX 1.5 Diesel [2020-2022],suv,diesel,10-20l,False,1493,"Hyundai,suv,diesel",current
+Mahindra,XUV500 W6 2013,suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Mercedes-Benz,GLC 220d 4MATIC Progressive [2019-2021],sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",current
+Maruti Suzuki,Wagon R VXI+ AMT,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Land Rover,Range Rover Sport SDV6 SE,sedan,diesel,above_30l,True,2993,"Land Rover,sedan,diesel",recent
+Maruti Suzuki,Swift ZXi AMT [2018-2019],hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Hyundai,Creta 1.6 SX (O),suv,diesel,under_10l,False,1582,"Hyundai,suv,diesel",current
+Land Rover,Discovery Sport HSE Luxury,muv,diesel,above_30l,True,1999,"Land Rover,muv,diesel",recent
+Hyundai,i20 Active 1.2 SX,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Tata,Safari XZ Plus,muv,diesel,10-20l,False,1956,"Tata,muv,diesel",current
+Skoda,Octavia 1.8 TSI Ambition Plus AT,sedan,petrol,10-20l,False,1798,"Skoda,sedan,petrol",recent
+Hyundai,Creta SX 1.6 CRDI,suv,diesel,under_10l,False,1582,"Hyundai,suv,diesel",current
+Maruti Suzuki,Vitara Brezza VDi (O) [2016-2018],suv,diesel,under_10l,False,1248,"Maruti Suzuki,suv,diesel",recent
+Maruti Suzuki,Eeco 5 STR WITH HTR CNG [2018-2019],sedan,cng,under_10l,False,1196,"Maruti Suzuki,sedan,cng",recent
+Hyundai,i20 Sportz 1.2 (O),hatchback,petrol,under_10l,False,1200,"Hyundai,hatchback,petrol",recent
+Jaguar,XJ 3.0 Petrol,sedan,petrol,20-30l,True,2995,"Jaguar,sedan,petrol",recent
+BMW,7-Series 730Ld DPE,hatchback,diesel,above_30l,True,2993,"BMW,hatchback,diesel",recent
+Hyundai,Tucson GL 2WD AT Diesel,sedan,diesel,20-30l,False,1995,"Hyundai,sedan,diesel",current
+Hyundai,i20 Sportz 1.4 CRDI,hatchback,diesel,under_10l,False,1336,"Hyundai,hatchback,diesel",recent
+Land Rover,Evoque Dynamic SD4,sedan,diesel,20-30l,True,2179,"Land Rover,sedan,diesel",recent
+Maruti Suzuki,Ertiga Vxi CNG,muv,cng,under_10l,False,1373,"Maruti Suzuki,muv,cng",recent
+Hyundai,Grand i10 Asta 1.2 Kappa VTVT [2013-2016],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Toyota,Corolla Altis 1.8 G AT,sedan,petrol,under_10l,False,1798,"Toyota,sedan,petrol",recent
+Honda,City 1.5 EXi,sedan,petrol,under_10l,False,1200,"Honda,sedan,petrol",recent
+Maruti Suzuki,Swift LXi,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Ciaz Delta 1.4 MT,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Skoda,Octavia 1.8 TSI L&K,sedan,petrol,10-20l,False,1798,"Skoda,sedan,petrol",recent
+Land Rover,Discovery Sport SE R-Dynamic Petrol,muv,petrol,above_30l,True,1997,"Land Rover,muv,petrol",recent
+Renault,Kwid RXT [2015-2019],sedan,petrol,under_10l,False,799,"Renault,sedan,petrol",recent
+Toyota,Etios GD,sedan,diesel,under_10l,False,1364,"Toyota,sedan,diesel",recent
+Porsche,Panamera 3.0 Diesel,hatchback,diesel,above_30l,True,1200,"Porsche,hatchback,diesel",recent
+Mercedes-Benz,A-Class Sedan 200d,sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,Elite i20 Magna 1.4 CRDI [2016-2017],hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Mercedes-Benz,S-Class 350,sedan,petrol,under_10l,True,3498,"Mercedes-Benz,sedan,petrol",recent
+Maruti Suzuki,Estilo VXi,sedan,petrol,under_10l,False,1061,"Maruti Suzuki,sedan,petrol",recent
+Hyundai,Elite i20 Magna Executive 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Mahindra,Scorpio LX BS-III,muv,diesel,under_10l,False,2179,"Mahindra,muv,diesel",classic
+Ssangyong,Rexton RX7,muv,diesel,under_10l,False,2696,"Ssangyong,muv,diesel",recent
+BMW,X5 3.0d,sedan,diesel,10-20l,True,2993,"BMW,sedan,diesel",recent
+Honda,Amaze 1.2 S i-VTEC Opt,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Audi,Q7 45 TDI Technology Pack,muv,diesel,above_30l,True,2967,"Audi,muv,diesel",recent
+Hyundai,Elantra 1.6 SX AT,sedan,diesel,under_10l,False,1582,"Hyundai,sedan,diesel",recent
+Audi,A4 Premium Plus 40 TFSI,sedan,petrol,above_30l,True,1984,"Audi,sedan,petrol",recent
+Hyundai,Grand i10 Asta 1.2 Kappa VTVT (O) [2013-2017],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Skoda,Rapid Elegance 1.6 MPI AT,sedan,petrol,under_10l,False,1598,"Skoda,sedan,petrol",recent
+Audi,Q7 35 TDI Premium Plus + Sunroof,muv,diesel,20-30l,True,2967,"Audi,muv,diesel",recent
+BMW,5-Series 520d Sport Line,sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Renault,Duster 85 PS RxL Diesel,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+BMW,6-Series GT 630d Luxury Line [2018-2019],sedan,diesel,above_30l,True,2993,"BMW,sedan,diesel",recent
+Toyota,Commuter HiAce 3.0 L,hatchback,diesel,above_30l,True,1200,"Toyota,hatchback,diesel",recent
+Jeep,Compass Limited 2.0 Diesel [2017-2020],suv,diesel,10-20l,False,1956,"Jeep,suv,diesel",current
+Maruti Suzuki,Baleno Alpha (O) 1.2,hatchback,petrol,under_10l,False,1200,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Swift DZire ZXI,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Volkswagen,Polo Trendline 1.0L (P),hatchback,petrol,under_10l,False,999,"Volkswagen,hatchback,petrol",recent
+Maruti Suzuki,Celerio LXi,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Toyota,Corolla Altis GL,sedan,diesel,under_10l,False,1364,"Toyota,sedan,diesel",recent
+Maruti Suzuki,Ciaz ZDi SHVS,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Maruti Suzuki,Wagon R LXi LPG,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Mahindra,Scorpio S2,muv,diesel,under_10l,False,2523,"Mahindra,muv,diesel",recent
+Honda,City 1.5 V AT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Jeep,Compass Limited 1.4 Petrol AT [2017-2020],suv,petrol,10-20l,False,1368,"Jeep,suv,petrol",current
+Maruti Suzuki,Ciaz ZXI+,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Toyota,Corolla Altis 1.8 VL AT,sedan,petrol,under_10l,False,1794,"Toyota,sedan,petrol",recent
+Audi,A6 Technology 45 TFSI,sedan,petrol,above_30l,True,1984,"Audi,sedan,petrol",recent
+Volvo,XC60 Inscription [2017-2020],sedan,diesel,above_30l,True,1969,"Volvo,sedan,diesel",current
+Volkswagen,Jetta 1.9L TDI,hatchback,diesel,under_10l,False,1200,"Volkswagen,hatchback,diesel",recent
+Mahindra,Scorpio S6 Plus 1.99 [2016-2017],muv,diesel,10-20l,False,1997,"Mahindra,muv,diesel",recent
+Ford,Endeavour Titanium 2.0 4x2 AT,muv,diesel,above_30l,True,1996,"Ford,muv,diesel",recent
+Hyundai,Xcent SX CRDi,sedan,diesel,under_10l,False,1186,"Hyundai,sedan,diesel",recent
+Ssangyong,Rexton RX6,muv,diesel,under_10l,False,2696,"Ssangyong,muv,diesel",recent
+Honda,City VX,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+BMW,X3 xDrive-20d xLine,sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",recent
+Datsun,Redigo T(O) 1.0 [2017-2019],sedan,petrol,under_10l,False,999,"Datsun,sedan,petrol",recent
+Hyundai,i10 Magna 1.1 LPG,hatchback,petrol,under_10l,False,1086,"Hyundai,hatchback,petrol",recent
+Hyundai,i20 Asta 1.4 AT with AVN,hatchback,petrol,under_10l,False,1396,"Hyundai,hatchback,petrol",recent
+Hyundai,Creta SX Plus 1.6 CRDI Dual Tone,suv,diesel,under_10l,False,1582,"Hyundai,suv,diesel",current
+BMW,3-Series 320d Prestige,sedan,diesel,10-20l,True,1995,"BMW,sedan,diesel",recent
+Nissan,Magnite XL,sedan,petrol,under_10l,False,999,"Nissan,sedan,petrol",recent
+Maruti Suzuki,Celerio ZXi [2019-2020],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",current
+Kia,Seltos HTK Plus 1.5 Diesel,suv,diesel,10-20l,False,1493,"Kia,suv,diesel",current
+Hyundai,Santro Era,sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",recent
+Land Rover,Range Rover Sport SDV6 S,sedan,diesel,above_30l,True,2993,"Land Rover,sedan,diesel",recent
+Maruti Suzuki,Ignis Zeta 1.2 AMT,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Tata,Safari 2.2 VX 4x2,muv,diesel,under_10l,False,2179,"Tata,muv,diesel",current
+Fiat,Punto Active 1.3,sedan,diesel,under_10l,False,1248,"Fiat,sedan,diesel",classic
+Audi,Q3 30 TDI Premium FWD,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Mercedes-Benz,C-Class C 300d AMG line,sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Mercedes-Benz,GLA 200 Sport,sedan,petrol,20-30l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Honda,City VX CVT Petrol [2017-2019],sedan,petrol,10-20l,False,1497,"Honda,sedan,petrol",recent
+Maruti Suzuki,S-Cross Sigma 1.3,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Mahindra,XUV700 AX 7 Diesel AT AWD Luxury Pack 7 STR,suv,diesel,20-30l,False,2184,"Mahindra,suv,diesel",current
+Audi,A7 Sportback 3.0 TDI quattro,sedan,diesel,20-30l,True,2967,"Audi,sedan,diesel",recent
+Maruti Suzuki,Swift DZire LDI,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Hyundai,Venue SX (O) 1.0 Turbo iMT,suv,petrol,10-20l,False,998,"Hyundai,suv,petrol",current
+Mercedes-Benz,C-Class 220 CDI Sport,hatchback,diesel,10-20l,True,1200,"Mercedes-Benz,hatchback,diesel",recent
+Maruti Suzuki,Swift DZire ZDI AMT,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Volkswagen,Vento Highline Diesel,sedan,diesel,under_10l,False,1598,"Volkswagen,sedan,diesel",recent
+Honda,City V Petrol,sedan,petrol,10-20l,False,1497,"Honda,sedan,petrol",recent
+Rolls-Royce,Ghost 6.5,sedan,petrol,above_30l,True,6592,"Rolls-Royce,sedan,petrol",recent
+Audi,Q3 35 TDI Technology with Navigation,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Volkswagen,Polo Comfortline 1.5L (D),hatchback,diesel,under_10l,False,1498,"Volkswagen,hatchback,diesel",recent
+Tata,Nexon XM,suv,petrol,under_10l,False,1198,"Tata,suv,petrol",current
+Hyundai,Verna 1.6 CRDI SX,sedan,diesel,under_10l,False,1582,"Hyundai,sedan,diesel",recent
+Land Rover,Discovery Sport SE R-Dynamic,muv,diesel,above_30l,True,1999,"Land Rover,muv,diesel",recent
+Nissan,Teana 250XL,hatchback,petrol,under_10l,False,1200,"Nissan,hatchback,petrol",recent
+Honda,City S Petrol,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Ford,Figo Trend 1.5L TDCi [2015-2016],sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Toyota,Glanza V,hatchback,petrol,under_10l,False,1197,"Toyota,hatchback,petrol",recent
+Mercedes-Benz,E-Class E 200 Avantgarde,sedan,petrol,10-20l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Hyundai,Alcazar Prestige 7 STR 1.5 Diesel,muv,diesel,10-20l,False,1493,"Hyundai,muv,diesel",current
+Hyundai,Santa Fe 2WD AT [2014-2017],muv,diesel,under_10l,False,2199,"Hyundai,muv,diesel",recent
+Maruti Suzuki,Wagon R VXi 1.2,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Toyota,Innova 2.4 ZX 7 STR [2016-2020],muv,diesel,above_30l,True,2393,"Toyota,muv,diesel",current
+Lexus,NX 300h Luxury [2017-2020],sedan,petrol,above_30l,True,2494,"Lexus,sedan,petrol",current
+Toyota,Innova ZX 2.4 AT 7 STR,muv,diesel,above_30l,False,2393,"Toyota,muv,diesel",recent
+Hyundai,Elite i20 Sportz 1.2 [2016-2017],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Renault,Duster 110 PS RxL,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Volkswagen,Taigun Highline 1.0 TSI AT,sedan,petrol,10-20l,False,999,"Volkswagen,sedan,petrol",current
+Hyundai,i20 Active 1.4 S,hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+MG,Hector Plus Sharp 1.5 DCT Petrol,suv,petrol,10-20l,False,1451,"MG,suv,petrol",current
+BMW,3-Series 320d Sport Line [2014-2016],sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Land Rover,Discovery HSE,muv,diesel,20-30l,True,2993,"Land Rover,muv,diesel",recent
+Hyundai,Santa Fe 4 WD (AT),muv,diesel,under_10l,False,2199,"Hyundai,muv,diesel",recent
+Audi,Q5 2.0 TDI quattro Premium,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Tata,Harrier XZ,suv,diesel,10-20l,False,1956,"Tata,suv,diesel",current
+Mahindra,Thar CRDe 4x4 Non AC,suv,diesel,under_10l,False,2498,"Mahindra,suv,diesel",current
+Volkswagen,Vento Highline Petrol,hatchback,petrol,under_10l,False,1200,"Volkswagen,hatchback,petrol",recent
+Audi,A3 35 TFSI Premium Plus,sedan,petrol,20-30l,True,1395,"Audi,sedan,petrol",recent
+Ford,Mustang GT Fastback 5.0L v8,hatchback,petrol,above_30l,True,4951,"Ford,hatchback,petrol",recent
+Maruti Suzuki,DZire ZXi Plus AMT,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Skoda,Rapid Style 1.6 MPI AT,sedan,petrol,under_10l,False,1598,"Skoda,sedan,petrol",recent
+Skoda,Superb Elegance 1.8 TSI AT,sedan,petrol,under_10l,False,1798,"Skoda,sedan,petrol",recent
+Mahindra,Xylo D4,muv,diesel,under_10l,False,2489,"Mahindra,muv,diesel",recent
+Lexus,LX SUV Petrol,suv,petrol,20-30l,True,1200,"Lexus,suv,petrol",recent
+Volvo,S60 Kinetic D4,sedan,diesel,under_10l,True,1984,"Volvo,sedan,diesel",recent
+Porsche,Macan S [2019-2020],sedan,petrol,above_30l,True,2995,"Porsche,sedan,petrol",current
+Porsche,Macan Base [2019-2020],sedan,petrol,above_30l,True,1984,"Porsche,sedan,petrol",current
+Maruti Suzuki,Baleno Zeta 1.2 AT,hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Eeco 5 STR [2014-2019],sedan,petrol,under_10l,False,1196,"Maruti Suzuki,sedan,petrol",recent
+Maruti Suzuki,Ertiga LXI,muv,petrol,under_10l,False,1373,"Maruti Suzuki,muv,petrol",recent
+BMW,3-Series 320d Highline Sedan,sedan,diesel,10-20l,True,1200,"BMW,sedan,diesel",recent
+Mercedes-Benz,S-Class 280 AT,hatchback,petrol,10-20l,True,1200,"Mercedes-Benz,hatchback,petrol",recent
+Audi,A3 35 TDI Premium Plus + Sunroof,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Jeep,Compass Sport 1.4 Petrol,suv,petrol,10-20l,False,1368,"Jeep,suv,petrol",current
+Hyundai,i20 Asta 1.2,hatchback,petrol,under_10l,False,1200,"Hyundai,hatchback,petrol",recent
+Jeep,Compass Longitude (O) 2.0 Diesel [2017-2020],suv,diesel,10-20l,False,1200,"Jeep,suv,diesel",current
+Maruti Suzuki,Swift DZire VXI AT,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Land Rover,Discovery 3.0 TDV6 HSE,hatchback,diesel,above_30l,True,1200,"Land Rover,hatchback,diesel",recent
+Hyundai,i20 Magna (O) 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+BMW,5-Series 520d Modern Line,sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Audi,Q3 35 TDI Technology,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Kia,Seltos GTX Plus 1.4 DCT,suv,petrol,10-20l,False,1353,"Kia,suv,petrol",current
+Hyundai,Elantra SX (O) 2.0 AT,sedan,petrol,10-20l,False,1999,"Hyundai,sedan,petrol",recent
+Hyundai,Accent Executive,sedan,petrol,under_10l,False,1495,"Hyundai,sedan,petrol",recent
+Audi,Q5 35 TDI Premium Plus,hatchback,diesel,above_30l,True,1200,"Audi,hatchback,diesel",recent
+Maruti Suzuki,S-Presso VXi Plus,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Lexus,ES 300h Exquisite [2020-2021],sedan,hybrid,above_30l,True,2487,"Lexus,sedan,hybrid",current
+Maruti Suzuki,Swift DZire LXI (O),sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Honda,Civic 1.8V MT,hatchback,petrol,under_10l,False,1200,"Honda,hatchback,petrol",recent
+Audi,Q3 35 TDI quattro Technology,sedan,diesel,above_30l,True,1968,"Audi,sedan,diesel",recent
+Maruti Suzuki,S-Presso VXi (O),sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+MINI,Countryman Cooper S JCW Inspired,sedan,petrol,above_30l,True,1998,"MINI,sedan,petrol",recent
+Toyota,Innova 2.7 ZX AT 7 STR,muv,petrol,10-20l,False,2694,"Toyota,muv,petrol",recent
+Honda,Amaze 1.5 VX i-DTEC,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Mahindra,Scorpio S4 1.99 [2016-2017],muv,diesel,under_10l,False,1997,"Mahindra,muv,diesel",recent
+Hyundai,Grand i10 Magna AT 1.2 Kappa VTVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Maruti Suzuki,Eeco 5 STR WITH A/C+HTR CNG [2017-2019],sedan,cng,under_10l,False,1196,"Maruti Suzuki,sedan,cng",recent
+Maruti Suzuki,Swift ZXi Plus [2018-2019],hatchback,petrol,under_10l,False,1197,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Eeco 7 STR STD (O),muv,petrol,under_10l,False,1196,"Maruti Suzuki,muv,petrol",recent
+Hyundai,Eon Sportz,sedan,petrol,under_10l,False,814,"Hyundai,sedan,petrol",recent
+Ford,Ecosport Titanium 1.5 Ti-VCT,sedan,petrol,under_10l,False,1499,"Ford,sedan,petrol",recent
+Renault,Duster 110 PS RXZ 4X2 MT Diesel,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Mercedes-Benz,GLE 350 d,sedan,diesel,above_30l,True,2987,"Mercedes-Benz,sedan,diesel",recent
+Maruti Suzuki,Alto VXi [2014-2019],hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Toyota,Yaris V CVT,sedan,petrol,10-20l,False,1496,"Toyota,sedan,petrol",recent
+BMW,2 Series Gran Coupe 220d M Sport [2020-2021],sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",current
+Volkswagen,Polo GT TDI,hatchback,diesel,under_10l,False,1598,"Volkswagen,hatchback,diesel",recent
+Tata,Tiago Revotron XM (O) [2016-2019],sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Mahindra,Scorpio LX BS-IV,muv,diesel,under_10l,False,2179,"Mahindra,muv,diesel",older
+BMW,7-Series 730Ld,hatchback,diesel,above_30l,True,2993,"BMW,hatchback,diesel",recent
+Land Rover,Discovery 2.0 HSE 4WD Diesel,sedan,diesel,above_30l,True,1999,"Land Rover,sedan,diesel",recent
+Ford,Ikon DuraTorq 1.4 TDCi,sedan,diesel,under_10l,False,1399,"Ford,sedan,diesel",recent
+MINI,Cooper D 5 Door,sedan,diesel,above_30l,True,1496,"MINI,sedan,diesel",recent
+Toyota,Vellfire Hybrid,muv,hybrid,above_30l,True,2494,"Toyota,muv,hybrid",recent
+Maruti Suzuki,Celerio ZXi,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Hyundai,Elantra 1.8 SX AT,sedan,petrol,under_10l,False,1797,"Hyundai,sedan,petrol",recent
+Renault,Duster 85 PS RXS 4X2 MT Diesel,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Maruti Suzuki,Celerio VXi [2019-2020],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",current
+Kia,Seltos HTK Plus 1.5 iMT,suv,petrol,10-20l,False,1497,"Kia,suv,petrol",current
+Jaguar,XJ 3.0 V6 Portfolio,sedan,diesel,above_30l,True,2993,"Jaguar,sedan,diesel",recent
+Hyundai,Verna 1.6 CRDI SX (O),sedan,diesel,10-20l,False,1582,"Hyundai,sedan,diesel",recent
+Hyundai,Verna Fluidic 1.6 VTVT SX Opt AT,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+Audi,Q8 Celebration,sedan,petrol,above_30l,True,2995,"Audi,sedan,petrol",recent
+BMW,X4 xDrive30d M Sport X [2019-2020],sedan,diesel,above_30l,True,2993,"BMW,sedan,diesel",current
+Honda,City VX (O) MT BL,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Tata,Harrier XZA Plus,suv,diesel,20-30l,False,1956,"Tata,suv,diesel",current
+Jeep,Compass Model S (O) 1.4 Petrol DCT,suv,petrol,20-30l,False,1368,"Jeep,suv,petrol",current
+BMW,5-Series 525d Luxury Plus,sedan,diesel,10-20l,True,1995,"BMW,sedan,diesel",recent
+BMW,X6 xDrive40i M Sport,sedan,petrol,above_30l,True,2998,"BMW,sedan,petrol",recent
+Maruti Suzuki,XL6 Alpha AT Petrol,muv,petrol,10-20l,False,1462,"Maruti Suzuki,muv,petrol",recent
+Tata,Tigor XZA Plus,sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Hyundai,Creta E Plus 1.6 Petrol,suv,petrol,10-20l,False,1591,"Hyundai,suv,petrol",current
+Maruti Suzuki,Ciaz Alpha Hybrid 1.5 [2018-2020],sedan,petrol,under_10l,False,1462,"Maruti Suzuki,sedan,petrol",current
+Mahindra,XUV500 W11,suv,diesel,10-20l,False,2179,"Mahindra,suv,diesel",recent
+Hyundai,Elite i20 Magna 1.2 [2016-2017],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Hyundai,Elite i20 Asta 1.2 IVT,hatchback,petrol,10-20l,False,1197,"Hyundai,hatchback,petrol",recent
+Audi,A4 2.0 TDI (143bhp),sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Hyundai,Creta 1.4 S Plus,suv,diesel,10-20l,False,1396,"Hyundai,suv,diesel",current
+Hyundai,Venue SX (O) 1.5 CRDi,suv,diesel,10-20l,False,1493,"Hyundai,suv,diesel",current
+Datsun,Go Plus T,muv,petrol,under_10l,False,1198,"Datsun,muv,petrol",recent
+Honda,Amaze 1.2 S CVT Petrol [2018-2020],sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",current
+Maruti Suzuki,Baleno Delta 1.3,hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",recent
+Skoda,Kushaq Style 1.0L TSI MT,sedan,petrol,10-20l,False,999,"Skoda,sedan,petrol",current
+Hyundai,Verna 1.6 VTVT SX (O),sedan,petrol,10-20l,False,1591,"Hyundai,sedan,petrol",recent
+Mitsubishi,Pajero Select Plus AT,muv,diesel,10-20l,False,2477,"Mitsubishi,muv,diesel",recent
+Hyundai,Elite i20 Sportz 1.4 CRDI [2016-2017],hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Hyundai,Creta SX (O) 1.5 Diesel [2020-2022],suv,diesel,10-20l,False,1493,"Hyundai,suv,diesel",current
+Toyota,Yaris J CVT [2018-2020],sedan,petrol,under_10l,False,1496,"Toyota,sedan,petrol",current
+Ford,Endeavour Trend 2.2 4x2 AT,muv,diesel,20-30l,False,2198,"Ford,muv,diesel",recent
+Maruti Suzuki,Ciaz VDi+ SHVS,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Renault,Duster 110 PS RxZ Diesel,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Ford,Endeavour Sport 2.0 4x4 AT,muv,diesel,above_30l,True,1996,"Ford,muv,diesel",recent
+Skoda,Kushaq Style 1.0L TSI AT,sedan,petrol,10-20l,False,999,"Skoda,sedan,petrol",current
+Honda,Mobilio RS Diesel,muv,diesel,under_10l,False,1498,"Honda,muv,diesel",recent
+Rolls-Royce,Ghost Extended Wheelbase,sedan,petrol,above_30l,True,6592,"Rolls-Royce,sedan,petrol",recent
+Hyundai,Santro Sportz CNG [2018-2020],sedan,cng,under_10l,False,1086,"Hyundai,sedan,cng",current
+Mercedes-Benz,C-Class 220 CDI Elegance AT,sedan,diesel,under_10l,True,2148,"Mercedes-Benz,sedan,diesel",recent
+BMW,3-Series 320d Luxury Line [2014-2016],sedan,diesel,20-30l,True,1995,"BMW,sedan,diesel",recent
+Maruti Suzuki,S-Cross Delta 1.6,sedan,diesel,under_10l,False,1598,"Maruti Suzuki,sedan,diesel",recent
+Jeep,Compass Longitude (O) 1.4 Petrol AT [2019-2020],suv,petrol,10-20l,False,1368,"Jeep,suv,petrol",current
+Land Rover,Discovery Sport SE,muv,diesel,above_30l,True,1999,"Land Rover,muv,diesel",recent
+Maruti Suzuki,Swift DZire ZDi BS-IV,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",older
+Maruti Suzuki,Ciaz VDi (O) SHVS,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Honda,WR-V S MT Diesel,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Hyundai,Creta 1.6 SX Plus Special Edition,suv,diesel,under_10l,False,1582,"Hyundai,suv,diesel",current
+Maruti Suzuki,SX4 ZDI,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Hyundai,Verna SX Plus 1.6 VTVT AT,sedan,petrol,10-20l,False,1591,"Hyundai,sedan,petrol",recent
+Hyundai,i10 Magna,hatchback,petrol,under_10l,False,1086,"Hyundai,hatchback,petrol",recent
+Lexus,ES 300h,sedan,petrol,above_30l,True,2494,"Lexus,sedan,petrol",recent
+BMW,X5 xDrive 30d Expedition,muv,diesel,above_30l,True,2993,"BMW,muv,diesel",recent
+Mahindra,TUV300 T10,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Mercedes-Benz,GLA 200 CDI Style,sedan,diesel,10-20l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Land Rover,Range Rover 3.0 V6 Diesel Vogue LWB,hatchback,diesel,above_30l,True,2993,"Land Rover,hatchback,diesel",recent
+MG,Hector Sharp 1.5 DCT Petrol Dual Tone,suv,petrol,10-20l,False,1451,"MG,suv,petrol",current
+Maruti Suzuki,Ertiga VDi 1.3 Diesel,muv,diesel,under_10l,False,1248,"Maruti Suzuki,muv,diesel",recent
+Land Rover,Discovery Sport HSE Luxury 7-Seater,muv,diesel,above_30l,True,2179,"Land Rover,muv,diesel",recent
+Jaguar,XF Portfolio Diesel,sedan,diesel,above_30l,True,1999,"Jaguar,sedan,diesel",recent
+Hyundai,Grand i10 Asta AT 1.2 Kappa VTVT (O) [2016-2017],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+MG,Hector Plus Smart 1.5 DCT Petrol,suv,petrol,10-20l,False,1451,"MG,suv,petrol",current
+Honda,City SV CVT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Maruti Suzuki,Baleno Zeta 1.3,hatchback,diesel,under_10l,False,1248,"Maruti Suzuki,hatchback,diesel",recent
+Jaguar,XJ 3.0 Portfolio,sedan,diesel,above_30l,True,2993,"Jaguar,sedan,diesel",recent
+Maruti Suzuki,Alto 800 Lx CNG,hatchback,cng,under_10l,False,796,"Maruti Suzuki,hatchback,cng",recent
+Volkswagen,Polo Trendline 1.2L (P),hatchback,petrol,under_10l,False,1200,"Volkswagen,hatchback,petrol",recent
+Hyundai,Santro GLS,sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",recent
+Hyundai,Creta 1.6 S Plus AT,suv,diesel,10-20l,False,1582,"Hyundai,suv,diesel",current
+Audi,A8 3.0 TDI quattro,hatchback,diesel,above_30l,True,2967,"Audi,hatchback,diesel",recent
+Honda,Jazz V Diesel,hatchback,diesel,under_10l,False,1498,"Honda,hatchback,diesel",recent
+Audi,Q7 3.0 TDI quattro Premium,hatchback,diesel,above_30l,True,2967,"Audi,hatchback,diesel",recent
+Hyundai,Eon Magna +,sedan,petrol,under_10l,False,814,"Hyundai,sedan,petrol",recent
+Land Rover,Evoque SE Dynamic,sedan,diesel,above_30l,True,1999,"Land Rover,sedan,diesel",recent
+Datsun,Redigo T(O) 1.0,sedan,petrol,under_10l,False,999,"Datsun,sedan,petrol",recent
+Hyundai,Grand i10 Magna 1.2 Kappa VTVT [2016-2017],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Volkswagen,Vento Comfortline Diesel,sedan,diesel,under_10l,False,1598,"Volkswagen,sedan,diesel",recent
+Chevrolet,Captiva LTZ AWD AT,muv,diesel,under_10l,False,1991,"Chevrolet,muv,diesel",recent
+Ford,Ecosport Titanium + 1.5L TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Audi,A3 40 TFSI Premium,sedan,petrol,10-20l,True,1798,"Audi,sedan,petrol",recent
+Skoda,Superb Style TSI AT,sedan,petrol,10-20l,False,1798,"Skoda,sedan,petrol",recent
+Mahindra,Alturas G4 4WD AT [2018-2020],muv,diesel,20-30l,False,2157,"Mahindra,muv,diesel",current
+Kia,Carnival Limousine Plus 7 STR,muv,diesel,20-30l,False,2199,"Kia,muv,diesel",current
+Mercedes-Benz,GLA 220 d Activity Edition,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Hyundai,Santro XO eRLX - Euro III,sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",recent
+Mahindra,Scorpio S5,muv,diesel,10-20l,False,2179,"Mahindra,muv,diesel",recent
+Tata,Tigor Revotron XM,sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Toyota,Innova 2.5 G BS IV 8 STR,muv,diesel,under_10l,False,2494,"Toyota,muv,diesel",older
+Mercedes-Benz,A-Class A 180 Sport Petrol,hatchback,petrol,10-20l,True,1595,"Mercedes-Benz,hatchback,petrol",recent
+Volkswagen,Vento Highline 1.0L TSI,sedan,petrol,10-20l,False,999,"Volkswagen,sedan,petrol",recent
+Audi,A4 2.0 TDI Technology,hatchback,diesel,10-20l,True,1200,"Audi,hatchback,diesel",recent
+Hyundai,Eon D-Lite +,sedan,petrol,under_10l,False,814,"Hyundai,sedan,petrol",recent
+Land Rover,Evoque HSE,sedan,diesel,above_30l,True,1999,"Land Rover,sedan,diesel",recent
+Maruti Suzuki,Alto LXi CNG [2014-2018],hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",recent
+Ford,Figo Titanium1.5 TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Tata,Zest XE 75 PS Diesel,sedan,diesel,under_10l,False,1248,"Tata,sedan,diesel",recent
+Maruti Suzuki,S-Cross Zeta 1.6,sedan,diesel,under_10l,False,1598,"Maruti Suzuki,sedan,diesel",recent
+Maruti Suzuki,Celerio X Vxi AMT [2017-2019],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Hyundai,i10 Asta 1.2 AT Kappa2 with Sunroof,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Maruti Suzuki,Alto VXi AMT [2014-2018],hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Kia,Seltos HTK Plus AT 1.5 Diesel [2020-2021],suv,diesel,10-20l,False,1493,"Kia,suv,diesel",current
+Mercedes-Benz,C-Coupe 43 AMG 4MATIC,hatchback,petrol,above_30l,True,2996,"Mercedes-Benz,hatchback,petrol",recent
+Mahindra,XUV500 W10 AT 1.99,suv,diesel,under_10l,False,1997,"Mahindra,suv,diesel",recent
+Audi,Q5 40 TDI Premium Plus,sedan,diesel,above_30l,True,1968,"Audi,sedan,diesel",recent
+Mahindra,Thar LX 4-STR Convertible Diesel AT,suv,diesel,10-20l,False,2184,"Mahindra,suv,diesel",current
+Hyundai,Creta 1.4 S,suv,diesel,under_10l,False,1396,"Hyundai,suv,diesel",current
+Maruti Suzuki,Estilo LXi BS-IV,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",older
+Audi,A6 35 TFSI Matrix,sedan,petrol,20-30l,True,1798,"Audi,sedan,petrol",recent
+Renault,Pulse RxL ABS Diesel [2015-2017],sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Honda,Amaze 1.5 E i-DTEC,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Nissan,Terrano XL D THP 110 PS,sedan,diesel,under_10l,False,1461,"Nissan,sedan,diesel",recent
+Tata,Tiago Revotron XZA,sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Maruti Suzuki,Ignis Delta 1.2 AMT,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Volkswagen,Polo Highline Plus 1.0L TSI,hatchback,petrol,under_10l,False,999,"Volkswagen,hatchback,petrol",recent
+Hyundai,i10 Magna 1.2,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Hyundai,Xcent S 1.2,sedan,petrol,under_10l,False,1197,"Hyundai,sedan,petrol",recent
+Skoda,Octavia Style 1.8 TSI AT,sedan,petrol,under_10l,False,1798,"Skoda,sedan,petrol",recent
+Honda,Amaze 1.2 VX MT Petrol [2018-2020],sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",current
+Mahindra,XUV500 W8 AWD,suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Hyundai,i10 Magna (O),hatchback,petrol,under_10l,False,1086,"Hyundai,hatchback,petrol",recent
+Volvo,S90 D4 Inscription,sedan,diesel,above_30l,True,1969,"Volvo,sedan,diesel",recent
+Hyundai,Xcent S 1.1 CRDi (O),sedan,diesel,under_10l,False,1120,"Hyundai,sedan,diesel",recent
+Mercedes-Benz,E-Class 200,hatchback,petrol,above_30l,True,1200,"Mercedes-Benz,hatchback,petrol",recent
+Volkswagen,Polo 1.5 TDI,hatchback,diesel,under_10l,False,1498,"Volkswagen,hatchback,diesel",recent
+Mercedes-Benz,C-Class 250 CDI Avantgarde,sedan,diesel,under_10l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Ford,Ecosport Titanium + 1.5L TDCi [2019-2020],sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",current
+Renault,Kwid 1.0 RXL [2017-2019],sedan,petrol,under_10l,False,999,"Renault,sedan,petrol",recent
+Toyota,Innova 2.5 V 7 STR,muv,diesel,under_10l,False,2494,"Toyota,muv,diesel",recent
+Maruti Suzuki,DZire ZXi AGS,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Volkswagen,Ameo Trendline 1.5L (D),sedan,diesel,under_10l,False,1498,"Volkswagen,sedan,diesel",recent
+Maruti Suzuki,SX4 VXi,sedan,petrol,under_10l,False,1586,"Maruti Suzuki,sedan,petrol",recent
+Mercedes-Benz,E-Class E200 CGI Blue Efficiency,sedan,petrol,10-20l,True,1796,"Mercedes-Benz,sedan,petrol",recent
+Maruti Suzuki,Wagon R LXi,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Hyundai,Grand i10 Magna U2 1.2 CRDi,hatchback,diesel,under_10l,False,1186,"Hyundai,hatchback,diesel",recent
+Tata,Harrier XT Plus Dark Edition,suv,diesel,10-20l,False,1956,"Tata,suv,diesel",current
+Mercedes-Benz,C-Class C220d Progressive,sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Maruti Suzuki,Ertiga ZXI+,muv,petrol,under_10l,False,1373,"Maruti Suzuki,muv,petrol",recent
+Honda,Amaze 1.2 E MT Petrol [2018-2020],sedan,petrol,under_10l,False,1199,"Honda,sedan,petrol",current
+Volkswagen,Vento Highline Diesel AT,sedan,diesel,under_10l,False,1498,"Volkswagen,sedan,diesel",recent
+Volkswagen,Vento Highline Plus 1.6 (P),sedan,petrol,under_10l,False,1598,"Volkswagen,sedan,petrol",recent
+Mercedes-Benz,GLS 450 4MATIC,muv,petrol,above_30l,True,2999,"Mercedes-Benz,muv,petrol",recent
+Audi,Q5 2.0 TDI quattro Technology Pack,sedan,diesel,20-30l,True,1968,"Audi,sedan,diesel",recent
+Audi,Q5 3.0 TDI quattro,sedan,diesel,under_10l,True,2967,"Audi,sedan,diesel",recent
+Hyundai,Verna Fluidic 1.6 CRDi SX Opt,sedan,diesel,under_10l,False,1582,"Hyundai,sedan,diesel",recent
+Audi,Q2 Premium 40 TFSI quattro,sedan,petrol,above_30l,True,1984,"Audi,sedan,petrol",recent
+Mercedes-Benz,CLA 200 CDI Sport (CBU),sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Toyota,Etios 1.2 G,sedan,petrol,under_10l,False,1197,"Toyota,sedan,petrol",recent
+Hyundai,i10 Era 1.1 iRDE2 [2010-2017],hatchback,petrol,under_10l,False,1086,"Hyundai,hatchback,petrol",recent
+Hyundai,Santro GL Plus,sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",recent
+Mahindra,Bolero SLE BS IV,muv,diesel,under_10l,False,2523,"Mahindra,muv,diesel",older
+Chevrolet,Beat LT Diesel,sedan,diesel,under_10l,False,936,"Chevrolet,sedan,diesel",recent
+Volvo,XC40 T4 R-Design,sedan,petrol,above_30l,True,1969,"Volvo,sedan,petrol",recent
+Maruti Suzuki,Vitara Brezza ZDi Plus AGS,suv,diesel,10-20l,False,1248,"Maruti Suzuki,suv,diesel",recent
+Maruti Suzuki,Ertiga VXI AT,muv,petrol,under_10l,False,1373,"Maruti Suzuki,muv,petrol",recent
+Honda,Accord 2.4 AT,sedan,petrol,under_10l,False,2354,"Honda,sedan,petrol",recent
+Maruti Suzuki,Ertiga ZXi AT,muv,petrol,under_10l,False,1462,"Maruti Suzuki,muv,petrol",recent
+Maruti Suzuki,Ciaz Delta Hybrid 1.5 AT [2018-2020],sedan,petrol,under_10l,False,1462,"Maruti Suzuki,sedan,petrol",current
+Maruti Suzuki,Swift DZire VDi,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Hyundai,i20 Asta 1.4 CRDI,hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Maruti Suzuki,Ertiga ZXi Plus,muv,petrol,10-20l,False,1462,"Maruti Suzuki,muv,petrol",recent
+Mahindra,Bolero SLE BS III,muv,diesel,under_10l,False,2523,"Mahindra,muv,diesel",classic
+Maruti Suzuki,Ertiga VXI,muv,petrol,under_10l,False,1373,"Maruti Suzuki,muv,petrol",recent
+Hyundai,i10 Sportz 1.2 AT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Toyota,Innova 2.5 ZX 7 STR BS-IV,muv,diesel,10-20l,False,2494,"Toyota,muv,diesel",older
+Maruti Suzuki,Ciaz ZDi (O) [2014-2015],sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Maruti Suzuki,Ciaz S 1.4 MT,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Tata,Hexa XM 4x2 7 STR,muv,diesel,under_10l,False,2179,"Tata,muv,diesel",recent
+Volkswagen,Vento Comfortline 1.6 (P),sedan,petrol,under_10l,False,1598,"Volkswagen,sedan,petrol",recent
+Hyundai,Elite i20 Asta 1.0 Turbo IMT Dual Tone,hatchback,petrol,10-20l,False,998,"Hyundai,hatchback,petrol",recent
+Mercedes-Benz,A-Class Sedan 200,sedan,petrol,above_30l,True,1332,"Mercedes-Benz,sedan,petrol",recent
+Tata,Nexon XM Diesel,suv,diesel,under_10l,False,1497,"Tata,suv,diesel",current
+Hyundai,i20 Sportz 1.2 BS-IV,hatchback,petrol,under_10l,False,1200,"Hyundai,hatchback,petrol",older
+Jeep,Wrangler Rubicon,sedan,petrol,above_30l,True,1995,"Jeep,sedan,petrol",recent
+Honda,Amaze 1.2 S AT i-VTEC,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Honda,Amaze 1.2 E i-VTEC,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Volkswagen,Ameo Highline1.2L (P) [2016-2018],sedan,petrol,under_10l,False,1198,"Volkswagen,sedan,petrol",recent
+Maruti Suzuki,Celerio ZXi AMT,sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Hyundai,Aura S 1.2 CNG,sedan,cng,under_10l,False,1197,"Hyundai,sedan,cng",recent
+Renault,Duster 85 PS Sandstorm Edition Diesel,sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Honda,Jazz VX CVT Petrol,hatchback,petrol,under_10l,False,1199,"Honda,hatchback,petrol",recent
+Ford,Ecosport Ambiente 1.5L Ti-VCT,sedan,petrol,under_10l,False,1499,"Ford,sedan,petrol",recent
+Hyundai,i20 Magna (O) 1.4 CRDI,hatchback,diesel,under_10l,False,1336,"Hyundai,hatchback,diesel",recent
+Mahindra,XUV500 W9 [2018-2020],suv,diesel,10-20l,False,2179,"Mahindra,suv,diesel",current
+Hyundai,i10 Era,hatchback,petrol,under_10l,False,1086,"Hyundai,hatchback,petrol",recent
+Skoda,Superb Sportline AT,sedan,petrol,above_30l,True,1984,"Skoda,sedan,petrol",recent
+Audi,A4 35 TDI Premium,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Mahindra,Thar LX 4-STR Convertible Diesel MT,suv,diesel,10-20l,False,2184,"Mahindra,suv,diesel",current
+Renault,Duster 110 PS RXL 4X2 AMT [2016-2017],sedan,diesel,under_10l,False,1461,"Renault,sedan,diesel",recent
+Skoda,Octavia RS,sedan,petrol,above_30l,True,1984,"Skoda,sedan,petrol",recent
+Hyundai,Elite i20 Asta 1.2 [2016-2017],hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Mercedes-Benz,CLS 300d [2018-2019],sedan,diesel,above_30l,True,1950,"Mercedes-Benz,sedan,diesel",recent
+Toyota,Innova 2.8 GX AT 8 STR [2016-2020],muv,diesel,20-30l,False,2755,"Toyota,muv,diesel",current
+Mercedes-Benz,V-Class Elite LWB,hatchback,diesel,above_30l,True,1950,"Mercedes-Benz,hatchback,diesel",recent
+Mahindra,Scorpio S6 Plus Intelli-Hybrid,muv,diesel,under_10l,False,2179,"Mahindra,muv,diesel",recent
+Hyundai,Venue S 1.0 AT Petrol [2019-2020],suv,petrol,under_10l,False,998,"Hyundai,suv,petrol",current
+Maruti Suzuki,Wagon R VXi (O),hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Vitara Brezza VXi,suv,petrol,under_10l,False,1462,"Maruti Suzuki,suv,petrol",recent
+BMW,X7 xDrive40i M Sport,hatchback,petrol,above_30l,True,2998,"BMW,hatchback,petrol",recent
+Hyundai,Verna SX (O) AT Anniversary Edition 1.6 VTVT,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+BMW,X1 sDrive20d,sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",recent
+BMW,X3 xDrive30i M Sport,sedan,petrol,above_30l,True,1998,"BMW,sedan,petrol",recent
+Hyundai,Elantra 2.0 SX (O) AT,sedan,petrol,10-20l,False,1999,"Hyundai,sedan,petrol",recent
+Renault,Kiger RXZ AMT,sedan,petrol,10-20l,False,999,"Renault,sedan,petrol",recent
+Hyundai,Verna 1.6 VTVT SX AT,sedan,petrol,under_10l,False,1591,"Hyundai,sedan,petrol",recent
+Tata,Safari 2.2 VX 4x2 Varicor400,muv,diesel,20-30l,False,2179,"Tata,muv,diesel",current
+Maruti Suzuki,DZire LDi,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Volvo,S90 Momentum D4 [2018-2020],sedan,diesel,above_30l,True,1969,"Volvo,sedan,diesel",current
+MINI,Cooper JCW Hatchback,hatchback,petrol,above_30l,True,1998,"MINI,hatchback,petrol",recent
+Mercedes-Benz,S-Class S 500,hatchback,petrol,10-20l,True,4663,"Mercedes-Benz,hatchback,petrol",recent
+Honda,Jazz S AT [2015-2016],hatchback,petrol,under_10l,False,1198,"Honda,hatchback,petrol",recent
+Volvo,XC60 Inscription,sedan,diesel,10-20l,True,2400,"Volvo,sedan,diesel",recent
+Volvo,XC90 D5 Inscription,muv,diesel,above_30l,True,1969,"Volvo,muv,diesel",recent
+Renault,Kwid CLIMBER 1.0 [2017-2019],sedan,petrol,under_10l,False,999,"Renault,sedan,petrol",recent
+Mahindra,Thar AX 6-STR Soft Top Petrol MT,suv,petrol,10-20l,False,1997,"Mahindra,suv,petrol",current
+Maruti Suzuki,Ertiga ZDi,muv,diesel,under_10l,False,1248,"Maruti Suzuki,muv,diesel",recent
+Mitsubishi,Pajero 2.5 AT,muv,diesel,10-20l,False,2477,"Mitsubishi,muv,diesel",recent
+Mahindra,Quanto C4,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Maruti Suzuki,Celerio VXi (O) [2019-2020],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",current
+Jeep,Compass Limited 2.0 Diesel 4x4 [2017-2020],suv,diesel,10-20l,False,1956,"Jeep,suv,diesel",current
+Maruti Suzuki,Celerio LDi [2015-2017],sedan,diesel,under_10l,False,793,"Maruti Suzuki,sedan,diesel",recent
+Maruti Suzuki,Wagon R Duo LXi LPG,hatchback,petrol,under_10l,False,1061,"Maruti Suzuki,hatchback,petrol",recent
+Mercedes-Benz,S-Class 350 CDI L,sedan,diesel,10-20l,True,2987,"Mercedes-Benz,sedan,diesel",recent
+Porsche,Cayenne Base,sedan,petrol,above_30l,True,2995,"Porsche,sedan,petrol",recent
+Toyota,Etios Liva G,sedan,petrol,under_10l,False,1197,"Toyota,sedan,petrol",recent
+Maruti Suzuki,Ciaz Delta Hybrid 1.5 [2018-2020],sedan,petrol,under_10l,False,1462,"Maruti Suzuki,sedan,petrol",current
+Tata,Hexa XT 4x2 6 STR,hatchback,diesel,10-20l,False,2179,"Tata,hatchback,diesel",recent
+Maruti Suzuki,Alto VXI,hatchback,petrol,under_10l,False,1200,"Maruti Suzuki,hatchback,petrol",recent
+Audi,A4 35 TDI Premium Sunroof,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Toyota,Innova 2.5 E,muv,diesel,under_10l,False,2494,"Toyota,muv,diesel",recent
+Mahindra,XUV500 W4 1.99,suv,diesel,under_10l,False,1997,"Mahindra,suv,diesel",recent
+Mahindra,Quanto C8,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Audi,A4 35 TDI Premium Plus,sedan,diesel,above_30l,True,1968,"Audi,sedan,diesel",recent
+Skoda,Octavia Elegance 2.0 TDI AT,sedan,diesel,10-20l,False,1968,"Skoda,sedan,diesel",recent
+Hyundai,Alcazar Platinum 7 STR 1.5 Diesel,muv,diesel,10-20l,False,1493,"Hyundai,muv,diesel",current
+Honda,City VX Petrol [2017-2019],sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Mahindra,XUV500 W5 [2018-2020],suv,diesel,10-20l,False,2179,"Mahindra,suv,diesel",current
+BMW,5-Series 530d M Sport,sedan,diesel,above_30l,True,2993,"BMW,sedan,diesel",recent
+Hyundai,Creta SX 1.5 Petrol CVT [2020-2022],suv,petrol,10-20l,False,1497,"Hyundai,suv,petrol",current
+Renault,Kwid RXL [2015-2019],sedan,petrol,under_10l,False,799,"Renault,sedan,petrol",recent
+Skoda,Rapid Elegance 1.6 TDI CR MT,sedan,diesel,under_10l,False,1598,"Skoda,sedan,diesel",recent
+Tata,Nexon XZ Plus Diesel,suv,diesel,under_10l,False,1497,"Tata,suv,diesel",current
+Hyundai,Elite i20 Asta 1.4 CRDI,hatchback,diesel,under_10l,False,1396,"Hyundai,hatchback,diesel",recent
+Honda,BR-V V CVT Petrol,muv,petrol,under_10l,False,1497,"Honda,muv,petrol",recent
+Mahindra,TUV300 T6 Plus AMT,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Hyundai,Xcent S 1.1 CRDi Special Edition,sedan,diesel,under_10l,False,1120,"Hyundai,sedan,diesel",recent
+Maruti Suzuki,Zen LX,hatchback,petrol,under_10l,False,1200,"Maruti Suzuki,hatchback,petrol",classic
+Maruti Suzuki,Ritz Ldi BS-IV,sedan,diesel,under_10l,False,1248,"Maruti Suzuki,sedan,diesel",classic
+Skoda,Rapid 1.6 MPI Active,sedan,petrol,under_10l,False,1598,"Skoda,sedan,petrol",recent
+Ford,Aspire Titanium1.5 TDCi [2018-2020],sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",current
+Hyundai,Alcazar Signature (O) 7 Seater 1.5 Diesel AT,muv,diesel,20-30l,False,1493,"Hyundai,muv,diesel",current
+Kia,Seltos HTK 1.5 Diesel [2020-2021],suv,diesel,10-20l,False,1493,"Kia,suv,diesel",current
+Toyota,Innova 2.5 GX BS IV 8 STR,muv,diesel,under_10l,False,2494,"Toyota,muv,diesel",older
+Maruti Suzuki,Alto 800 VXi,hatchback,petrol,under_10l,False,796,"Maruti Suzuki,hatchback,petrol",recent
+Maruti Suzuki,Alto LXi,hatchback,petrol,under_10l,False,998,"Maruti Suzuki,hatchback,petrol",recent
+Hyundai,Verna SX (O) 1.6 CRDi,sedan,diesel,under_10l,False,1582,"Hyundai,sedan,diesel",recent
+BMW,5-Series 530d M Sport [2017-2019],hatchback,diesel,above_30l,True,2993,"BMW,hatchback,diesel",recent
+Volkswagen,Polo Highline1.5L (D),hatchback,diesel,under_10l,False,1498,"Volkswagen,hatchback,diesel",recent
+BMW,X3 20d M Sport,sedan,diesel,above_30l,True,1995,"BMW,sedan,diesel",recent
+Audi,Q3 35 TDI Premium Plus + Sunroof,sedan,diesel,10-20l,True,1968,"Audi,sedan,diesel",recent
+Nissan,Terrano XE (D),sedan,diesel,under_10l,False,1461,"Nissan,sedan,diesel",recent
+Tata,Tiago NRG Petrol,sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",recent
+Mercedes-Benz,S-Class S 450,sedan,petrol,above_30l,True,2996,"Mercedes-Benz,sedan,petrol",recent
+Maruti Suzuki,Celerio ZXi AMT [2017-2019],sedan,petrol,under_10l,False,998,"Maruti Suzuki,sedan,petrol",recent
+Chevrolet,Spark LS 1.0 BS-III,sedan,petrol,under_10l,False,995,"Chevrolet,sedan,petrol",classic
+Hyundai,Grand i10 NIOS Sportz 1.2 Kappa VTVT,hatchback,petrol,under_10l,False,1197,"Hyundai,hatchback,petrol",recent
+Honda,CR-V 2.0L 2WD AT,sedan,petrol,10-20l,False,1997,"Honda,sedan,petrol",recent
+Maruti Suzuki,Swift DZire LXI,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",recent
+Mercedes-Benz,B-class B180 Sports,sedan,petrol,10-20l,True,1595,"Mercedes-Benz,sedan,petrol",recent
+MG,ZS EV Exclusive [2020-2021],sedan,electric,20-30l,False,1200,"MG,sedan,electric",current
+Hyundai,Xcent SX 1.1 CRDi (O),sedan,diesel,under_10l,False,1120,"Hyundai,sedan,diesel",recent
+Skoda,Octavia 2.0 TDI L&K,sedan,diesel,10-20l,False,1968,"Skoda,sedan,diesel",recent
+Hyundai,Santro Sportz [2018-2020],sedan,petrol,under_10l,False,1086,"Hyundai,sedan,petrol",current
+Toyota,Corolla Altis GL Petrol,sedan,petrol,10-20l,False,1798,"Toyota,sedan,petrol",recent
+Tata,Altroz XT Petrol,sedan,petrol,under_10l,False,1199,"Tata,sedan,petrol",current
+Volvo,XC40 D4 R-Design,sedan,diesel,above_30l,True,1969,"Volvo,sedan,diesel",recent
+Honda,WR-V VX MT Diesel,sedan,diesel,under_10l,False,1498,"Honda,sedan,diesel",recent
+Porsche,Cayenne 3.2 V6 Petrol,hatchback,petrol,above_30l,True,1200,"Porsche,hatchback,petrol",recent
+Honda,City CVT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Mahindra,KUV100 K6 D 6 STR [2016-2017],hatchback,diesel,under_10l,False,1198,"Mahindra,hatchback,diesel",recent
+Mahindra,Bolero Power Plus ZLX,muv,diesel,under_10l,False,1493,"Mahindra,muv,diesel",recent
+Toyota,Innova 2.7 GX AT 7 STR [2016-2020],muv,petrol,10-20l,False,2694,"Toyota,muv,petrol",current
+Nissan,Sunny XL,sedan,petrol,under_10l,False,1498,"Nissan,sedan,petrol",recent
+Maruti Suzuki,Ciaz Zeta 1.3 Hybrid,sedan,diesel,10-20l,False,1248,"Maruti Suzuki,sedan,diesel",recent
+Land Rover,Discovery Sport HSE Petrol 7-Seater,muv,petrol,above_30l,True,1999,"Land Rover,muv,petrol",recent
+Ford,Ecosport Titanium 1.5 TDCi,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Honda,Brio VX AT,sedan,petrol,under_10l,False,1198,"Honda,sedan,petrol",recent
+Maruti Suzuki,Wagon R LXi 1.0 CNG,hatchback,cng,under_10l,False,998,"Maruti Suzuki,hatchback,cng",recent
+Ford,Fiesta Titanium Diesel,sedan,diesel,under_10l,False,1498,"Ford,sedan,diesel",recent
+Mercedes-Benz,GLA 200 d Style,sedan,diesel,20-30l,True,2143,"Mercedes-Benz,sedan,diesel",recent
+Toyota,Innova 2.0 G1 BS-IV,muv,petrol,under_10l,False,1998,"Toyota,muv,petrol",older
+Maruti Suzuki,Alto 800 Std,hatchback,petrol,under_10l,False,796,"Maruti Suzuki,hatchback,petrol",recent
+Honda,City 1.5 E MT,sedan,petrol,under_10l,False,1497,"Honda,sedan,petrol",recent
+Maruti Suzuki,Ciaz Alpha 1.4 AT,sedan,petrol,under_10l,False,1373,"Maruti Suzuki,sedan,petrol",recent
+Jeep,Compass Limited (O) 1.4 Petrol DCT,suv,petrol,20-30l,False,1368,"Jeep,suv,petrol",current
+Mercedes-Benz,E-Class 280 CDI Elegance,sedan,diesel,under_10l,True,2987,"Mercedes-Benz,sedan,diesel",recent
+Mahindra,XUV500 W11 (O) AT,suv,diesel,10-20l,False,2179,"Mahindra,suv,diesel",recent
+Hyundai,Creta SX (O) 1.5 Diesel Automatic,suv,diesel,10-20l,False,1493,"Hyundai,suv,diesel",current
+Mahindra,XUV500 W10 AWD,suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Honda,Accord 2.4 iVtec AT,hatchback,petrol,under_10l,False,1200,"Honda,hatchback,petrol",recent
+Toyota,Etios VXD,sedan,diesel,under_10l,False,1364,"Toyota,sedan,diesel",recent
+Land Rover,Range Rover Velar 2.0 S Petrol 250,sedan,petrol,above_30l,True,1997,"Land Rover,sedan,petrol",recent
+Mercedes-Benz,E-Class E200,sedan,petrol,under_10l,True,1991,"Mercedes-Benz,sedan,petrol",recent
+Mercedes-Benz,B-class B180,sedan,petrol,10-20l,True,1595,"Mercedes-Benz,sedan,petrol",recent
+Chevrolet,Sail Sedan 1.2 LS,sedan,petrol,under_10l,False,1199,"Chevrolet,sedan,petrol",classic
+Mahindra,XUV700 AX 7 Petrol AT Luxury Pack 7 STR,suv,petrol,20-30l,False,1997,"Mahindra,suv,petrol",current
+Hyundai,Grand i10 Asta 1.1 CRDi [2013-2016],hatchback,diesel,under_10l,False,1120,"Hyundai,hatchback,diesel",recent
+Mercedes-Benz,GLS 400 4MATIC,sedan,petrol,above_30l,True,2996,"Mercedes-Benz,sedan,petrol",recent
+Maruti Suzuki,Ritz Vxi (ABS) BS-IV,sedan,petrol,under_10l,False,1197,"Maruti Suzuki,sedan,petrol",classic
+Mahindra,XUV500 W8 [2015-2017],suv,diesel,under_10l,False,2179,"Mahindra,suv,diesel",recent
+Ford,Figo Duratec Petrol ZXI 1.2,sedan,petrol,under_10l,False,1196,"Ford,sedan,petrol",recent

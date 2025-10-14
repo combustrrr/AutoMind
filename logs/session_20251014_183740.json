@@ -1,0 +1,48 @@
+{
+  "session_id": "20251014_183740",
+  "mode": "guessing",
+  "timestamp": "2025-10-14T18:38:15.128181",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:37:48.126547",
+      "question": "What era or generation is the car from?",
+      "answer": "Classic (Pre-2010)",
+      "value": "classic"
+    },
+    {
+      "timestamp": "2025-10-14T18:37:50.531264",
+      "question": "Do you have a brand in mind?",
+      "answer": "Honda",
+      "value": "honda"
+    },
+    {
+      "timestamp": "2025-10-14T18:37:52.394954",
+      "question": "Which body style fits best?",
+      "answer": "SEDAN",
+      "value": "sedan"
+    },
+    {
+      "timestamp": "2025-10-14T18:37:55.741492",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Petrol",
+      "value": "petrol"
+    },
+    {
+      "timestamp": "2025-10-14T18:37:58.585316",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Balanced (1.2L-1.6L)",
+      "value": "balanced"
+    },
+    {
+      "timestamp": "2025-10-14T18:38:03.156570",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "10-20 Lakhs",
+      "value": "10-20l"
+    },
+    {
+      "timestamp": "2025-10-14T18:38:15.128171",
+      "result": "correct",
+      "guessed_car": "City ZX CVT Petrol"
+    }
+  ]
+}

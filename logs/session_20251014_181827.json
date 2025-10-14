@@ -1,0 +1,43 @@
+{
+  "session_id": "20251014_181827",
+  "mode": "guessing",
+  "timestamp": "2025-10-14T18:19:24.306050",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:19:11.004436",
+      "question": "Do you have a brand in mind?",
+      "answer": "Maruti Suzuki",
+      "value": "maruti suzuki"
+    },
+    {
+      "timestamp": "2025-10-14T18:19:14.968986",
+      "question": "Which body style fits best?",
+      "answer": "HATCHBACK",
+      "value": "hatchback"
+    },
+    {
+      "timestamp": "2025-10-14T18:19:17.379674",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Petrol",
+      "value": "petrol"
+    },
+    {
+      "timestamp": "2025-10-14T18:19:19.795519",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Balanced (1.2L-1.6L)",
+      "value": "balanced"
+    },
+    {
+      "timestamp": "2025-10-14T18:19:21.884636",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "10-20 Lakhs",
+      "value": "10-20l"
+    },
+    {
+      "timestamp": "2025-10-14T18:19:24.306041",
+      "question": "Is a luxury badge important?",
+      "answer": "No, everyday practicality",
+      "value": "False"
+    }
+  ]
+}

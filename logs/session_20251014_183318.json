@@ -1,0 +1,49 @@
+{
+  "session_id": "20251014_183318",
+  "mode": "guessing",
+  "timestamp": "2025-10-14T18:34:01.116658",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:33:25.353466",
+      "question": "What era or generation is the car from?",
+      "answer": "Current (2020+)",
+      "value": "current"
+    },
+    {
+      "timestamp": "2025-10-14T18:33:28.951415",
+      "question": "Do you have a brand in mind?",
+      "answer": "Another brand (not listed)",
+      "value": "None"
+    },
+    {
+      "timestamp": "2025-10-14T18:33:31.558242",
+      "question": "Which body style fits best?",
+      "answer": "HATCHBACK",
+      "value": "hatchback"
+    },
+    {
+      "timestamp": "2025-10-14T18:33:33.591177",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Petrol",
+      "value": "petrol"
+    },
+    {
+      "timestamp": "2025-10-14T18:33:37.111881",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "10-20 Lakhs",
+      "value": "10-20l"
+    },
+    {
+      "timestamp": "2025-10-14T18:33:43.614866",
+      "question": "Is a luxury badge important?",
+      "answer": "No, everyday practicality",
+      "value": "False"
+    },
+    {
+      "timestamp": "2025-10-14T18:34:01.116643",
+      "result": "incorrect",
+      "guessed_car": "Elite i20 Asta (O) 1.0 Turbo DCT",
+      "actual_car": "Tata Nexon"
+    }
+  ]
+}

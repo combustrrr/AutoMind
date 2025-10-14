@@ -1,0 +1,46 @@
+{
+  "session_id": "20251014_180048",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:01:13.548083",
+      "question": "Do you have a brand in mind?",
+      "answer": "Toyota",
+      "value": "toyota"
+    },
+    {
+      "timestamp": "2025-10-14T18:01:16.448323",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "Above 30 Lakhs",
+      "value": "above_30l"
+    },
+    {
+      "timestamp": "2025-10-14T18:01:19.450411",
+      "question": "Which body style fits best?",
+      "answer": "SUV",
+      "value": "suv"
+    },
+    {
+      "timestamp": "2025-10-14T18:01:21.803913",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Diesel",
+      "value": "diesel"
+    },
+    {
+      "timestamp": "2025-10-14T18:01:25.077820",
+      "question": "Is a luxury badge important?",
+      "answer": "Yes, luxury or premium",
+      "value": "True"
+    },
+    {
+      "timestamp": "2025-10-14T18:01:26.806589",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Performance (>= 1.6L)",
+      "value": "performance"
+    },
+    {
+      "timestamp": "2025-10-14T18:01:36.779259",
+      "result": "correct",
+      "guessed_car": "Fortuner 2.8 4x2 AT [2016-2020]"
+    }
+  ]
+}

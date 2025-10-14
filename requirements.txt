@@ -1,10 +1,4 @@
-# AutoMind - Car Recommendation System Requirements
-
-# Core dependencies (Python standard library - no install needed)
-# Python >= 3.6 is recommended for f-string support and type hints
-
-# Optional UI dependency
-# For Streamlit UI (run: pip install streamlit)
-streamlit>=1.20.0  # Optional - for web UI (automind_ui.py)
-
-# The CLI version (automind_cli.py) requires no external dependencies
+streamlit
+scikit-learn
+pandas
+joblib

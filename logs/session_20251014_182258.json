@@ -1,0 +1,49 @@
+{
+  "session_id": "20251014_182258",
+  "mode": "guessing",
+  "timestamp": "2025-10-14T18:23:48.296177",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:23:05.561549",
+      "question": "Do you have a brand in mind?",
+      "answer": "Maruti Suzuki",
+      "value": "maruti suzuki"
+    },
+    {
+      "timestamp": "2025-10-14T18:23:07.992740",
+      "question": "Which body style fits best?",
+      "answer": "HATCHBACK",
+      "value": "hatchback"
+    },
+    {
+      "timestamp": "2025-10-14T18:23:10.493727",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Petrol",
+      "value": "petrol"
+    },
+    {
+      "timestamp": "2025-10-14T18:23:12.699329",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Balanced (1.2L-1.6L)",
+      "value": "balanced"
+    },
+    {
+      "timestamp": "2025-10-14T18:23:15.341326",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "Under 10 Lakhs",
+      "value": "under_10l"
+    },
+    {
+      "timestamp": "2025-10-14T18:23:17.361612",
+      "question": "Is a luxury badge important?",
+      "answer": "No, everyday practicality",
+      "value": "False"
+    },
+    {
+      "timestamp": "2025-10-14T18:23:48.296163",
+      "result": "incorrect",
+      "guessed_car": "Ritz VXI BS-IV",
+      "actual_car": "Swift"
+    }
+  ]
+}

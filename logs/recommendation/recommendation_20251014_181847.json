@@ -1,0 +1,118 @@
+{
+  "session_id": "20251014_181847",
+  "mode": "recommendation",
+  "timestamp": "2025-10-14T18:18:47.347734",
+  "preferences": {
+    "brand": "Hyundai",
+    "body_type": "Hatchback",
+    "fuel_type": "Diesel",
+    "budget": "Any",
+    "luxury": "Any",
+    "usage": "Any"
+  },
+  "results": {
+    "total_matches": 10,
+    "top_10": [
+      {
+        "rank": 1,
+        "model": "Elite i20 Sportz 1.5 MT Diesel",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 2,
+        "model": "Elite i20 Asta 1.4 (O) CRDi",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 3,
+        "model": "i20 Magna 1.4 CRDI",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 4,
+        "model": "Elite i20 Sportz 1.4",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 5,
+        "model": "i20 Active 1.4 SX",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 6,
+        "model": "Grand i10 Sportz U2 1.2 CRDi",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 7,
+        "model": "Elite i20 Asta 1.4 CRDI [2016-2017]",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 8,
+        "model": "Elite i20 Sportz 1.4 CRDI",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 9,
+        "model": "i20 Sportz 1.4 CRDI",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      },
+      {
+        "rank": 10,
+        "model": "Elite i20 Magna 1.4 CRDI [2016-2017]",
+        "score": 0.05753101775030454,
+        "brand": "Hyundai",
+        "body_type": "hatchback",
+        "fuel_type": "diesel"
+      }
+    ]
+  },
+  "ai_processing": {
+    "algorithm": "Content-based filtering with multi-criteria matching",
+    "strategy": "entropy",
+    "steps": [
+      "1. Parse user preferences",
+      "2. Map preferences to database attributes",
+      "3. Apply preferences as high-confidence evidence",
+      "4. Update belief state probabilities for all 1,050 cars",
+      "5. Rank cars by match score",
+      "6. Return top 10 matches"
+    ],
+    "ai_concepts_used": [
+      "Expert System reasoning",
+      "Content-based recommendation",
+      "Multi-criteria decision making",
+      "Probability-based ranking",
+      "Attribute matching",
+      "Entropy strategy for optimization"
+    ]
+  }
+}

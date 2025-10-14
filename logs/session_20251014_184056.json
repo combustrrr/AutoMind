@@ -1,0 +1,55 @@
+{
+  "session_id": "20251014_184056",
+  "mode": "guessing",
+  "timestamp": "2025-10-14T18:41:50.389918",
+  "interactions": [
+    {
+      "timestamp": "2025-10-14T18:41:02.954434",
+      "question": "What era or generation is the car from?",
+      "answer": "Classic (Pre-2010)",
+      "value": "classic"
+    },
+    {
+      "timestamp": "2025-10-14T18:41:04.692557",
+      "question": "Do you have a brand in mind?",
+      "answer": "Mahindra",
+      "value": "mahindra"
+    },
+    {
+      "timestamp": "2025-10-14T18:41:06.796467",
+      "question": "What budget bracket do you have in mind?",
+      "answer": "10-20 Lakhs",
+      "value": "10-20l"
+    },
+    {
+      "timestamp": "2025-10-14T18:41:09.346100",
+      "question": "Which body style fits best?",
+      "answer": "SUV",
+      "value": "suv"
+    },
+    {
+      "timestamp": "2025-10-14T18:41:12.774142",
+      "question": "Preferred fuel or powertrain?",
+      "answer": "Diesel",
+      "value": "diesel"
+    },
+    {
+      "timestamp": "2025-10-14T18:41:14.688222",
+      "question": "What level of engine performance do you expect?",
+      "answer": "Light (<= 1.2L)",
+      "value": "light"
+    },
+    {
+      "timestamp": "2025-10-14T18:41:33.800193",
+      "result": "incorrect",
+      "guessed_car": "XUV300 W8 (O) 1.5 Diesel",
+      "actual_car": "Thar"
+    },
+    {
+      "timestamp": "2025-10-14T18:41:50.389908",
+      "result": "incorrect",
+      "guessed_car": "XUV300 W8 (O) 1.5 Diesel",
+      "actual_car": "Thar"
+    }
+  ]
+}
