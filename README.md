@@ -1,6 +1,29 @@
-# AutoMind - Guess the Car Game 🚗
+# AutoMind - AI Car Expert System 🚗🤖
 
-A fun and interactive car guessing game featuring 50 popular Indian market cars. Test your automotive knowledge by identifying cars from clues about their brand, specifications, and characteristics.
+> **Dual-Mode AI System:** Akinator-style car guessing game + Intelligent car recommendation engine
+
+A sophisticated AI-powered expert system featuring 1,050+ Indian market cars. Demonstrates 14+ AI concepts including expert systems, inference engines, Bayesian reasoning, and information theory through two interactive modes.
+
+---
+
+## 🎉 NEW: Professional Documentation Available!
+
+**Want to add this to LinkedIn or your portfolio?** We've created comprehensive documentation for you!
+
+**📋 [START HERE: YOUR_NEXT_STEPS.md](YOUR_NEXT_STEPS.md)** ← Click this first!
+
+**Quick Links:**
+- 💼 [LinkedIn Project Template](LINKEDIN_PROJECT_TEMPLATE.md) - Fill-in guide with copy-paste content
+- 💬 [LinkedIn Post Templates](LINKEDIN_POST.md) - Ready-to-post with hashtags
+- 🎤 [Interview Talking Points](PROJECT_SUMMARY_TALKING_POINTS.md) - Elevator pitch & Q&A
+- ⚡ [Quick Reference](QUICK_REFERENCE.md) - One-page cheat sheet
+- 📚 [Documentation Index](DOCUMENTATION_INDEX.md) - Complete navigation guide
+
+---
+
+## 🎯 What is AutoMind?
+
+AutoMind is a complete AI application demonstrating advanced artificial intelligence through two interactive modes. Built from scratch with production-quality Python code (1,832 lines across 15 modules).
 
 ## Features
 
