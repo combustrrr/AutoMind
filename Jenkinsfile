@@ -1,91 +1,46 @@
 pipeline {
-  agent any
+    agent any
 
-  environment {
-    VENV_DIR = ".venv"
-    PYTHON = "${env.WORKSPACE}/${env.VENV_DIR}/bin/python"
-    PIP = "${env.WORKSPACE}/${env.VENV_DIR}/bin/pip"
-  }
-
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
+    environment {
+        // Use Windows paths for the virtual environment
+        VENV_DIR = ".venv"
+        PYTHON = "${env.WORKSPACE}\\${env.VENV_DIR}\\Scripts\\python.exe"
+        PIP = "${env.WORKSPACE}\\${env.VENV_DIR}\\Scripts\\pip.exe"
     }
 
-    stage('Prepare Python') {
-      steps {
-        sh '''
-          set -e
-          python3 -V || { echo "python3 not found on agent"; exit 1; }
-          rm -rf ${VENV_DIR}
-          python3 -m venv ${VENV_DIR}
-          ${PIP} install --upgrade pip
-          if [ -f requirements.txt ]; then
-            ${PIP} install -r requirements.txt
-          fi
-        '''
-      }
-    }
-
-    stage('Lint (optional)') {
-      steps {
-        sh '''
-          set -e
-          if ${PIP} show flake8 > /dev/null 2>&1; then
-            ${PYTHON} -m flake8 || true
-          else
-            echo "flake8 not installed; skipping lint"
-          fi
-        '''
-      }
-    }
-
-    stage('Test') {
-      steps {
-        sh '''
-          set -e
-          mkdir -p reports
-          if ${PIP} show pytest > /dev/null 2>&1; then
-            ${PYTHON} -m pytest --junitxml=reports/junit.xml || true
-          else
-            echo "pytest not installed; skipping tests"
-          fi
-        '''
-      }
-      post {
-        always {
-          junit 'reports/junit.xml'
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
         }
-      }
-    }
 
-    stage('Build (if packaging present)') {
-      steps {
-        sh '''
-          set -e
-          if [ -f setup.py ] || [ -f pyproject.toml ]; then
-            ${PYTHON} -m pip install build
-            ${PYTHON} -m build --wheel --sdist --outdir dist || true
-          else
-            echo "No setup.py or pyproject.toml found - skipping packaging"
-          fi
-        '''
-      }
+        stage('Prepare Python') {
+            steps {
+                // Use 'bat' instead of 'sh' for Windows
+                bat """
+                    python -m venv ${VENV_DIR}
+                    "${PIP}" install --upgrade pip
+                    if exist requirements.txt (
+                        "${PIP}" install -r requirements.txt
+                    )
+                """
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                bat """
+                    if not exist reports mkdir reports
+                    "${PYTHON}" -m pytest --junitxml=reports/junit.xml || exit 0
+                """
+            }
+            post {
+                always {
+                    junit 'reports/junit.xml'
+                }
+            }
+        }
     }
-  }
-
-  post {
-    always {
-      archiveArtifacts artifacts: 'dist/**, reports/**, **/*.log', allowEmptyArchive: true
-      cleanWs()
-    }
-    success {
-      echo "Build succeeded"
-    }
-    failure {
-      echo "Build failed — check console output"
-    }
-  }
+    // ... rest of your post actions
 }
