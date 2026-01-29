@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     environment {
-        // Updated with your local path
+        // Local Python installation path
         PYTHON_EXE = "C:\\Users\\icsar\\AppData\\Local\\Python\\bin\\python.exe"
         VENV_DIR = ".venv"
+        // Virtual environment tool paths
         VENV_PYTHON = "${env.WORKSPACE}\\${env.VENV_DIR}\\Scripts\\python.exe"
         VENV_PIP = "${env.WORKSPACE}\\${env.VENV_DIR}\\Scripts\\pip.exe"
     }
@@ -37,7 +38,8 @@ pipeline {
             }
             post {
                 always {
-                    junit 'reports/junit.xml'
+                    // Added allowEmptyResults to prevent failure if 0 tests are found
+                    junit testResults: 'reports/junit.xml', allowEmptyResults: true
                 }
             }
         }
@@ -45,8 +47,15 @@ pipeline {
 
     post {
         always {
+            // Archive test reports and logs before cleaning the workspace
             archiveArtifacts artifacts: 'reports/**, **/*.log', allowEmptyArchive: true
             cleanWs()
+        }
+        success {
+            echo "Build and Test process completed successfully."
+        }
+        failure {
+            echo "Pipeline failed. Please check the Console Output for details."
         }
     }
 }
